@@ -1,0 +1,36 @@
+*{
+    margin-top: 5px;
+}
+
+ul>li>a{
+    font-size: large;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(157 166 217 / 86%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.img{
+    background-image: url('../assets/img/img.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height:750px;
+    
+}
+.card{
+    background-color: rgba(86, 114, 241, 0.3);
+    box-shadow:inset 10px 10px 50px 24px rgba(2, 0, 8, 0.5) ; 
+    transition: all 1s  ease-in-out;
+}
+.card:hover{
+    
+    box-shadow:inset 10px 10px 50px 24px rgba(19, 104, 231, 0.9) ; 
+    background-color: rgb(101, 164, 235, 0.4);
+
+}

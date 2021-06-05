@@ -1,0 +1,75 @@
+<!-- Material form group -->
+<div *ngIf="!submitted">
+        <br>
+    <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
+    <span class="utility1 rounded"><span>{{titleskillset}}</span></span>
+    </h1>
+    <hr>
+    <!-- SKILL_SET, DESCRIPTION, CREATED_BY,MODIFIED_BY," + -->
+            <!-- "RESOURCE_ID -->
+    <div class="container">
+        <div class="scrollbar">
+            <form #f="ngForm">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstName">SKILL_NAME : </label>
+                            <input type="text" class="form-control" id="SKILL_NAME"
+                            [(ngModel)]="skillset.skillName"
+                            name="SKILL_NAME" #box1 required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstName">DESCRIPTION : </label>
+                            <input type="text" class="form-control" id="DESCRIPTION"
+                            [(ngModel)]="skillset.description"
+                            name="DESCRIPTION" #box1 required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="uid">RESOURCE_ID : </label>
+                            <input type="text" class="form-control" id="RESOURCE_ID" 
+                            [(ngModel)]="skillset.resourceId" 
+                            name="RESOURCE_ID" #box3 required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstName">CREATED_BY : </label>
+                            <input type="text" class="form-control" id="CREATED_BY"
+                            [(ngModel)]="skillset.createdBy"
+                            name="CREATED_BY" #box1 required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstName">MODIFIED_BY : </label>
+                            <input type="number" class="form-control" id="MODIFIED_AT"
+                            [(ngModel)]="skillset.modifiedBy"
+                            name="MODIFIED_BY" #MODIFIED_BY required>
+                        </div>
+                    </div>
+                </div>
+                <button  class="btn btn-sm btn-primary float-right" type="submit" type="button"
+                (click)="save()" [disabled]="!f.valid"
+                >Add Skill Set</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="submitted" class="text-center">
+    <h2>Form Submitted Successfully !</h2>
+    <br>
+    <button class="btn btn-primary" routerLink="view-skill-set">View_List</button>
+    <br>
+    <br>
+    <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
+</div>
