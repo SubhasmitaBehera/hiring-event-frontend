@@ -1,108 +1,33 @@
 <div class="row">
     <div class="col">
         <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;"> 
-        <span class="utility1 rounded">List of SkillSet</span> 
+        <span class="utility1 rounded text-white">List of SkillSet</span> 
      </h2>
     </div>
     <div class="scrollbar">
-        <table class="table table-striped">
+        <table class="table table-striped text-center text-white">
             <thead>
                 <tr>
                     <th scope="col">SKILL_NAME</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">TITLE</th>
                     <th scope="col">DESCRIPTION</th>
-                    <th scope="col">RESOURCE_ID</th>
-                    <th scope="col">CREATED_BY</th>
-                    <th scope="col">CREATED_AT</th>
-                    <th scope="col">MODIFIED_BY</th>
-                    <th scope="col">MODIFIED_AT</th>
+                    <th scope="col">ACTION</th>
                 </tr>
             </thead>
             <tbody >
-                <tr >
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                   
+                <tr *ngFor="let skillset of skillsets | async">
+                    <td>{{skillset.skillName}}</td>
+                    <td>{{skillset.description}}</td>
                     <td>
                         <div class="row">
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Delete</button>
+                            <div class="col-5">
+                                <button class="btn btn-outline-danger"
+                                (click)="deleteSkillSet(skillset.id)"
+                                >Delete</button>
                             </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Details</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Edit</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr >
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                   
-                    <td>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Delete</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Details</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Edit</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr >
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                   
-                    <td>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Delete</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Details</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Edit</button>
+                            <div class="col-5">
+                                <button class="btn btn-outline-danger"
+                                (click)="updateSkillSet(skillset.id)"
+                                >Edit</button>
                             </div>
                         </div>
                     </td>

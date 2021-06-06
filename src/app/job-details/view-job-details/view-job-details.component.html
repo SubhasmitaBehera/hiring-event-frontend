@@ -8,7 +8,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">TITLE</th>
                     <th scope="col">DESCRIPTION</th>
                     <th scope="col">TEAM</th>
@@ -17,97 +16,31 @@
                     <th scope="col">EXP_DT</th>
                     <th scope="col">MIN_EXP_DT</th>
                     <th scope="col">MAX_EXP_DT</th>
-                    <th scope="col">RESOURCE_ID</th>
-                    <th scope="col">CREATED_BY</th>
-                    <th scope="col">MODIFIED_BY</th>
-                    <th scope="col">MODIFIED_AT</th>
                     <th scope="col">Take_Action</th>
                 </tr>
             </thead>
             <tbody >
-                <tr >
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                   
+                <tr *ngFor="let jobdetail of jobdetails | async">
+                    <td>{{jobdetail.id}}</td>
+                    <td>{{jobdetail.minExp}}</td>
+                    <td>{{jobdetail.maxExp}}</td>
+                    <td>{{jobdetail.hiringManagerEmail}}</td>
+                    <td>{{jobdetail.jobExpiryDate}}</td>
+                    <td>{{jobdetail.numOfPositions}}</td>
+                    <td>{{jobdetail.title}}</td>
+                    <td>{{jobdetail.description}}</td>
+                    <td>{{jobdetail.team}}</td>
                     <td>
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-outline-danger">Delete</button>
+                                <button class="btn btn-outline-danger"
+                                (click)="deleteJobDetails(jobdetail.id)"
+                                >Delete</button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-outline-danger">Details</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Edit</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr >
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                   
-                    <td>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Delete</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Details</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Edit</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr >
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                    <td>dummy</td>
-                   
-                    <td>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Delete</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Details</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-outline-danger">Edit</button>
+                                <button class="btn btn-outline-danger"
+                                (click)="updateJobDetails(jobdetail.id)"
+                                >Edit</button>
                             </div>
                         </div>
                     </td>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JobDetails } from '../Models/jobdetails.model';
+import { JobDetailsService } from '../service/jobdetails.services';
 
 @Component({
   selector: 'app-job-details',
@@ -6,21 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./job-details.component.css']
 })
 export class JobDetailsComponent implements OnInit {
-  jobdetails = "JOB DETAILS PAGE";
+  jobdetailstitle = "DETAILS OF JOB";
+  jobdetails : JobDetails;
 
   submitted : boolean = false;
 
-  constructor() { }
+  constructor(private jobDetailsService : JobDetailsService) { }
 
   ngOnInit(): void {
   }
 
-  check(){
-    this.submitted = true;
-  }
-
   addAgain(){
     this.submitted = false;
+  }
+
+  save(){
+    this.jobDetailsService
+    .createJobDetails(this.jobdetails).subscribe((data) => {
+      console.log(data);
+      this.jobdetails = new JobDetails();
+    },
+      (error) => console.log(error));
+
+  this.submitted = true;
   }
 
 }

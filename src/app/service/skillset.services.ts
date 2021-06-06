@@ -11,23 +11,23 @@ export class SkillSetService{
 
     constructor(private http: HttpClient) { }
   
-    // getEmployeesList(): Observable<any> {
-    //   return this.http.get(`${this.baseUrl}`);
-    // }
+    getSkillSetList(): Observable<any> {
+      return this.http.get(`${this.baseUrl}`);
+    }
   
-    // getEmployee(uid: string): Observable<any> {
-    //   return this.http.get(`${this.baseUrl}/${uid}`);
-    // }
+    getSkillSet(id: number): Observable<any> {
+      return this.http.get(`${this.baseUrl}/${id}`);
+    }
   
     createSkillSet(skillset: Object): Observable<Object> {
       return this.http.post(`${this.baseUrl}`, skillset);
     }
   
-    // updateEmployee(uid: string, value: any): Observable<Object> {
-    //   return this.http.put(`${this.baseUrl}/${uid}`, value);
-    // }
+    updateSkillSet(id: number, value: any): Observable<Object> {
+      return this.http.put(`${this.baseUrl}/${id}`, value);
+    }
   
-    // deleteEmployee(uid: string): Observable<any> {
-    //   return this.http.delete(`${this.baseUrl}/${uid}`, { responseType: 'text' });
-    // }
+    deleteSkillSet(id: number): Observable<any> {
+      return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    }
 }

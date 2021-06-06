@@ -9,7 +9,7 @@ import { SkillSetService } from '../service/skillset.services';
   styleUrls: ['./skill-set.component.css']
 })
 export class SkillSetComponent implements OnInit {
-  titleskillset = "SKILL SET PAGE";
+  titleskillset = "SET YOUR SKILLS";
   submitted : boolean = false;
 
   skillset : SkillSet = new SkillSet();

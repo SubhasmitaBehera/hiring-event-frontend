@@ -2,7 +2,7 @@
 <div *ngIf="!submitted">
     <br>
     <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-        <span class="utility1 rounded"><span>{{jobdetails}}</span></span>
+        <span class="utility1 rounded"><span>{{jobdetailstitle}}</span></span>
     </h1>
     <hr>
     <div class="container">
@@ -10,23 +10,14 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="firstName">ID : </label>
-                        <input type="text" class="form-control" id="firstName"
-                        name="id" ngModel #box1="ngModel" required>
-                        <span class="help-block" *ngIf="!box1.valid && box1.touched"></span>
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="lastName">TITLE : </label>
+                        <label for="title">TITLE : </label>
                         <input type="text" class="form-control" id="lastName" 
                         name="title"  ngModel #box1="ngModel" required>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="uid">DESCRIPTION : </label>
+                        <label for="description">DESCRIPTION : </label>
                         <input type="text" class="form-control" id="uid"  
                         name="description"  ngModel #box1="ngModel" required>
                     </div>
@@ -35,7 +26,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="uid">MANAGER_EMAIL : </label>
+                        <label for="managerEmail">MANAGER_EMAIL : </label>
                         <input type="text" class="form-control" id="uid"  
                         name="managerEmail" #box3 ngModel required email #email="ngModel">
                         <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
@@ -44,8 +35,8 @@
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="firstName">NUM_OF_POSITIONS : </label>
-                        <input type="text" class="form-control" id="firstName"
+                        <label for="noOfPositions">NUM_OF_POSITIONS : </label>
+                        <input type="number" class="form-control" id="firstName"
                         name="noOfPositions"  ngModel #box2="ngModel" required>
                         <span class="help-block" *ngIf="!box2.valid && box2.touched"></span>
 
@@ -53,7 +44,7 @@
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="firstName">TEAM : </label>
+                        <label for="team">TEAM : </label>
                         <input type="text" class="form-control" id="firstName"
                         name="team"  ngModel #box3="ngModel" required>
                         <span class="help-block" *ngIf="!box3.valid && box3.touched"></span>
@@ -65,64 +56,33 @@
             <div class="row" >
                 <div class="col">
                     <div class="form-group">
-                        <label for="uid">EXP_DT : </label>
+                        <label for="expDt">EXP_DT : </label>
                         <input type="date" class="form-control" id="uid"  
                         name="expDt"  ngModel #box1="ngModel" required>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="firstName">MIN_EXP_DT : </label>
-                        <input type="date" class="form-control" id="firstName"
-                        name="MinExpDt"  ngModel #box4="ngModel" required>
+                        <label for="MinExp">MIN_EXPERIENCE : </label>
+                        <input type="number" class="form-control" id="firstName"
+                        name="MinExp"  ngModel #box4="ngModel" required>
                         <span class="help-block" *ngIf="!box4.valid && box4.touched"></span>
 
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="firstName">MAX_EXP_DT : </label>
-                        <input type="date" class="form-control" id="firstName"
-                        name="maxExpDt"  ngModel #box5="ngModel" required>
+                        <label for="maxExp">MAX_EXPERIENCE : </label>
+                        <input type="number" class="form-control" id="firstName"
+                        name="maxExp"  ngModel #box5="ngModel" required>
                         <span class="help-block" *ngIf="!box5.valid && box5.touched"></span>
 
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="uid">RESOURCE_ID : </label>
-                        <input type="text" class="form-control" id="uid"  
-                        name="resourceId"  ngModel #box1="ngModel" required>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="firstName">CREATED_BY : </label>
-                        <input type="text" class="form-control" id="firstName"
-                        name="createdBy"  ngModel #box6="ngModel" required>
-                        <span class="help-block" *ngIf="!box6.valid && box6.touched"></span>
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="uid">MODIFIED_BY : </label>
-                        <input type="text" class="form-control" id="uid"  
-                        name="modifiedBy"  ngModel #box1="ngModel" required>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="firstName">MODIFIED_AT : </label>
-                        <input type="text" class="form-control" id="firstName"
-                        name="modifiedAt"  ngModel #box7="ngModel" required>
-                        <span class="help-block" *ngIf="!box7.valid && box7.touched"></span>
-                    </div>
-                </div>
-            </div>
-            <button  class="btn btn-sm btn-primary float-right" type="submit" (click)="check()" [disabled]="!f.valid"
+            <button  class="btn btn-sm btn-primary float-right" type="submit" (click)="check()"
+            (click)="save()"
+            [disabled]="!f.valid"
             >Add Job Details</button>
         </form>
     </div>

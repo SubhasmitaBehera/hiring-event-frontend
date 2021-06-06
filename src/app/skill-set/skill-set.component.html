@@ -28,34 +28,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="uid">RESOURCE_ID : </label>
-                            <input type="text" class="form-control" id="RESOURCE_ID" 
-                            [(ngModel)]="skillset.resourceId" 
-                            name="RESOURCE_ID" #box3 required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="firstName">CREATED_BY : </label>
-                            <input type="text" class="form-control" id="CREATED_BY"
-                            [(ngModel)]="skillset.createdBy"
-                            name="CREATED_BY" #box1 required>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="firstName">MODIFIED_BY : </label>
-                            <input type="number" class="form-control" id="MODIFIED_AT"
-                            [(ngModel)]="skillset.modifiedBy"
-                            name="MODIFIED_BY" #MODIFIED_BY required>
-                        </div>
-                    </div>
-                </div>
                 <button  class="btn btn-sm btn-primary float-right" type="submit" type="button"
                 (click)="save()" [disabled]="!f.valid"
                 >Add Skill Set</button>
