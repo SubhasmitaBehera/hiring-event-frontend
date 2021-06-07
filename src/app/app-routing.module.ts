@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "skill-set/edit-skill-set/:id", component: EditSkillSetComponent },
   { path: "job-details", component: JobDetailsComponent },
   { path: "job-details/view-job-details", component: ViewJobDetailsComponent },
-  { path: "job-details/edit-job-details", component: EditJobDetailsComponent },
+  { path: "job-details/edit-job-details/:id ", component: EditJobDetailsComponent },
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
 ];

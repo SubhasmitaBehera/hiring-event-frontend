@@ -2,24 +2,27 @@
 <div *ngIf="!submitted">
     <br>
     <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-        <span class="utility1 rounded"><span>{{jobdetailstitle}}</span></span>
+        <span class="utility1 rounded text-white"><span>{{jobdetailstitle}}</span></span>
     </h1>
     <hr>
-    <div class="container">
+    <div class="container text-white">
         <form #f="ngForm">
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="title">TITLE : </label>
                         <input type="text" class="form-control" id="lastName" 
-                        name="title"  ngModel #box1="ngModel" required>
+                        name="title"  ngModel #box1
+                        [(ngModel)]="jobdetails.title"
+                        required>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="description">DESCRIPTION : </label>
                         <input type="text" class="form-control" id="uid"  
-                        name="description"  ngModel #box1="ngModel" required>
+                        name="description"  ngModel #box2
+                        [(ngModel)]="jobdetails.description"required>
                     </div>
                 </div>
             </div>
@@ -28,7 +31,9 @@
                     <div class="form-group">
                         <label for="managerEmail">MANAGER_EMAIL : </label>
                         <input type="text" class="form-control" id="uid"  
-                        name="managerEmail" #box3 ngModel required email #email="ngModel">
+                        name="managerEmail" #box3 ngModel 
+                        [(ngModel)]="jobdetails.hiringManagerEmail"
+                        required email #email="ngModel">
                         <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
 
                     </div>
@@ -37,8 +42,10 @@
                     <div class="form-group">
                         <label for="noOfPositions">NUM_OF_POSITIONS : </label>
                         <input type="number" class="form-control" id="firstName"
-                        name="noOfPositions"  ngModel #box2="ngModel" required>
-                        <span class="help-block" *ngIf="!box2.valid && box2.touched"></span>
+                        name="noOfPositions"  ngModel #box4
+                        
+                        [(ngModel)]="jobdetails.numOfPositions"required>
+                        <!-- <span class="help-block" *ngIf="!box2.valid && box2.touched"></span> -->
 
                     </div>
                 </div>
@@ -46,8 +53,10 @@
                     <div class="form-group">
                         <label for="team">TEAM : </label>
                         <input type="text" class="form-control" id="firstName"
-                        name="team"  ngModel #box3="ngModel" required>
-                        <span class="help-block" *ngIf="!box3.valid && box3.touched"></span>
+                        name="team"  ngModel #box5
+                        
+                        [(ngModel)]="jobdetails.team"required>
+                        <!-- <span class="help-block" *ngIf="!box3.valid && box3.touched"></span> -->
 
                     </div>
                 </div>
@@ -58,15 +67,19 @@
                     <div class="form-group">
                         <label for="expDt">EXP_DT : </label>
                         <input type="date" class="form-control" id="uid"  
-                        name="expDt"  ngModel #box1="ngModel" required>
+                        name="expDt"  ngModel #box6
+                        
+                        [(ngModel)]="jobdetails.jobExpiryDate"required>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="MinExp">MIN_EXPERIENCE : </label>
                         <input type="number" class="form-control" id="firstName"
-                        name="MinExp"  ngModel #box4="ngModel" required>
-                        <span class="help-block" *ngIf="!box4.valid && box4.touched"></span>
+                        name="MinExp"  ngModel #box7
+                        
+                        [(ngModel)]="jobdetails.minExp"required>
+                        <!-- <span class="help-block" *ngIf="!box4.valid && box4.touched"></span> -->
 
                     </div>
                 </div>
@@ -74,13 +87,13 @@
                     <div class="form-group">
                         <label for="maxExp">MAX_EXPERIENCE : </label>
                         <input type="number" class="form-control" id="firstName"
-                        name="maxExp"  ngModel #box5="ngModel" required>
-                        <span class="help-block" *ngIf="!box5.valid && box5.touched"></span>
-
+                        name="maxExp"  ngModel #box8 
+                        [(ngModel)]="jobdetails.maxExp"required>
+                        <!-- <span class="help-block" *ngIf="!box5.valid && box5.touched"></span> -->
                     </div>
                 </div>
             </div>
-            <button  class="btn btn-sm btn-primary float-right" type="submit" (click)="check()"
+            <button  class="btn btn-sm btn-primary float-right" type="submit" type="button"
             (click)="save()"
             [disabled]="!f.valid"
             >Add Job Details</button>
@@ -88,7 +101,7 @@
     </div>
 </div>
 
-<div *ngIf="submitted" class="text-center">
+<div *ngIf="submitted" class="text-center text-white">
     <h2>Form Submitted Successfully !</h2>
     <br>
     <button class="btn btn-primary" routerLink="view-job-details">View_List</button>

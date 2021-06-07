@@ -9,7 +9,8 @@ import { JobDetailsService } from '../service/jobdetails.services';
 })
 export class JobDetailsComponent implements OnInit {
   jobdetailstitle = "DETAILS OF JOB";
-  jobdetails : JobDetails;
+  
+  jobdetails : JobDetails = new JobDetails();
 
   submitted : boolean = false;
 

@@ -1,11 +1,11 @@
 <br>
 <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-<span class="utility1 rounded"><span>Update Skill Details</span></span>
+<span class="utility1 rounded text-white"><span>Update Skill Details</span></span>
 </h1>
 <hr>
 
 <div class="form" *ngIf="!boolVar">
-    <div class="form-group">
+    <div class="form-group text-white">
         <label><b>Update Skill Name : </b></label>
         <input type="text" class="form-control" [(ngModel)]="skillset.skillName" id="name" name="skillName">
     </div>
@@ -15,6 +15,6 @@
 
 
 <div *ngIf="boolVar">
-    <h2 class="bg-success">Updated SuccessFully</h2>
+    <h2 class="bg-success text-white">Updated SuccessFully</h2>
     <button type="button" (click)="list()">Back to List</button>
 </div>

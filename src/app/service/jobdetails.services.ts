@@ -10,7 +10,7 @@ export class JobDetailsService{
 
     constructor(private http: HttpClient) { }
     
-    getJobDetailsList(): Observable<any> {
+      getJobDetailsList(): Observable<any> {
         return this.http.get(`${this.baseUrl}`);
       }
     
