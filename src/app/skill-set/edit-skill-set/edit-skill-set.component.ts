@@ -44,7 +44,7 @@ export class EditSkillSetComponent implements OnInit {
       }, error => console.log(error));
   }
   list(){
-    this.router.navigate(['skill-set']);
+    this.router.navigate(['skill-set/view-skill-set']);
   }
 
 
