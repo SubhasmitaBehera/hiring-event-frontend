@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Params } from "@angular/router";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -15,7 +16,9 @@ export class JobDetailsService{
       }
     
       getJobDetails(id: number): Observable<any> {
+        console.log(id);
         return this.http.get(`${this.baseUrl}/${id}`);
+        
       }
     
       createJobDetails(jobdetails: Object): Observable<Object> {
