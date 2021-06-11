@@ -1,4 +1,4 @@
-*{
+.card{
     margin-top: 5px;
 }
 
@@ -18,17 +18,18 @@ ul>li>a{
 
 .img{
     background-image: url('../assets/img/img.jpg');
+    /* background-size: cover; */
     background-position: center;
     background-repeat: no-repeat;
-    height:750px;
+    height:100vh;
     
 }
-.card{
+/* .card{
     background-color: rgba(86, 114, 241, 0.4);
     box-shadow:inset 10px 10px 50px 24px rgba(2, 0, 8, 0.6) ; 
     transition: all 1s  ease-in-out;
-}
-.card:hover{
+} */
+.card{
     
     box-shadow:inset 10px 10px 50px 24px rgba(19, 104, 231, 0.9) ; 
     background-color: rgb(101, 164, 235, 0.6);
