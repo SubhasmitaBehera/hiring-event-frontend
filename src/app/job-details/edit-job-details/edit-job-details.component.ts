@@ -13,44 +13,18 @@ export class EditJobDetailsComponent implements OnInit {
   boolVar:boolean = false;
   jobdetails: JobDetails;
   id: number;
-  sub :any;
-
   constructor(private route: ActivatedRoute, private router: Router,
-    private jobDetailsService: JobDetailsService) {
-      this.m1();
-    }
-
+    private jobDetailsService: JobDetailsService) { }
 
   ngOnInit(): void {
-    
-
-      
-  }
-  m1() : void {
     this.jobdetails = new JobDetails();
+    this.id = +this.route.snapshot.params['id'];
 
-    // this.sub = this.route.params.subscribe(params => {
-    //   this.id = params['id'];
-    
-    //   console.log("id is "+this.id);
-    
-     this.id = +this.route.snapshot.paramMap.get('id');
-
-     this.sub = this.route.params.subscribe(params => {
-      // this.id = params['id'];
-      // console.log("id is "+ this.id);
-
-      console.log("some msg"+this.id);
-    
-      this.jobDetailsService.getJobDetails(this.id)
-        .subscribe(data => {
-          console.log(data)
-          this.jobdetails = data;
-        }, error => console.log(error));
-      
-     });
-    
-    
+    this.jobDetailsService.getJobDetails(this.id)
+    .subscribe(data => {
+      console.log(data)
+      this.jobdetails = data;
+    }, error => console.log(error));
   }
 
   updateJobDetails() {
