@@ -5,4 +5,8 @@ h1>span{
     font-weight: bolder;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+    
+  }
 

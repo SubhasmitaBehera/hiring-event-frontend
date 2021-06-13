@@ -1,0 +1,43 @@
+<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+
+<hr>
+<div *ngIf="jobdetail" style="text-align: center;">
+    <div>
+        <label ><b>ID: </b></label>{{jobdetail.id}}
+    </div>
+
+    <div>
+        <label ><b>Title: </b></label>{{jobdetail.title}}
+    </div>
+
+    <div>
+        <label ><b>Description: </b></label>{{jobdetail.description}}
+    </div>
+
+    <div>
+        <label ><b>Team: </b></label>{{jobdetail.team}}
+    </div>
+    <div>
+        <label ><b>Hiring Manager Email: </b></label>{{jobdetail.hiringManagerEmail}}
+    </div>
+    <div>
+        <label ><b>Number Of Positions: </b></label>{{jobdetail.numOfPositions}}
+    </div>
+    <div>
+        <label ><b>Job Expiry Date: </b></label>{{jobdetail.jobExpiryDate}}
+    </div>
+    <div>
+        <label ><b>Min Expiry Date: </b></label>{{jobdetail.minExp}}
+    </div>
+    <div>
+        <label ><b>Max Expiry Date: </b></label>{{jobdetail.maxExp}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<div style="text-align: center;">
+<button (click)="list()" class="btn btn-primary">Back to List</button>
+</div>
+<br>

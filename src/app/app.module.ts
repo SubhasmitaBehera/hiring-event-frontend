@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
 import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job-details.component';
 
+import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job
     ViewJobDetailsComponent,
     ViewSkillSetComponent,
     EditSkillSetComponent,
-    EditJobDetailsComponent
+    EditJobDetailsComponent,
+    
+    ViewSingleJobDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -19,28 +19,28 @@ export class EditJobDetailsComponent implements OnInit {
     private jobDetailsService: JobDetailsService) 
     
     {
-      this.jobdetails = new JobDetails();
 
     // this.sub = this.route.params.subscribe(params => {
     //   this.id = params['id'];
     //   console.log("id is "+this.id);
-      this.id = this.route.snapshot.params['id'];
     
     console.log("some msg"+this.id);
     
-    this.jobDetailsService.getJobDetails(this.id)
-      .subscribe(data => {
-        console.log(data)
-        this.jobdetails = data;
-      }, error => console.log(error));
-
+    
       
   }
 
 
   ngOnInit(): void {
+    this.jobdetails = new JobDetails();
+    this.id = this.route.snapshot.params['id'];
     
-      
+    this.jobDetailsService.getJobDetails(this.id)
+    .subscribe(data => {
+      console.log(data)
+      this.jobdetails = data;
+    }, error => console.log(error));
+
   }
 
   updateJobDetails() {
