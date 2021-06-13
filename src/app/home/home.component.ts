@@ -20,6 +20,6 @@ export class HomeComponent implements OnInit {
    this.router.navigate(['/view'])
   }
   onLoadJobDetails() {
-    this.router.navigate(['/job-details'])
+    this.router.navigate(['/create'])
   }
 }

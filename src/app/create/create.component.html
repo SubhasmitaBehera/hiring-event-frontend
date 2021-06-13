@@ -1,1 +1,23 @@
-<p>create works!</p>
+<nav class="navbar navbar-expand-sm  text-center" >
+
+    <ul class="nav nav-tabs">
+      <div class="row ">
+        <li>
+          <div class="col">
+            <button class="btn btn-success mx-4" (click)="enable()">Create Job Details</button>
+          </div>
+        </li>
+  
+        <li>
+          <div class="col">
+            <button class="btn btn-success" (click)="enable1()">Create Skillset</button>
+          </div>
+        </li>
+  
+      </div>
+    </ul>
+  </nav>
+  <br>
+  <hr>
+  <app-job-details *ngIf="boolVar"></app-job-details>
+  <app-skill-set *ngIf="boolVar1"></app-skill-set>

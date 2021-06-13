@@ -43,9 +43,7 @@ export class ViewJobDetailsComponent implements OnInit {
 
   }
 
-  viewJobDetails(id : number) {
-    this.router.navigate(['job-details/view-job-details', id]);
-  }
+ 
 
   updateJobDetails(id: number) {
     this.router.navigate(['job-details/edit-job-details', id]);

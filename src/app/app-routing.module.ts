@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CreateComponent } from './create/create.component';
 
 import { HomeComponent } from './home/home.component';
 import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job-details.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 
 import { ViewJobDetailsComponent } from './job-details/view-job-details/view-job-details.component';
-<<<<<<< HEAD
-import { ViewSingleJobDetailsComponent } from './job-details/view-single-job-details/view-single-job-details.component';
-=======
 import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
->>>>>>> 5767a03b26357de3dfb9dc8d21671fba5744c380
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
@@ -26,15 +23,10 @@ const routes: Routes = [
   { path: "job-details", component: JobDetailsComponent },
   { path: "job-details/view-job-details", component: ViewJobDetailsComponent },
   { path: "job-details/edit-job-details/:id", component: EditJobDetailsComponent },
-<<<<<<< HEAD
   { path: "job-details/view-job-details/:id", component: ViewSingleJobDetailsComponent },
-=======
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
-<<<<<<< HEAD
   { path: "view", component: ViewComponent },
-=======
->>>>>>> 5767a03b26357de3dfb9dc8d21671fba5744c380
->>>>>>> 0f03da281e3072269b64b468a1121e299c5b6a51
+  { path: "create", component: CreateComponent },
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
 ];
