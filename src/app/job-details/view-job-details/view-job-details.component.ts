@@ -38,6 +38,10 @@ export class ViewJobDetailsComponent implements OnInit {
           error => console.log(error));
     }
   }
+  viewJobDetails(id: number){
+    this.router.navigate(['job-details/view-job-details/view-single-job-details', id]);
+
+  }
 
   viewJobDetails(id : number) {
     this.router.navigate(['job-details/view-job-details', id]);

@@ -7,7 +7,8 @@
 <div class="form" *ngIf="!boolVar">
     <div class="form-group text-white">
         <label><b>Update Title : </b></label>
-        <input type="text" class="form-control" [(ngModel)]="jobdetails.title" id="title" name="title">
+        <input type="text" class="form-control" [(ngModel)]="jobdetails.title" id="name" name="title">
+        <!-- <p>{{jobdetails.title}}</p> -->
     </div>
     
     <button class="btn btn-primary" type="button" (click)="updateJobDetails()">Update</button>

@@ -16,6 +16,8 @@ import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set
 import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job-details.component';
 import { ViewSingleJobDetailsComponent } from './job-details/view-single-job-details/view-single-job-details.component';
 
+import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,10 @@ import { ViewSingleJobDetailsComponent } from './job-details/view-single-job-det
     ViewSkillSetComponent,
     EditSkillSetComponent,
     EditJobDetailsComponent,
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 5767a03b26357de3dfb9dc8d21671fba5744c380
     ViewSingleJobDetailsComponent
   ],
   imports: [

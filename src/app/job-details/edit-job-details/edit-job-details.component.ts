@@ -14,6 +14,9 @@ export class EditJobDetailsComponent implements OnInit {
   jobdetails: JobDetails;
   id: number;
   constructor(private route: ActivatedRoute, private router: Router,
+
+    
+
     private jobDetailsService: JobDetailsService) { }
 
   ngOnInit(): void {
@@ -25,6 +28,7 @@ export class EditJobDetailsComponent implements OnInit {
       console.log(data)
       this.jobdetails = data;
     }, error => console.log(error));
+
   }
 
   updateJobDetails() {
