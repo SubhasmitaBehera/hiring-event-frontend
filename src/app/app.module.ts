@@ -30,11 +30,13 @@ import { CreateComponent } from './create/create.component';
     EditSkillSetComponent,
     EditJobDetailsComponent,
     
+
     ViewSingleJobDetailsComponent,
     
     ViewComponent,
     
     CreateComponent
+
   ],
   imports: [
     BrowserModule,
