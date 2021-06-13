@@ -8,35 +8,40 @@
         <table class="table table-striped text-white text-center">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <!-- <th scope="col">ID</th> -->
                     <th scope="col">TITLE</th>
                     <th scope="col">DESCRIPTION</th>
-                    <th scope="col">TEAM</th>
-                    <th scope="col">MANAGER_EMAIL</th>
-                    <th scope="col">NUM_OF_POSITIONS</th>
-                    <th scope="col">EXP_DT</th>
+                    <!-- <th scope="col">TEAM</th> -->
+                    <!-- <th scope="col">MANAGER_EMAIL</th> -->
+                    <!-- <th scope="col">NUM_OF_POSITIONS</th> -->
+                    <!-- <th scope="col">EXP_DT</th> -->
                     <th scope="col">MIN_EXP_DT</th>
-                    <th scope="col">MAX_EXP_DT</th>
+                    <!-- <th scope="col">MAX_EXP_DT</th> -->
                     <th scope="col">Take_Action</th>
                 </tr>
             </thead>
             <tbody >
                 <tr *ngFor="let jobdetail of jobdetails | async">
-                    <td>{{jobdetail.id}}</td>
+                    <!-- <td>{{jobdetail.id}}</td> -->
                     <td>{{jobdetail.title}}</td>
                     <td>{{jobdetail.description}}</td>
-                    <td>{{jobdetail.team}}</td>
-                    <td>{{jobdetail.hiringManagerEmail}}</td>
-                    <td>{{jobdetail.numOfPositions}}</td>
-                    <td>{{jobdetail.jobExpiryDate}}</td>
+                    <!-- <td>{{jobdetail.team}}</td> -->
+                    <!-- <td>{{jobdetail.hiringManagerEmail}}</td> -->
+                    <!-- <td>{{jobdetail.numOfPositions}}</td> -->
+                    <!-- <td>{{jobdetail.jobExpiryDate}}</td> -->
                     <td>{{jobdetail.minExp}}</td>
-                    <td>{{jobdetail.maxExp}}</td>
+                    <!-- <td>{{jobdetail.maxExp}}</td> -->
                     <td>
                         <div class="row">
                             <div class="col">
                                 <button class="btn btn-outline-danger"
                                 (click)="deleteJobDetails(jobdetail.id)"
                                 >Delete</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-outline-info" 
+                                (click)="viewJobDetails(jobdetail.id)"
+                                >Details</button>
                             </div>
                             <div class="col">
                                 <button class="btn btn-outline-danger"
