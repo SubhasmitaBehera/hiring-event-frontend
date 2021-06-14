@@ -13,7 +13,7 @@ export class JobDetailsComponent implements OnInit {
   jobdetails : JobDetails = new JobDetails();
 
   submitted : boolean = false;
-
+  boolVar :boolean = false;
   constructor(private jobDetailsService : JobDetailsService) { }
 
   ngOnInit(): void {
@@ -32,6 +32,10 @@ export class JobDetailsComponent implements OnInit {
       (error) => console.log(error));
 
   this.submitted = true;
+  }
+
+  action(){
+    this.boolVar = true;
   }
 
 }

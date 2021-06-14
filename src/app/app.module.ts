@@ -18,6 +18,7 @@ import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job
 import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
 import { ViewComponent } from './view/view.component';
 import { CreateComponent } from './create/create.component';
+import { ApplyComponent } from './apply/apply.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { CreateComponent } from './create/create.component';
     
     ViewComponent,
     
-    CreateComponent
+    CreateComponent,
+    
+    ApplyComponent
 
   ],
   imports: [
