@@ -30,8 +30,8 @@ ul>li>a{
     transition: all 1s  ease-in-out;
 } */
 .card{
-    
-    box-shadow:inset 10px 10px 50px 24px rgba(19, 104, 231, 0.9) ; 
-    background-color: rgb(101, 164, 235, 0.6);
+
+    box-shadow:inset 10px 10px 50px 24px rgba(84, 141, 226, 0.9) ; 
+    background-color: rgba(30, 80, 138, 0.8);
 
 }

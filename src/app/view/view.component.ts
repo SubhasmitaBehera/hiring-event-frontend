@@ -13,7 +13,7 @@ import { JobDetailsService } from '../service/jobdetails.services';
 })
 export class ViewComponent implements OnInit {
 
-  boolVar : boolean = false;
+  boolVar : boolean = true;
   boolVar1 : boolean = false;
   
   

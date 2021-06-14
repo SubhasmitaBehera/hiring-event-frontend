@@ -8,24 +8,24 @@
         <table class="table table-striped text-center text-white text-center">
             <thead>
                 <tr>
-                    <th scope="col">SKILL_NAME</th>
-                    <th scope="col">DESCRIPTION</th>
-                    <th scope="col">ACTION</th>
+                    <th scope="col" class="col-2">SKILL_NAME</th>
+                    <th scope="col" class="col-5">DESCRIPTION</th>
+                    <th scope="col" class="col-3">ACTION</th>
                 </tr>
             </thead>
             <tbody >
                 <tr *ngFor="let skillset of skillsets | async">
-                    <td>{{skillset.skillName}}</td>
-                    <td>{{skillset.description}}</td>
-                    <td>
+                    <td class="col-2">{{skillset.skillName}}</td>
+                    <td class="col-5">{{skillset.description}}</td>
+                    <td class="col-3">
                         <div class="row">
-                            <div class="col-5">
-                                <button class="btn btn-outline-danger"
+                            <div class="col">
+                                <button class="btn btn-danger"
                                 (click)="deleteSkillSet(skillset.id)"
                                 >Delete</button>
                             </div>
-                            <div class="col-5">
-                                <button class="btn btn-outline-danger"
+                            <div  class="col">
+                                <button class="btn btn-danger"
                                 (click)="updateSkillSet(skillset.id)"
                                 >Edit</button>
                             </div>
