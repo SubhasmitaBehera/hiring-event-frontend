@@ -19,7 +19,7 @@ export class ViewSingleJobDetailsComponent implements OnInit {
 
     this.id = this.route.snapshot.params['id'];
     
-    this.jobDetailsService.getEmployee(this.id)
+    this.jobDetailsService.getSingleJobDetails(this.id)
       .subscribe(data => {
         console.log(data)
         this.jobdetail = data;

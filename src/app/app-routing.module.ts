@@ -10,6 +10,7 @@ import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/vi
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
+import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-single-skill-set/view-single-skill-set.component';
 import { ViewSkillSetComponent } from './skill-set/view-skill-set/view-skill-set.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: "job-details/edit-job-details/:id", component: EditJobDetailsComponent },
   { path: "job-details/view-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
+  { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }

@@ -14,7 +14,7 @@ export class JobDetailsService{
       getJobDetailsList(): Observable<any> {
         return this.http.get(`${this.baseUrl}`);
       }
-      getEmployee(id: number): Observable<any> {
+      getSingleJobDetails(id: number): Observable<any> {
         return this.http.get(`${this.baseUrl}/${id}`);
       }
     

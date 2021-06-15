@@ -14,6 +14,9 @@ export class SkillSetService{
     getSkillSetList(): Observable<any> {
       return this.http.get(`${this.baseUrl}`);
     }
+    getSingleSkillSet(id: number): Observable<any> {
+      return this.http.get(`${this.baseUrl}/${id}`);
+    }
   
     getSkillSet(id: number): Observable<any> {
       return this.http.get(`${this.baseUrl}/${id}`);

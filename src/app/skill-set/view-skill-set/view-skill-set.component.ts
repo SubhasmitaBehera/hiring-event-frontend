@@ -42,5 +42,8 @@ export class ViewSkillSetComponent implements OnInit {
   updateSkillSet(id: number) {
     this.router.navigate(['skill-set/edit-skill-set', id]);
   }
+  viewSkillSet(id: number) {
+    this.router.navigate(['skill-set/view-skill-set/view-single-skill-set', id]);
+  }
 
 }
