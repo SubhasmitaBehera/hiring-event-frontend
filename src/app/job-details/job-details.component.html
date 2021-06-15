@@ -1,25 +1,22 @@
-<!-- <div class="card mx-auto" style="max-width: 900px; height: 330px;" > -->
 
 <nav class="navbar navbar-expand-sm ">
     <ul class="nav nav-tabs">
-        <!-- <div class="row "> -->
             <li class="nav-item">
                 <a class="nav-link text-dark" style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"
-                data-toggle="tab"
-                    (click)="enable()">Create Job Details</a>
+                (click)="enable()">
+                    Create Job Details</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active text-dark" style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"
-                data-toggle="tab"    
-                (click)="enable1()">View Job Details</a>
+                <a class="nav-link text-dark" style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder; color: black;"
+                (click)="enable1()">
+                View Job Details</a>
             </li>
-
-        <!-- </div> -->
     </ul>
 </nav>
 <br>
 <hr>
+<div class="tab-content">
 <div *ngIf="boolVar1">
     <div *ngIf="!submitted">
         <br>
@@ -84,8 +81,6 @@
                             <label for="MinExp">MIN_EXPERIENCE : </label>
                             <input type="number" class="form-control" id="firstName" name="MinExp" ngModel #box7
                                 [(ngModel)]="jobdetails.minExp" required>
-                            <!-- <span class="help-block" *ngIf="!box4.valid && box4.touched"></span> -->
-
                         </div>
                     </div>
                     <div class="col">
@@ -112,6 +107,7 @@
         <br>
         <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
     </div>
+</div>
 </div>
 
 <app-view-job-details *ngIf="boolVar2"></app-view-job-details>

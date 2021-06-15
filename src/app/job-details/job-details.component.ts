@@ -51,5 +51,7 @@ export class JobDetailsComponent implements OnInit {
   action() {
     this.boolVar = true;
   }
+  
+
 
 }

@@ -19,5 +19,19 @@ input.ng-invalid.ng-touched{
   .help-block{
       color: red;
   }
+  li a:hover{
+      background-color: white;
+      
+  }
+  li a:active{
+      background-color: white;
+      
+  }
+  /* li a{
+      background-color: thistle;
+      border: black;
+      border-color: black;
+  } */
+ 
 
 
