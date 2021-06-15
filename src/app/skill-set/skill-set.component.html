@@ -1,48 +1,68 @@
+<nav class="navbar navbar-expand-sm ">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link text-dark" style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"
+                (click)="enable()">
+                Create Skillset</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-dark"
+                style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder; color: black;"
+                (click)="enable1()">
+                View Skillset</a>
+        </li>
+    </ul>
+</nav>
+<br>
+<hr>
+
 <!-- Material form group -->
-<div *ngIf="!submitted">
+<div *ngIf="boolVar1">
+
+    <div *ngIf="!submitted">
         <br>
-    <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-    <span class="utility1 rounded text-white"><span>{{titleskillset}}</span></span>
-    </h1>
-    <hr>
-    <!-- SKILL_SET, DESCRIPTION, CREATED_BY,MODIFIED_BY," + -->
-            <!-- "RESOURCE_ID -->
-    <div class="container text-white">
-        <div class="scrollbar">
-            <form #f="ngForm">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="firstName">SKILL_NAME : </label>
-                            <input type="text" class="form-control" id="SKILL_NAME"
-                            [(ngModel)]="skillset.skillName"
-                            name="SKILL_NAME" #box1 required>
+        <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
+            <span class="utility1 rounded text-white"><span>{{titleskillset}}</span></span>
+        </h1>
+        <hr>
+        <!-- SKILL_SET, DESCRIPTION, CREATED_BY,MODIFIED_BY," + -->
+        <!-- "RESOURCE_ID -->
+        <div class="container text-white">
+            <div class="scrollbar">
+                <form #f="ngForm">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="firstName">SKILL_NAME : </label>
+                                <input type="text" class="form-control" id="SKILL_NAME" [(ngModel)]="skillset.skillName"
+                                    name="SKILL_NAME" #box1 required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="firstName">DESCRIPTION : </label>
+                                <input type="text" class="form-control" id="DESCRIPTION"
+                                    [(ngModel)]="skillset.description" name="DESCRIPTION" #box1 required>
+                            </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="firstName">DESCRIPTION : </label>
-                            <input type="text" class="form-control" id="DESCRIPTION"
-                            [(ngModel)]="skillset.description"
-                            name="DESCRIPTION" #box1 required>
-                        </div>
-                    </div>
-                </div>
-                <button  class="btn btn-sm btn-primary float-right" type="submit" type="button"
-                (click)="save()" [disabled]="!f.valid"
-                >Add Skill Set</button>
-            </form>
+                    <button class="btn btn-sm btn-primary float-right" type="submit" type="button" (click)="save()"
+                        [disabled]="!f.valid">Add Skill Set</button>
+                </form>
+            </div>
         </div>
     </div>
+
+
+
+    <div *ngIf="submitted" class="text-center">
+        <h2>Form Submitted Successfully !</h2>
+        <br>
+        <button class="btn btn-primary" routerLink="view-skill-set">View_List</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
+    </div>
 </div>
-
-
-
-<div *ngIf="submitted" class="text-center">
-    <h2>Form Submitted Successfully !</h2>
-    <br>
-    <button class="btn btn-primary" routerLink="view-skill-set">View_List</button>
-    <br>
-    <br>
-    <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
-</div>
+<app-view-skill-set *ngIf="boolVar2"></app-view-skill-set>

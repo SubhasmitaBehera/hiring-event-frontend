@@ -14,6 +14,9 @@ export class SkillSetComponent implements OnInit {
 
   skillset : SkillSet = new SkillSet();
 
+  boolVar1: boolean = true;
+  boolVar2: boolean = false;
+
   constructor(private skillsetService : SkillSetService,private route : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -22,6 +25,14 @@ export class SkillSetComponent implements OnInit {
   addAgain(){
     this.submitted = false;
 
+  }
+  enable() {
+    this.boolVar1 = true;
+    this.boolVar2 = false;
+  }
+  enable1() {
+    this.boolVar2 = true;
+    this.boolVar1 = false;
   }
 
   save(){
