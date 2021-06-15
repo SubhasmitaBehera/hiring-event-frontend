@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
 
 
   onLoadSkillSet() {
-   this.router.navigate(['/view'])
+   this.router.navigate(['/skill-set'])
   }
   onLoadJobDetails() {
-    this.router.navigate(['/create'])
+    this.router.navigate(['/job-details'])
   }
 }

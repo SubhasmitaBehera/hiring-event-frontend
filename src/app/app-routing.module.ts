@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CreateComponent } from './create/create.component';
 
 import { HomeComponent } from './home/home.component';
 import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job-details.component';
@@ -12,7 +11,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { ViewSkillSetComponent } from './skill-set/view-skill-set/view-skill-set.component';
-import { ViewComponent } from './view/view.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -25,8 +23,7 @@ const routes: Routes = [
   { path: "job-details/edit-job-details/:id", component: EditJobDetailsComponent },
   { path: "job-details/view-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
-  { path: "view", component: ViewComponent },
-  { path: "create", component: CreateComponent },
+ 
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
 ];

@@ -1,22 +1,18 @@
-<nav class="navbar navbar-expand-sm ">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link text-dark" style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"
-                (click)="enable()">
-                Create Job Details</a>
-        </li>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark"
-                style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder; color: black;"
-                (click)="enable1()">
-                View Job Details</a>
-        </li>
-    </ul>
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+      <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
+      aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Job Details</button>
+
+      <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
+      aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Job Details</button>
+    </div>
 </nav>
 <br>
 <hr>
-<div class="tab-content">
+<div class="tab-content" id="nav-tabContent">
     <div *ngIf="boolVar1">
         <div *ngIf="!submitted">
             <br>
