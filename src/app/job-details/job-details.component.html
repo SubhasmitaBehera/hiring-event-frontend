@@ -23,14 +23,14 @@
             <div class="container text-white">
                 <form #f="ngForm">
                     <div class="row">
-                        <div class="col">
+                        <div class="col  mb-3">
                             <div class="form-group">
                                 <label for="firstName">TITLE : </label>
                                 <input type="text" class="form-control" id="TITLE" [(ngModel)]="jobdetails.title"
                                     name="TITLE" #box1 required>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="description">DESCRIPTION : </label>
                                 <input type="text" class="form-control" id="uid" name="description" ngModel #box2
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="managerEmail">MANAGER_EMAIL : </label>
                                 <input type="text" class="form-control" id="uid" name="managerEmail" #box3 ngModel
@@ -48,14 +48,14 @@
                                     email</span>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="noOfPositions">NUM_OF_POSITIONS : </label>
                                 <input type="number" class="form-control" id="firstName" name="noOfPositions" ngModel
                                     #box4 [(ngModel)]="jobdetails.numOfPositions" required>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="team">TEAM : </label>
                                 <input type="text" class="form-control" id="firstName" name="team" ngModel #box5
@@ -65,21 +65,21 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="expDt">EXP_DT : </label>
                                 <input type="date" class="form-control" id="uid" name="expDt" ngModel #box6
                                     [(ngModel)]="jobdetails.jobExpiryDate" required>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="MinExp">MIN_EXPERIENCE : </label>
                                 <input type="number" class="form-control" id="firstName" name="MinExp" ngModel #box7
                                     [(ngModel)]="jobdetails.minExp" required>
                             </div>
                         </div>
-                        <div class="col">
+                        <div class="col mb-3">
                             <div class="form-group">
                                 <label for="maxExp">MAX_EXPERIENCE : </label>
                                 <input type="number" class="form-control" id="firstName" name="maxExp" ngModel #box8
