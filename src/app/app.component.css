@@ -1,5 +1,6 @@
 .card{
     margin-top: 5px;
+    margin-bottom: 20%
 }
 
 ul>li>a{
@@ -15,6 +16,7 @@ ul>li>a{
     color: rgb(0, 0, 0);
     text-align: center;
 }
+
 
 .img{
     background-image: url('../assets/img/img.jpg');
