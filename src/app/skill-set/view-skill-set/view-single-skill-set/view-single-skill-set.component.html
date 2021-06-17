@@ -1,7 +1,8 @@
 <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
 
 <hr>
-<div *ngIf="skillset" style="text-align: center;">
+
+<div *ngIf="skillset" style="text-align: center;" class="text-center">
     
     <div>
         <label ><b>Title:  </b></label> {{skillset.skillName}}
@@ -11,6 +12,13 @@
         <label ><b>Description:  </b></label> {{skillset.description}}
     </div>
 
+    <div>
+        <label ><b>Modified By:  </b></label> {{skillset.modifiedBy}}
+    </div>
+
+    <div>
+        <label ><b>Resource ID:  </b></label> {{skillset.resourceId}}
+    </div>
 
 </div>
 
