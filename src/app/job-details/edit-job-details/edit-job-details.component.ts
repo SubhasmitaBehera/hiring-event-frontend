@@ -49,5 +49,18 @@ export class EditJobDetailsComponent implements OnInit {
   list(){
     this.router.navigate(['job-details/view-job-details']);
   }
+  public saveUsername:boolean;
+
+  public onSaveUsernameChanged(event:any,value:boolean){
+      this.saveUsername = value;
+      // console.log(this.skillset.skillName);
+      if(value)
+      console.log(event.target.value);
+      else
+      console.log("clear");
+      
+      
+  }
+ 
 
 }
