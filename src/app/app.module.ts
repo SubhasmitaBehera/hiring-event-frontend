@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ViewJobDetailsComponent } from './job-details/view-job-details/view-job-details.component';
 import { ViewSkillSetComponent } from './skill-set/view-skill-set/view-skill-set.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
 import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job-details.component';
 
@@ -44,7 +44,8 @@ import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-sin
     FormsModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
