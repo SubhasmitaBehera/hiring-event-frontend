@@ -41,20 +41,20 @@
 <div class="row justify-content-center">
   <div class="col-6">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
       <div class="scrollbar">
-        <form [formGroup]="form" (ngSubmit)="submitForm()">
           <div class="card card-body" *ngFor="let skillset of skillsets | async; let i=index">
               <label>
                 <input type="checkbox" [value]="skillset.skillName" (change)="onCheckboxChange($event)" />
                 {{skillset.skillName}}
               </label>
           </div>
+        </div>
 
-        </form>
-      </div>
-      <div class="text-center">
-        <button class="btn btn-success m-3" type="submit" value="submit">Save</button>
-      </div>
+          <div class="text-center">
+            <button class="btn btn-success m-3" type="submit" value="submit">Save</button>
+          </div>
+      </form>
     </div>
   </div>
 </div>
