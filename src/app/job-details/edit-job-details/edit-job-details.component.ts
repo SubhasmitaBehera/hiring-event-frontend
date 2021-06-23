@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JobDetails } from 'src/app/Models/jobdetails.model';
@@ -17,7 +18,17 @@ export class EditJobDetailsComponent implements OnInit {
   boolVar:boolean = false;
   jobdetails: JobDetails;
   id: number;
-  constructor(private route: ActivatedRoute, private router: Router,private skillSetService : SkillSetService,private jobDetailsService: JobDetailsService) { }
+
+  form: FormGroup;
+  constructor(private route: ActivatedRoute,
+     private router: Router,private skillSetService : SkillSetService,
+     private jobDetailsService: JobDetailsService,
+     private fb:FormBuilder) {
+
+      this.form = this.fb.group({
+      checkArray: this.fb.array([], [Validators.required])
+      })
+      }
 
   ngOnInit(): void {
     this.jobdetails = new JobDetails();
@@ -41,7 +52,6 @@ export class EditJobDetailsComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.jobdetails = new JobDetails();
-        // this.list();
       }, error => console.log(error));
 
       this.boolVar=true;
@@ -49,17 +59,25 @@ export class EditJobDetailsComponent implements OnInit {
   list(){
     this.router.navigate(['job-details/view-job-details']);
   }
-  public saveUsername:boolean;
+  onCheckboxChange(e) {
+    const checkArray: FormArray = this.form.get('checkArray') as FormArray;
 
-  public onSaveUsernameChanged(event:any,value:boolean){
-      this.saveUsername = value;
-      // console.log(this.skillset.skillName);
-      if(value)
-      console.log(event.target.value);
-      else
-      console.log("clear");
-      
-      
+    if (e.target.checked) {
+      checkArray.push(new FormControl(e.target.value));
+    } else {
+      let i: number = 0;
+      checkArray.controls.forEach((item: FormControl) => {
+        if (item.value == e.target.value) {
+          checkArray.removeAt(i);
+          return;
+        }
+        i++;
+      });
+    }
+  }
+
+  submitForm() {
+    console.log(this.form.value);
   }
  
 
