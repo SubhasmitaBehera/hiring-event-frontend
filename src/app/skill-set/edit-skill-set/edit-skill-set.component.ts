@@ -17,12 +17,6 @@ export class EditSkillSetComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router,
     private skillsetService: SkillSetService) { }
 
-
-
-  // check(){
-    
-  
-  // }
   ngOnInit(): void {
     this.skillset = new SkillSet();
 
@@ -50,6 +44,5 @@ export class EditSkillSetComponent implements OnInit {
   list(){
     this.router.navigate(['skill-set/view-skill-set']);
   }
-
 
 }
