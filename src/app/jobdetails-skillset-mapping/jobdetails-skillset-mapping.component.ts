@@ -14,7 +14,7 @@ import { SkillSetService } from '../service/skillset.services';
   styleUrls: ['./jobdetails-skillset-mapping.component.css']
 })
 export class JobdetailsSkillsetMappingComponent implements OnInit {
-
+  boolVar : boolean = true;
   jobdetailsSkillSetMapping: JobDetailsSkillSetMapping = new JobDetailsSkillSetMapping();
   skillsets: Observable<SkillSet[]>;
   form: FormGroup;
@@ -69,6 +69,9 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
           this.jobdetailsSkillSetMapping = new JobDetailsSkillSetMapping();
         },
           (error) => console.log(error));
+
+
+     this.boolVar = false;     
     
     // console.log(+this.route.snapshot.params['id']);
 
