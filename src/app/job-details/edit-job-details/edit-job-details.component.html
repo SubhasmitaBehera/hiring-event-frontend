@@ -33,28 +33,4 @@
 
 <br>
 <hr>
-
-<p class="mt-5 text-center">
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
-    aria-controls="multiCollapseExample1">Manage Skillset</a>
-</p>
-<div class="row justify-content-center">
-  <div class="col-6">
-    <div class="collapse multi-collapse" id="multiCollapseExample1">
-      <form [formGroup]="form" (ngSubmit)="submitForm()">
-      <div class="scrollbar">
-          <div class="card card-body" *ngFor="let skillset of skillsets | async; let i=index">
-              <label>
-                <input type="checkbox" [value]="skillset.id" (change)="onCheckboxChange($event)" />
-                {{skillset.skillName}}
-              </label>
-          </div>
-        </div>
-
-          <div class="text-center">
-            <button class="btn btn-success m-3" type="submit" value="submit">Save</button>
-          </div>
-      </form>
-    </div>
-  </div>
-</div>
+<app-jobdetails-skillset-mapping></app-jobdetails-skillset-mapping>

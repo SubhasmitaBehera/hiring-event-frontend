@@ -1,6 +1,4 @@
-import { ModelEntry } from "./modelEntry.model";
-
-export class SkillSet extends ModelEntry{
+export class SkillSet{
     id : number;
     skillName : string;
     description : string;

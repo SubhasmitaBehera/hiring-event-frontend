@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JobDetails } from 'src/app/Models/jobdetails.model';
+import { JobDetailsSkillSetMapping } from 'src/app/Models/jobdetailsSkillSetMapping.model';
 import { SkillSet } from 'src/app/Models/skillset.model';
 import { JobDetailsService } from 'src/app/service/jobdetails.services';
 import { SkillSetService } from 'src/app/service/skillset.services';
@@ -14,21 +15,13 @@ import { SkillSetService } from 'src/app/service/skillset.services';
 })
 export class EditJobDetailsComponent implements OnInit {
   skillsets: Observable<SkillSet[]>;
-
   boolVar:boolean = false;
   jobdetails: JobDetails;
   id: number;
-
   form: FormGroup;
   constructor(private route: ActivatedRoute,
      private router: Router,private skillSetService : SkillSetService,
-     private jobDetailsService: JobDetailsService,
-     private fb:FormBuilder) {
-
-      this.form = this.fb.group({
-      checkArray: this.fb.array([], [Validators.required])
-      })
-      }
+     private jobDetailsService: JobDetailsService) {}
 
   ngOnInit(): void {
     this.jobdetails = new JobDetails();
@@ -41,7 +34,6 @@ export class EditJobDetailsComponent implements OnInit {
     }, error => console.log(error));
 
   }
-
 
   reloadData() {
     this.skillsets = this.skillSetService.getSkillSetList();
@@ -59,26 +51,5 @@ export class EditJobDetailsComponent implements OnInit {
   list(){
     this.router.navigate(['job-details/view-job-details']);
   }
-  onCheckboxChange(e) {
-    const checkArray: FormArray = this.form.get('checkArray') as FormArray;
-
-    if (e.target.checked) {
-      checkArray.push(new FormControl(e.target.value));
-    } else {
-      let i: number = 0;
-      checkArray.controls.forEach((item: FormControl) => {
-        if (item.value == e.target.value) {
-          checkArray.removeAt(i);
-          return;
-        }
-        i++;
-      });
-    }
-  }
-
-  submitForm() {
-    console.log(this.form.value);
-  }
- 
 
 }
