@@ -30,13 +30,10 @@ export class EditSkillSetComponent implements OnInit {
   }
 
   updateSkillSet() {
-    console.log("inside Update Skill");
-    
     this.skillsetService.updateSkillSet(this.id, this.skillset)
       .subscribe(data => {
         console.log(data);
         this.skillset = new SkillSet();
-        this.list();
       }, error => console.log(error));
 
       this.boolVar=true;
