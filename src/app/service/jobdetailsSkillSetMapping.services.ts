@@ -14,4 +14,7 @@ export class JobdetailsSkillSetmappingService{
         
         return this.http.post(`${this.baseUrl}`, jobdetailsSkillSetmapping);
     }
+    getSkillSetIds(id: number): Observable<any> {
+        return this.http.get(`${this.baseUrl}/${id}`);
+    }
 }
