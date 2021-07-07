@@ -71,7 +71,9 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
       this.jobdetailsSkillSetMapping.jobId = +this.route.snapshot.params['id'];
       this.jobdetailsSkillSetmappingService
         .createJobDetailsSkillSetMapping(this.jobdetailsSkillSetMapping).subscribe((data) => {
-          console.log("data from post mapping : "+data);
+          console.log("data from post mapping : " );
+          console.log(data);
+          
           this.jobdetailsSkillSetMapping = new JobDetailsSkillSetMapping();
         },
           (error) => console.log(error));
