@@ -8,6 +8,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { ActivatedRoute } from '@angular/router';
 import { SkillSetService } from '../service/skillset.services';
 import * as $ from 'jquery';
+import { JobSkillSetStatus } from '../Models/jobSkillSetStatus.model';
 
 @Component({
   selector: 'app-jobdetails-skillset-mapping',
@@ -22,6 +23,8 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
   id: number;
   skillset : SkillSet = new SkillSet();
 
+  jobSkillStatus : JobSkillSetStatus;
+
   constructor(private jobdetailsSkillSetmappingService: JobdetailsSkillSetmappingService,
     private fb: FormBuilder, private route: ActivatedRoute, private skillSetService: SkillSetService
   ) {
@@ -34,6 +37,7 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
     
     this.id = +this.route.snapshot.params['id'];
     this.reloadData();
+    // this.checkedOnRefresh();
 
   }
   reloadData() {
@@ -81,25 +85,33 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
           this.isSubmitFormCalled = true;
 
 
-    //  this.boolVar = false;     
+     this.boolVar = false;     
     
     // console.log(+this.route.snapshot.params['id']);
 
     // console.log(this.form.value);
 
     
-    if(this.isSubmitFormCalled == true){
-      this.checkedOnRefresh();
-    }
+    // if(this.isSubmitFormCalled == true){
+    //   this.checkedOnRefresh();
+    // }
   }
+status : boolean;
 
   checkedOnRefresh(){      
-
+    this.jobdetailsSkillSetMapping.jobId = +this.route.snapshot.params['id'];
       this.jobdetailsSkillSetmappingService.getSkillSetIds(this.jobdetailsSkillSetMapping.jobId).subscribe((data) => {
           console.log("from get mapping");
           console.log(data);
+          console.log(data.enabled[0].id);
+          // if(data.enabled[0].id == 11)
+          //   this.status[0] = true;
+          
           this.jobdetailsSkillSetMapping = data;
       },(error)=> console.log(error));
+
+
+      return true;
       
       // console.log(this.form.value.checkArray);
 
