@@ -11,14 +11,14 @@ export class SkillSetService{
 
     constructor(private http: HttpClient) { }
   
-    getSkillSetList(): Observable<any> {
+    getSkillSetList(): any {
       return this.http.get(`${this.baseUrl}`);
     }
-    getSingleSkillSet(id: number): Observable<any> {
+    getSingleSkillSet(id: number): any {
       return this.http.get(`${this.baseUrl}/${id}`);
     }
   
-    getSkillSet(id: number): Observable<any> {
+    getSkillSet(id: number): any {
       return this.http.get(`${this.baseUrl}/${id}`);
     }
   

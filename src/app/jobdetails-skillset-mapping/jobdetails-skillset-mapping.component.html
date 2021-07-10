@@ -1,39 +1,28 @@
-<p class="mt-5 text-center" *ngIf="boolVar">
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
-      aria-controls="multiCollapseExample1">Manage Skillset</a>
+<p class="mt-5 text-center" *ngIf="!boolVar">
+  <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+    aria-controls="multiCollapseExample1">Manage Skillset</a>
 </p>
-<div class="row justify-content-center" *ngIf="boolVar">
+<div class="row justify-content-center" *ngIf="!boolVar">
   <div class="col-6">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <form [formGroup]="form" (ngSubmit)="submitForm()">
         <div class="scrollbar">
-          <div class="card card-body" *ngFor="let skillset of skillsets | async; let i=index">
-              <label>
-                <input type="checkbox" [value]="skillset.id" (change)="onCheckboxChange($event)" [checked]="">
-                {{skillset.skillName}} -------
-                {{status}} --- {{skillset.id}}
-              </label>
+          <div class="card card-body" *ngFor="let skillset of skillsets | async; let i=index ; ">
+            <label>
+              <input type="checkbox" [value]="skillset.id" (change)="onCheckboxChange($event)"
+                [checked]="check(skillset.id)== skillset.id">
+              {{skillset.skillName}}
+            </label>
           </div>
         </div>
-
-          <div class="text-center">
-            <button class="btn btn-success m-3" type="submit" value="submit">Save</button>
-          </div>
+        <div class="text-center ">
+          <button class="btn btn-success m-3" type="submit" value="submit">Save</button>
+        </div>
       </form>
     </div>
   </div>
 </div>
-  <div *ngIf="!boolVar" class="row justify-content-center">
-    <div class="col-6">
-      <div class="card ">
-        <div class="text-center">
-          <h2 class="text-success text-center ">The form submitted Successfully</h2>
-          <h4 class="text-success text-center">Thank You !</h4>
-          <div class="text-center">
-            <button class="btn btn-success m-3" type="submit" value="submit" (click)="checkedOnRefresh()">Show</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  </div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf = boolVar>
+  <strong>Saved</strong> Skills Added Successfully...
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
