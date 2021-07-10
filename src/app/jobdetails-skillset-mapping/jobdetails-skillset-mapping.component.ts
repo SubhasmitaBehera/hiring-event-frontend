@@ -71,7 +71,7 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
         
       },
         (error) => console.log(error));
-    this.reloadCurrentPage();
+    // this.reloadCurrentPage();
 
     this.boolVar= true;
   }
