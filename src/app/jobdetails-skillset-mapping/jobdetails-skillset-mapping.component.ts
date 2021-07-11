@@ -33,7 +33,6 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
     this.id = +this.route.snapshot.params['id'];
     this.reloadData();
     this.checkedOnRefresh();
-
   }
 
   reloadData() {
@@ -92,9 +91,6 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
         this.form.value.checkArray[i] = this.enable1[i];
       }
       // console.log(this.form.value.checkArray);
-
-
-
     }, (error) => console.log(error));
   }
 
