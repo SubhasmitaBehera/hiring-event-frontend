@@ -75,7 +75,13 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
         this.jobdetailsSkillSetMapping = new JobDetailsSkillSetMapping();
       },
         (error) => console.log(error));
-    this.boolVar = true;
+
+        setTimeout(() => {
+          this.reloadCurrentPage()
+        }, 2500);
+        // this.reloadCurrentPage();
+        // this.refreshComponent();
+        this.boolVar= true;
   }
   checkedOnRefresh() {
     this.jobdetailsSkillSetMapping.jobId = +this.route.snapshot.params['id'];
