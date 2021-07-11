@@ -18,6 +18,7 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
   form: FormGroup;
   id: number;
   skillset: SkillSet = new SkillSet();
+  enable1: number[] = [];
   enable: SkillSet[] = [];
 
   constructor(private jobdetailsSkillSetmappingService: JobdetailsSkillSetmappingService,
@@ -34,29 +35,34 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
     this.checkedOnRefresh();
 
   }
+
   reloadData() {
     this.skillsets = this.skillSetService.getSkillSetList();
   }
 
   onCheckboxChange(e) {
-    const checkArray: FormArray = this.form.get('checkArray') as FormArray;
+    // let checkArray: FormArray = this.form.get('checkArray') as FormArray;
     if (e.target.checked) {
-      checkArray.push(new FormControl(e.target.value));
-    } else {
-      let i: number = 0;
-      checkArray.controls.forEach((item: FormControl) => {
-        if (item.value == e.target.value) {
-          checkArray.removeAt(i);
-          return;
-        }
-        i++;
+      this.form.value.checkArray.push(+e.target.value);
+      console.log(this.form.value.checkArray);
+
+    }
+    if (!e.target.checked) {
+      console.log("e.target.value");
+      console.log(e.target.value);
+      this.form.value.checkArray.forEach((element, index) => {
+        if (element == e.target.value) this.form.value.checkArray.splice(index, 1);
       });
+      console.log(this.form.value.checkArray);
     }
   }
   reloadCurrentPage() {
     window.location.reload();
-   }
+
+  }
   submitForm() {
+    console.log(this.enable1);
+    console.log(this.form.value.checkArray);
     let skillSet: SkillSet[] = [];
     for (let i = 0; i < this.form.value.checkArray.length; i++) {
       skillSet.push({ 'id': this.form.value.checkArray[i], 'skillName': null, 'description': null });
@@ -68,14 +74,10 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
         console.log("data from post mapping : ");
         console.log(data);
         this.jobdetailsSkillSetMapping = new JobDetailsSkillSetMapping();
-        
       },
         (error) => console.log(error));
-    // this.reloadCurrentPage();
-
-    this.boolVar= true;
+    this.boolVar = true;
   }
-  enable1: number[] = [];
   checkedOnRefresh() {
     this.jobdetailsSkillSetMapping.jobId = +this.route.snapshot.params['id'];
     this.jobdetailsSkillSetmappingService.getSkillSetIds(this.jobdetailsSkillSetMapping.jobId).subscribe((data) => {
@@ -86,6 +88,13 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
         this.enable1.push(i.id)
       }
       this.jobdetailsSkillSetMapping = data;
+      for (let i = 0; i < this.enable1.length; i++) {
+        this.form.value.checkArray[i] = this.enable1[i];
+      }
+      // console.log(this.form.value.checkArray);
+
+
+
     }, (error) => console.log(error));
   }
 
