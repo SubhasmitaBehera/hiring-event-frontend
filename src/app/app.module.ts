@@ -16,6 +16,8 @@ import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job
 import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
 import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-single-skill-set/view-single-skill-set.component';
 import { JobdetailsSkillsetMappingComponent } from './jobdetails-skillset-mapping/jobdetails-skillset-mapping.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { JobdetailsSkillsetMappingComponent } from './jobdetails-skillset-mappin
     EditJobDetailsComponent,
     ViewSingleJobDetailsComponent,
     ViewSingleSkillSetComponent,
-    JobdetailsSkillsetMappingComponent
+    JobdetailsSkillsetMappingComponent,
+    UserInfoComponent,
+    ViewUserInfoComponent
   ],
   imports: [
     BrowserModule,
