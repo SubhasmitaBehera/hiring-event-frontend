@@ -1,1 +1,45 @@
+<div class="row">
+    <div class="col">
+        <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;"> 
+        <span class="utility1 rounded text-white">List of UserInfo</span> 
+     </h2>
+    </div>
+    <div class="scrollbar">
+        <table class="table text-center text-white text-center">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-2">Email Id</th>
+                    <th scope="col" class="col-5">User Type</th>
+                    <th scope="col" class="col-3">Login Provider</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let userInfo of userInfos | async">
+                    <td class="col-2">{{userInfo.email}}</td>
+                    <td class="col-5">{{userInfo.userType}}</td>
+                    <td class="col-5">{{userInfo.loginProvider}}</td>
+                    <!-- <td class="col-3">
+                        <div class="row">
+                            <div  class="col">
+                                <button class="btn btn-success"
+                                (click)="viewSkillSet(skillset.id)"
+                                >View</button>
+                            </div>
+                            <div  class="col">
+                                <button class="btn btn-primary"
+                                (click)="updateSkillSet(skillset.id)"
+                                >Edit</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger"
+                                (click)="deleteSkillSet(skillset.id)"
+                                >Delete</button>
+                            </div>
+                        </div>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
