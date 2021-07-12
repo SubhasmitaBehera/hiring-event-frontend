@@ -12,6 +12,8 @@ import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-single-skill-set/view-single-skill-set.component';
 import { ViewSkillSetComponent } from './skill-set/view-skill-set/view-skill-set.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -25,7 +27,8 @@ const routes: Routes = [
   { path: "job-details/view-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
-  { path: "user-info", component : userInfo }
+  { path: "user-info", component : UserInfoComponent },
+  { path: "user-info/view-user-info", component : ViewUserInfoComponent }
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
