@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: "job-details/view-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
+  { path: "user-info", component : userInfo }
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
