@@ -5,4 +5,5 @@ export class UserInfo{
     email : string;
     userType : UserType;
     loginProvider : LoginProvider;
+    isMockUser : boolean;
 }

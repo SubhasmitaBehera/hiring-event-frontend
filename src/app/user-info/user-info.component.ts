@@ -44,7 +44,14 @@ export class UserInfoComponent implements OnInit {
     },
       (error) => console.log(error));
 
+      setTimeout(() => {
+        this.reloadCurrentPage();
+      }, 2000);
+
   this.submitted = true;
+  }
+  reloadCurrentPage() {
+    window.location.reload();
   }
 
 
