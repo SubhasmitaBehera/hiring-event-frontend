@@ -18,7 +18,7 @@
     <div *ngIf="!submitted">
         <br>
         <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-            <span class="utility1 rounded text-white"><span>{{titleUserInfo}}</span></span>
+            <span class="utility1 rounded text-white"><span >{{titleUserInfo}}</span></span>
         </h1>
 
        
@@ -38,15 +38,25 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="firstName">USER TYPE : </label>
-                                <input type="text" class="form-control" id="USER TYPE"
-                                    [(ngModel)]="userinfo.userType" name="USER TYPE" #box1 required>
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="userinfo.userType"
+                                 required>
+                                 <span  class="text-danger">Select User Type</span>
+                                    <option value="1">Candidate</option>
+                                    <option value="2">Interviewer</option>
+                                  </select >
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="firstName">LOGIN PROVIDER: </label>
-                                <input type="text" class="form-control" id="LOGIN PROVIDER"
-                                    [(ngModel)]="userinfo.loginProvider" name="LOGIN PROVIDER" #box1 required>
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="userinfo.loginProvider"
+                                required>
+                                        <span  class="text-danger">Select User Type</span>
+                                       
+                                    <option value="1">Database</option>
+                                    <option value="2">Github</option>
+                                    <option value="3">Mock</option>
+                                  </select>
                             </div>
                         </div>
                     </div>

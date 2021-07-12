@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserInfo } from '../Models/userinfo.model';
+import { UserInfoService } from '../service/userInfo.services';
 
 @Component({
   selector: 'app-user-info',
@@ -9,12 +12,12 @@ export class UserInfoComponent implements OnInit {
   titleUserInfo = "SET USER INFO"
   submitted : boolean = false;
 
-  // skillset : SkillSet = new SkillSet();
+ userinfo : UserInfo = new UserInfo();
 
   boolVar1: boolean = true;
   boolVar2: boolean = false;
 
-  constructor() { }
+  constructor(private userinfoService : UserInfoService,private route : ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -33,16 +36,16 @@ export class UserInfoComponent implements OnInit {
     this.boolVar1 = false;
   }
 
-  // save(){
-  //   this.skillsetService
-  //   .createSkillSet(this.skillset).subscribe((data) => {
-  //     console.log(data);
-  //     this.skillset = new SkillSet();
-  //   },
-  //     (error) => console.log(error));
+  save(){
+    this.userinfoService
+    .createUserInfo(this.userinfo).subscribe((data) => {
+      console.log(data);
+      this.userinfo = new UserInfo();
+    },
+      (error) => console.log(error));
 
-  // this.submitted = true;
-  // }
+  this.submitted = true;
+  }
 
 
 }
