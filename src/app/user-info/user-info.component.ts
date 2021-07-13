@@ -37,6 +37,8 @@ export class UserInfoComponent implements OnInit {
   }
 
   save(){
+    console.log(this.userinfo.loginProvider);
+      console.log(this.userinfo.userType);
     this.userinfoService
     .createUserInfo(this.userinfo).subscribe((data) => {
       console.log(data);
@@ -46,8 +48,10 @@ export class UserInfoComponent implements OnInit {
 
       setTimeout(() => {
         this.reloadCurrentPage();
-      }, 2000);
-
+      }, 10000);
+      // console.log(this.userinfo.loginProvider);
+      // console.log(this.userinfo.userType);
+       
   this.submitted = true;
   }
   reloadCurrentPage() {

@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="firstName">EMAIL : </label>
                                     <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.email"
-                                        name="EMAIL" #box1 required email #email="ngModel">
+                                        name="EMAIL"  required email #email="ngModel">
                                     <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
                                         email</span>
                                 </div>
@@ -48,7 +48,7 @@
                                         <option value="2">Interviewer</option>
                                     </select> -->
                                     <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.userType"
-                                        name="userType" #box1 required >
+                                        name="userinfo.userType"  required #userType="ngModel">
                                 </div>
                             </div>
                             <div class="col">
@@ -63,7 +63,7 @@
                                         <option value="3">Mock</option>
                                     </select> -->
                                     <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.loginProvider"
-                                        name="loginProvider" #box1 required >
+                                        name="userinfo.loginProvider"  required #loginProvider="ngModel">
                                 </div>
                             </div>
                             <div class="col">
@@ -77,7 +77,7 @@
                                         <option value="2">false</option>
                                     </select> -->
                                     <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.isMockUser"
-                                        name="isMockUser" #box1 required >
+                                        name="userinfo.isMockUser"  required #isMockUser="ngModel">
                                 </div>
                             </div>
                         </div>
