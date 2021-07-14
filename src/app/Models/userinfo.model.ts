@@ -1,9 +1,9 @@
 import { LoginProvider } from "./loginProvider.model";
-import { UserType } from "./useertype.model";
+import { UserType } from "./userType.model";
 
 export class UserInfo{
     email : string;
     userType : UserType;
     loginProvider : LoginProvider;
-    isMockUser : boolean;
+    isMockUser : boolean = true;
 }
