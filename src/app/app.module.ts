@@ -18,6 +18,7 @@ import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-sin
 import { JobdetailsSkillsetMappingComponent } from './jobdetails-skillset-mapping/jobdetails-skillset-mapping.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info.component';
+import { InterviewDetailsComponent } from './interview-details/interview-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info
     ViewSingleSkillSetComponent,
     JobdetailsSkillsetMappingComponent,
     UserInfoComponent,
-    ViewUserInfoComponent
+    ViewUserInfoComponent,
+    InterviewDetailsComponent
   ],
   imports: [
     BrowserModule,

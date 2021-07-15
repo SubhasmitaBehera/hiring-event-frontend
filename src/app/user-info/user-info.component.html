@@ -43,7 +43,6 @@
                                     <label for="firstName">USER TYPE : </label>
                                     <select class="form-select" aria-label="Default select example"
                                         [(ngModel)]="userinfo.userType" required name="userType" #box2 ngModel>
-                                        <span class="text-danger">Select User Type</span>
                                         <option value="CANDIDATE">Candidate</option>
                                         <option value="INTERVIEWER">Interviewer</option>
                                     </select>
@@ -56,8 +55,6 @@
                                     <label for="firstName">LOGIN PROVIDER: </label>
                                     <select class="form-select" aria-label="Default select example"
                                         [(ngModel)]="userinfo.loginProvider" required name="loginProvider" #box3 ngModel>
-                                        <span class="text-danger">Select User Type</span>
-
                                         <option value="DATABASE">Database</option>
                                         <option value="GITHUB">Github</option>
                                         <option value="MOCK">Mock</option>
@@ -71,8 +68,6 @@
                                     <label for="firstName">IS MOCK USER?: </label>
                                     <select class="form-select" aria-label="Default select example"
                                         [(ngModel)]="userinfo.isMockUser" required name="isMockUser" #box4 ngModel>
-                                        <span class="text-danger">Select User Type</span>
-
                                         <option value="true">true</option>
                                         <option value="false">false</option>
                                     </select>

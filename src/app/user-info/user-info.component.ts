@@ -49,7 +49,7 @@ export class UserInfoComponent implements OnInit {
       (error) => console.log(error));
 
       setTimeout(() => {
-        this.reloadCurrentPage();
+        // this.reloadCurrentPage();
       }, 10000);
       // console.log(this.userinfo.loginProvider);
       // console.log(this.userinfo.userType);
@@ -57,7 +57,7 @@ export class UserInfoComponent implements OnInit {
   this.submitted = true;
   }
   reloadCurrentPage() {
-    window.location.reload();
+    // window.location.reload();
   }
 
 

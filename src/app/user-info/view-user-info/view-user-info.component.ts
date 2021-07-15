@@ -12,7 +12,7 @@ import { UserInfoService } from 'src/app/service/userInfo.services';
 export class ViewUserInfoComponent implements OnInit {
 
 
-  userInfos: Observable<UserInfo[]>;
+  userInfos : UserInfo[];
   constructor(private userInfoService : UserInfoService,private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {

@@ -10,7 +10,7 @@ export class UserInfoService{
 
     constructor(private http: HttpClient) { }
     
-    createUserInfo(userinfo: Object): Observable<Object> {
+    createUserInfo(userinfo: Object): any {
         
         return this.http.post(`${this.baseUrl}`, userinfo);
     }
