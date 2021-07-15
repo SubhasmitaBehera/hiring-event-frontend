@@ -68,10 +68,11 @@
                                     <label for="firstName">IS MOCK USER?: </label>
                                     <select class="form-select" aria-label="Default select example"
                                         [(ngModel)]="userinfo.isMockUser" required name="isMockUser" #box4 ngModel>
-                                        <option value="true">true</option>
-                                        <option value="false">false</option>
+
+                                        <option [ngValue]="true">true</option>
+                                        <option [ngValue]="false">false</option>
                                     </select>
-                                    <!-- <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.isMockUser"
+                                    <!-- <input type="text" class="form-control" id="MOCK_USER" [(ngModel)]="userinfo.isMockUser"
                                         name="userinfo.isMockUser"  required #isMockUser="ngModel"> -->
                                 </div>
                             </div>
