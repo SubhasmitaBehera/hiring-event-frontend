@@ -34,6 +34,13 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
+                                <label for="firstName">JOB_DETAILS_ID : </label>
+                                <input type="text" class="form-control" id="JOB_DETAILS_ID" [(ngModel)]="interviewDetails.jobDetailsId"
+                                    name="JOB_DETAILS_ID" #box1 required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
                                 <label for="firstName">CANDIDATE_EMAIL : </label>
                                 <input type="text" class="form-control" id="CANDIDATE_EMAIL"
                                     [(ngModel)]="interviewDetails.candidateEmail" name="CANDIDATE_EMAIL" #box1 required>
@@ -55,7 +62,7 @@
                         </div>
                     </div>
                     <button class="btn btn-sm btn-primary float-right" type="submit" type="button" (click)="save()"
-                        [disabled]="!f.valid">Add Skill Set</button>
+                        [disabled]="!f.valid">Add Interview Details</button>
                 </form>
             </div>
         </div>

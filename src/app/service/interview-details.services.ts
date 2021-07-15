@@ -2,10 +2,10 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
+@Injectable({
+    providedIn: 'root'
+})
 export class InterViewDetailsService{
-    @Injectable({
-        providedIn: 'root'
-    })
     private baseUrl = 'http://localhost:8080/interview-status/';
 
     constructor(private http: HttpClient) { }
