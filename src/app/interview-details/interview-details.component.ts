@@ -37,7 +37,7 @@ export class InterviewDetailsComponent implements OnInit {
 
   save(){
     this.interviewDetailsService
-    .createInterviewDetails(this.interviewDetailsService).subscribe((data) => {
+    .createInterviewDetails(this.interviewDetails).subscribe((data) => {
       console.log(data);
       this.interviewDetails = new InterviewDetails();
     },

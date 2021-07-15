@@ -19,7 +19,7 @@ export class InterViewDetailsService{
         return this.http.get(`${this.baseUrl}/${id}`);
       }
     
-      createInterviewDetails(skillset: Object): Observable<Object> {
-        return this.http.post(`${this.baseUrl}`, skillset);
+      createInterviewDetails(interviewDetails: Object): Observable<Object> {
+        return this.http.post(`${this.baseUrl}`, interviewDetails);
       }
 }
