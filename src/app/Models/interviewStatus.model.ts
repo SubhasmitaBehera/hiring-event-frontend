@@ -1,7 +1,7 @@
 export enum InterviewStatus {
 
     SCHEDULED,
-    CANCELED,
+    CANCELLED,
     POSITIVE,
     NEGATIVE,
     OFFERED,
