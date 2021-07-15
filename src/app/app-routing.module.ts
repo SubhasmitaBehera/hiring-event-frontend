@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { InterviewDetailsComponent } from './interview-details/interview-details.component';
+import { ViewInterviewDetailsComponent } from './interview-details/view-interview-details/view-interview-details.component';
 import { EditJobDetailsComponent } from './job-details/edit-job-details/edit-job-details.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
   { path: "user-info", component : UserInfoComponent },
   { path: "user-info/view-user-info", component : ViewUserInfoComponent },
+  { path: "interview-details", component : InterviewDetailsComponent },
+  { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent },
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }

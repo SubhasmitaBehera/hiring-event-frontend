@@ -1,15 +1,25 @@
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 export class InterViewDetailsService{
-    private baseUrl = 'http://localhost:8080/user-info/';
+    @Injectable({
+        providedIn: 'root'
+    })
+    private baseUrl = 'http://localhost:8080/interview-status/';
 
     constructor(private http: HttpClient) { }
     
-    createUserInfo(userinfo: Object): any {
-        
-        return this.http.post(`${this.baseUrl}`, userinfo);
-    }
-    getUserInfo(): any {
+    getInterviewDetailsList(): any {
         return this.http.get(`${this.baseUrl}`);
-    }
+      }
+      
+    
+      getInterviewDetails(id: number): any {
+        return this.http.get(`${this.baseUrl}/${id}`);
+      }
+    
+      createInterviewDetails(skillset: Object): Observable<Object> {
+        return this.http.post(`${this.baseUrl}`, skillset);
+      }
 }

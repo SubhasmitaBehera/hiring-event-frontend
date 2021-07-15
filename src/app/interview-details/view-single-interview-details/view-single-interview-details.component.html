@@ -1,0 +1,33 @@
+<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+
+<hr>
+
+<div *ngIf="interviewDetails" style="text-align: center;" class="text-center">
+  
+    <div>
+        <label ><b>Id:  </b></label> {{interviewDetails.id}}
+    </div>
+    <div>
+        <label ><b>Title:  </b></label> {{interviewDetails.title}}
+    </div>
+
+    <div>
+        <label ><b>Job Details Id:  </b></label> {{interviewDetails.jobDetailsId}}
+    </div>
+
+    <div>
+        <label ><b>Candidate Email:  </b></label> {{interviewDetails.candidateEmail}}
+    </div>
+
+    <div>
+        <label ><b>Status:  </b></label> {{interviewDetails.status}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<div style="text-align: center;">
+<button (click)="list()" class="btn btn-primary">Back to List</button>
+</div>
+<br>
