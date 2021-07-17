@@ -1,5 +1,5 @@
 <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 
         <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab"
             data-bs-target="#nav-create" type="button" role="tab" aria-controls="nav-create" aria-selected="true"
@@ -12,7 +12,6 @@
 </nav>
 
 <br>
-<hr>
 
 <!-- Material form group -->
 <div *ngIf="boolVar1">
@@ -20,12 +19,12 @@
     <div *ngIf="!submitted">
         <br>
         <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-            <span class="utility1 rounded text-white"><span>{{titleUserInfo}}</span></span>
+            <span class="utility1 rounded"><span>{{titleUserInfo}}</span></span>
         </h1>
 
 
         <div *ngIf="!submitted">
-            <div class="container text-white">
+            <div class="container">
                 <div class="scrollbar">
                     <form #f="ngForm">
                         <div class="row">

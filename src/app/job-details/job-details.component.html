@@ -1,5 +1,5 @@
 <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 
       <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
       aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Job Details</button>
@@ -15,10 +15,10 @@
         <div *ngIf="!submitted">
             <br>
             <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-                <span class="utility1 rounded text-white"><span>{{jobdetailstitle}}</span></span>
+                <span class="utility1 rounded"><span>{{jobdetailstitle}}</span></span>
             </h1>
-            <hr>
-            <div class="container text-white">
+            <!-- <hr> -->
+            <div class="container">
                 <form #f="ngForm">
                     <div class="row">
                         <div class="col  mb-3">
@@ -93,7 +93,7 @@
             </div>
         </div>
 
-        <div *ngIf="submitted" class="text-center text-white">
+        <div *ngIf="submitted" class="text-center">
             <h2>Form Submitted Successfully !</h2>
             <br>
             <button class="btn btn-primary" routerLink="view-job-details">View_List</button>
