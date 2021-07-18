@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { InterviewRounds } from 'src/app/Models/interviewRounds.model';
+import { InterviewRoundService } from 'src/app/service/interview-round.services';
 
 @Component({
   selector: 'app-view-rounds',
@@ -7,9 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewRoundsComponent implements OnInit {
 
-  constructor() { }
+  interviewRounds: Observable<InterviewRounds[]>;
+  boolVar : boolean = false;
+  id:number;
+  
+  constructor(private interviewRoundService : InterviewRoundService,private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.interviewRounds = this.interviewRoundService.getInterviewRoundList();
+  }
+
+  deleteSkillSet(id: number) {
+    this.boolVar = confirm("Are You Sure to Delete ?");
+    if (this.boolVar === true) {
+      this.interviewRoundService.deleteInterviewRound(id)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.reloadData();
+          },
+          error => console.log(error));
+    }
+  }
+
+  viewInterviewRound(id: number) {
+    this.router.navigate(['rounds/view-rounds/view-single-rounds', id]);
   }
 
 }

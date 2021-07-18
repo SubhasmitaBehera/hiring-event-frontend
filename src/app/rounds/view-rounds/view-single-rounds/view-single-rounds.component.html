@@ -1,0 +1,60 @@
+ <!-- id : number;
+            interviewId : string;
+            candidateEmailId : string;
+            interviewerEmailId : string;
+            title : string;
+            interviewDate : string;
+            interviewTime : string;
+            virtualLink : string;
+            interviewFeedBack : string;
+            status : InterviewStatus; -->
+
+
+
+            <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+
+
+
+            <div *ngIf="interviewRounds" style="text-align: center;" class="text-center">
+                
+                <div>
+                    <label ><b>Id:  </b></label> {{interviewRounds.id}}
+                </div>
+                <div>
+                    <label ><b>Interview Id:  </b></label> {{interviewRounds.interviewId}}
+                </div>
+                <div>
+                    <label ><b>Candidate Email Id:  </b></label> {{interviewRounds.candidateEmailId}}
+                </div>
+                <div>
+                    <label ><b>Interviewer Email Id:  </b></label> {{interviewRounds.interviewerEmailId}}
+                </div>
+                <div>
+                    <label ><b>Title:  </b></label> {{interviewRounds.title}}
+                </div>
+                <div>
+                    <label ><b>Interview Date:  </b></label> {{interviewRounds.interviewDate}}
+                </div>
+                <div>
+                    <label ><b>InterviewTime:  </b></label> {{interviewRounds.interviewTime}}
+                </div>
+                <div>
+                    <label ><b>Virtual Link:  </b></label> {{interviewRounds.virtualLink}}
+                </div>
+                <div>
+                    <label ><b>Interview FeedBack:  </b></label> {{interviewRounds.interviewFeedBack}}
+                </div>
+                <div>
+                    <label ><b>Status:  </b></label> {{interviewRounds.status}}
+                </div>
+            
+                
+            
+            </div>
+            
+            <br>
+            <br>
+            <div style="text-align: center;">
+            <button (click)="list()" class="btn btn-primary">Back to List</button>
+            </div>
+            <br>
