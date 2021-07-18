@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rounds.component.css']
 })
 export class RoundsComponent implements OnInit {
-
+  interviewRoundTitle = "DETAILS OF Interview ";
   constructor() { }
 
   ngOnInit(): void {
