@@ -18,26 +18,11 @@ ul>li>a{
 }
 
 
-.img{
-    background-image: url('../assets/img/img.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    height:100vh;
-    width: 100vw;
-    
-}
-/* .card{
-    background-color: rgba(86, 114, 241, 0.4);
-    box-shadow:inset 10px 10px 50px 24px rgba(2, 0, 8, 0.6) ; 
-    transition: all 1s  ease-in-out;
-} */
-.card{
-
-    box-shadow:inset 10px 10px 50px 24px rgba(84, 141, 226, 0.9) ; 
-    background-color: rgba(30, 80, 138, 0.8);
-
-}
 .nav-item:hover{
     background-color: rgba(115, 139, 165, 0.699);
     border-radius: 10px;
+}
+
+.active{
+    background-color: rgb(127 215 160 / 76%) !important
 }
