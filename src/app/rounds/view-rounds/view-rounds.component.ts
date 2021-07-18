@@ -40,7 +40,7 @@ export class ViewRoundsComponent implements OnInit {
   }
 
   viewInterviewRound(id: number) {
-    this.router.navigate(['rounds/view-rounds/view-single-rounds', id]);
+    this.router.navigate(['rounds/view-interview-rounds/view-single-interview-rounds', id]);
   }
 
 }

@@ -9,16 +9,6 @@
     </div>
 </nav>
 <br>
-<!-- id : number;
-interviewId : string;
-candidateEmailId : string;
-interviewerEmailId : string;
-title : string;
-interviewDate : string;
-interviewTime : string;
-virtualLink : string;
-interviewFeedBack : string;
-status : InterviewStatus; -->
 <div class="tab-content" id="nav-tabContent">
     <div *ngIf="boolVar1">
         <div *ngIf="!submitted">
@@ -26,31 +16,31 @@ status : InterviewStatus; -->
             <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
                 <span class="utility1 rounded"><span>{{interviewRoundTitle}}</span></span>
             </h1>
-            <!-- <hr> -->
             <div class="container">
                 <form #f="ngForm">
                     <div class="row">
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="interviewId">interviewId : </label>
+                                <label for="interviewId">Interview Id : </label>
                                 <input type="number" class="form-control" id="interviewId" name="interviewId" ngModel #box1
                                     [(ngModel)]="interviewRound.interviewId" required>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="candidateEmailId">candidateEmailId : </label>
+                                <label for="candidateEmailId">Candidate Email Id : </label>
                                 <input type="email" class="form-control" id="uid" name="candidateEmailId" #box2 ngModel
                                     [(ngModel)]="interviewRound.candidateEmailId" required email #email="ngModel">
                                 <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
                                     email</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="interviewerEmailId">interviewerEmailId : </label>
+                                <label for="interviewerEmailId">Interviewer Email Id : </label>
                                 <input type="email" class="form-control" id="uid" name="interviewerEmailId" #box3 ngModel
                                     [(ngModel)]="interviewRound.interviewerEmailId" required email #email="ngModel">
                                 <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
@@ -59,7 +49,7 @@ status : InterviewStatus; -->
                         </div>
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="title">title : </label>
+                                <label for="title">Title : </label>
                                 <input type="text" class="form-control" id="title" name="team" ngModel #box4
                                     [(ngModel)]="interviewRound.title" required>
                             </div>
@@ -69,35 +59,35 @@ status : InterviewStatus; -->
                     <div class="row">
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="interviewDate">interviewDate : </label>
+                                <label for="interviewDate">Interview Date : </label>
                                 <input type="date" class="form-control" id="uid" name="expDt" ngModel #box5
                                     [(ngModel)]="interviewRound.interviewDate" required>
                             </div>
                         </div>
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="interviewTime">interviewTime : </label>
+                                <label for="interviewTime">Interview Time : </label>
                                 <input type="time" class="form-control" id="interviewTime" name="interviewTime" ngModel #box6
                                     [(ngModel)]="interviewRound.interviewTime" required>
                             </div>
                         </div>
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="virtualLink">virtualLink : </label>
+                                <label for="virtualLink">Virtual Link : </label>
                                 <input type="text" class="form-control" id="virtualLink" name="virtualLink" ngModel #box7
                                     [(ngModel)]="interviewRound.virtualLink" required>
                             </div>
                         </div>
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="interviewFeedBack">interviewFeedBack : </label>
+                                <label for="interviewFeedBack">Interview FeedBack : </label>
                                 <input type="text" class="form-control" id="interviewFeedBack" name="interviewFeedBack" ngModel #box8
                                     [(ngModel)]="interviewRound.interviewFeedBack" required>
                             </div>
                         </div>
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="status">status : </label>
+                                <label for="status">Status : </label>
                                 <input type="text" class="form-control" id="status" name="status" ngModel #box9
                                     [(ngModel)]="interviewRound.status" required>
                             </div>
@@ -122,4 +112,4 @@ status : InterviewStatus; -->
     </div>
 </div>
 
-<app-view-job-details *ngIf="boolVar2"></app-view-job-details>
+<app-view-rounds *ngIf="boolVar2"></app-view-rounds>

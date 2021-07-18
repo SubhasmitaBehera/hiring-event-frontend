@@ -1,0 +1,13 @@
+.active{
+    background-color: black !important;
+    color: white !important;
+  }
+h1>span{
+    color:black;
+    font-size: larger;
+    font-weight: bolder;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
