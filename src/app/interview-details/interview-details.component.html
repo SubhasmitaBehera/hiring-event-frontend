@@ -1,12 +1,13 @@
-
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 
-      <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-      aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Interview Details</button>
+        <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-create" type="button" role="tab" aria-controls="nav-create" aria-selected="true"
+            (click)="enable()">Create Interview Details</button>
 
-      <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-      aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Interview Details</button>
+        <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view"
+            type="button" role="tab" aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Interview
+            Details</button>
     </div>
 </nav>
 <br>
@@ -19,7 +20,7 @@
         <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
             <span class="utility1 rounded"><span>{{titleInterviewDetails}}</span></span>
         </h1>
-        
+
         <div class="container ">
             <div class="scrollbar">
                 <form #f="ngForm">
@@ -34,11 +35,13 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="firstName">JOB_DETAILS_ID : </label>
-                                    <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="interviewDetails.jobDetailsId" required name="JOB_DETAILS_ID" #box2 ngModel>
-                                        <option *ngFor="let jobdetail of jobdetails | async " [value]="jobdetail.id">{{jobdetail.id}}.{{jobdetail.title}}</option>
+                                <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="interviewDetails.jobDetailsId" required name="JOB_DETAILS_ID" #box2
+                                    ngModel>
+                                    <option *ngFor="let jobdetail of jobdetails | async " [value]="jobdetail.id">
+                                        {{jobdetail.id}}.{{jobdetail.title}}</option>
 
-                            </select>
+                                </select>
 
                             </div>
                         </div>
@@ -46,30 +49,30 @@
                             <div class="form-group">
                                 <label for="firstName">CANDIDATE_EMAIL : </label>
                                 <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="interviewDetails.candidateEmail" required name="CANDIDATE_EMAIL" #box3 ngModel>
-                                        <option *ngFor="let userInfo of userInfos | async "[value]="userInfo.email">
-                                            <div  *ngIf="userInfo.userType=== candidate" >
-                                                {{userInfo.email}}
-                                            </div>
-                                            </option>
-                                 
-
-                            </select>
+                                    [(ngModel)]="interviewDetails.candidateEmail" required name="CANDIDATE_EMAIL" #box3
+                                    ngModel>
+                                    <ng-container *ngFor="let userInfo of userInfos | async ">
+                                        <option *ngIf="userInfo.userType=== candidate" [value]="userInfo.email">
+                                            {{userInfo.email}}
+                                        </option>
+                                    </ng-container>
+                                </select>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="firstName">INTERVIEW_STATUS : </label>
                                 <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="interviewDetails.status" required name="INTERVIEW_STATUS" #box4 ngModel>
+                                    [(ngModel)]="interviewDetails.status" required name="INTERVIEW_STATUS" #box4
+                                    ngModel>
 
-                                <option value="SCHEDULED">Scheduled</option>
-                                <option value="CANCELLED">Cancelled</option>
-                                <option value="POSITIVE">Positive</option>
-                                <option value="NEGATIVE">Negative</option>
-                                <option value="OFFERED">Offered</option>
-                                
-                            </select>
+                                    <option value="SCHEDULED">Scheduled</option>
+                                    <option value="CANCELLED">Cancelled</option>
+                                    <option value="POSITIVE">Positive</option>
+                                    <option value="NEGATIVE">Negative</option>
+                                    <option value="OFFERED">Offered</option>
+
+                                </select>
                             </div>
                         </div>
                     </div>
