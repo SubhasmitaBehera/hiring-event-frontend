@@ -47,11 +47,4 @@ export class JobDetailsComponent implements OnInit {
 
     this.submitted = true;
   }
-
-  action() {
-    this.boolVar = true;
-  }
-  
-
-
 }

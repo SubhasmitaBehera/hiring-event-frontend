@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: "interview-round", component : InterviewRounds },
   { path: "interview-round/view-interview-round", component : ViewInterviewDetailsComponent },
   { path: "interview-round/view-interview-round", component : ViewInterviewDetailsComponent },
+  { path: "interview-round/view-interview-round/:id", component : ViewSingleInterviewDetailsComponent },
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
