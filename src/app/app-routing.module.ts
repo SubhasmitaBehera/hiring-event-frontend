@@ -10,8 +10,10 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 
 import { ViewJobDetailsComponent } from './job-details/view-job-details/view-job-details.component';
 import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
-import { InterviewRounds } from './Models/interviewRounds.model';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RoundsComponent } from './rounds/rounds.component';
+import { ViewRoundsComponent } from './rounds/view-rounds/view-rounds.component';
+import { ViewSingleRoundsComponent } from './rounds/view-rounds/view-single-rounds/view-single-rounds.component';
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-single-skill-set/view-single-skill-set.component';
@@ -36,10 +38,9 @@ const routes: Routes = [
   { path: "interview-details", component : InterviewDetailsComponent },
   { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent },
   { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent },
-  { path: "interview-round", component : InterviewRounds },
-  { path: "interview-round/view-interview-round", component : ViewInterviewDetailsComponent },
-  { path: "interview-round/view-interview-round", component : ViewInterviewDetailsComponent },
-  { path: "interview-round/view-interview-round/:id", component : ViewSingleInterviewDetailsComponent },
+  { path: "interview-round", component : RoundsComponent },
+  { path: "interview-round/view-interview-round", component : ViewRoundsComponent },
+  { path: "interview-round/view-interview-round/:id", component : ViewSingleRoundsComponent },
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }

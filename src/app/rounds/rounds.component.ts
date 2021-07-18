@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InterviewRounds } from '../Models/interviewRounds.model';
+import { InterviewRoundService } from '../service/interview-round.services';
 
 @Component({
   selector: 'app-rounds',
@@ -18,7 +19,7 @@ export class RoundsComponent implements OnInit {
   boolVar2: boolean = false;
 
 
-  constructor() { }
+  constructor(private interviewRoundService : InterviewRoundService) { }
 
   ngOnInit(): void {
   }
@@ -36,7 +37,14 @@ export class RoundsComponent implements OnInit {
   }
 
   save() {
-    
+    this.interviewRoundService
+      .createInterviewRound(this.interviewRound).subscribe((data) => {
+        console.log(data);
+        this.interviewRound = new InterviewRounds();
+      },
+        (error) => console.log(error));
+
+    this.submitted = true;
   }
 
   action() {
