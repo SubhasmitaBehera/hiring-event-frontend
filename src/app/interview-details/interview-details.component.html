@@ -47,7 +47,8 @@
                                 <label for="firstName">CANDIDATE_EMAIL : </label>
                                 <select class="form-select" aria-label="Default select example"
                                 [(ngModel)]="interviewDetails.candidateEmail" required name="CANDIDATE_EMAIL" #box3 ngModel>
-                                        <option *ngFor="let userInfo of userInfos | async " [value]="userInfo.email">{{userInfo.email}}</option>
+                                
+                                        <option *ngFor="let userInfo of userInfos | async " [value]="userInfo">{{userInfo.email}}</option>
 
                             </select>
                             </div>

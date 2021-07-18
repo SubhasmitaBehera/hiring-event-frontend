@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { InterviewDetails } from '../Models/interviewDetails.model';
 import { JobDetails } from '../Models/jobdetails.model';
 import { UserInfo } from '../Models/userinfo.model';
+import { UserType } from '../Models/userType.model';
 import { InterViewDetailsService } from '../service/interview-details.services';
 import { JobDetailsService } from '../service/jobdetails.services';
 import { UserInfoService } from '../service/userInfo.services';
@@ -18,7 +19,8 @@ export class InterviewDetailsComponent implements OnInit {
   titleInterviewDetails = "SET INTERVIEW DETAILS";
   submitted : boolean = false;
   jobdetails: Observable<JobDetails[]>;
-  userInfos: UserInfo[];
+  userInfos: String[];
+  userInfo :UserInfo[];
 
   id: number;
 
@@ -29,16 +31,29 @@ export class InterviewDetailsComponent implements OnInit {
 
   constructor(private interviewDetailsService : InterViewDetailsService,
     private route : ActivatedRoute,private jobDetailsService : JobDetailsService,
-    private userInfoService : UserInfoService) { }
+    private userInfoService : UserInfoService) { 
+    this.getCandidateEmail();
+
+    }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
 
-    // for( let i of this.jobdetails){
-    //   console.log(i);
+  
     this.reloadData();
   }
 
+getCandidateEmail(){
+for(let i of this.userInfo){
+
+  if(i.userType == UserType.CANDIDATE){
+    this.userInfos.push(i.email);
+    console.log(i.email);
+}
+    
+  }
+
+}
   reloadData() {
     this.jobdetails = this.jobDetailsService.getJobDetailsList();
     this.userInfos = this.userInfoService.getUserInfo();
