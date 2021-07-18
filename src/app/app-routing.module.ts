@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent },
   { path: "interview-round", component : RoundsComponent },
   { path: "interview-round/view-interview-round", component : ViewRoundsComponent },
-  { path: "interview-round/view-interview-round/:id", component : ViewSingleRoundsComponent },
+  { path: "interview-round/view-interview-round/view-single-interview-round/:id", component : ViewSingleRoundsComponent },
  
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }

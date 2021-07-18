@@ -5,7 +5,7 @@
       aria-controls="nav-create" aria-selected="true" (click)="enable()">Round Details</button>
 
       <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-      aria-controls="nav-view" aria-selected="false" (click)="enable1()">Round Details</button>
+      aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Round Details</button>
     </div>
 </nav>
 <br>
@@ -104,7 +104,7 @@
         <div *ngIf="submitted" class="text-center">
             <h2>Form Submitted Successfully !</h2>
             <br>
-            <button class="btn btn-primary" routerLink="view-job-details">View_List</button>
+            <button class="btn btn-primary" routerLink="view-interview-round">View_List</button>
             <br>
             <br>
             <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
