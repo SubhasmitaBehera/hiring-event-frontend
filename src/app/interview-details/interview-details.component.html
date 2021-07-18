@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <label for="firstName">JOB_DETAILS_ID : </label>
                                     <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="interviewDetails.jobDetailsId" required name="JOB_DETAILS_ID" #box4 ngModel>
+                                [(ngModel)]="interviewDetails.jobDetailsId" required name="JOB_DETAILS_ID" #box2 ngModel>
                                         <option *ngFor="let jobdetail of jobdetails | async " [value]="jobdetail.id">{{jobdetail.id}}.{{jobdetail.title}}</option>
 
                             </select>
@@ -46,8 +46,8 @@
                             <div class="form-group">
                                 <label for="firstName">CANDIDATE_EMAIL : </label>
                                 <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="interviewDetails.candidateEmail" required name="CANDIDATE_EMAIL" #box4 ngModel>
-                                        <option *ngFor="let jobdetail of jobdetails | async " [value]="jobdetail.id">{{jobdetail.id}}.{{jobdetail.title}}</option>
+                                [(ngModel)]="interviewDetails.candidateEmail" required name="CANDIDATE_EMAIL" #box3 ngModel>
+                                        <option *ngFor="let userInfo of userInfos | async " [value]="userInfo.email">{{userInfo.email}}</option>
 
                             </select>
                             </div>

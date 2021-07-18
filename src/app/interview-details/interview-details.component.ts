@@ -6,6 +6,7 @@ import { JobDetails } from '../Models/jobdetails.model';
 import { UserInfo } from '../Models/userinfo.model';
 import { InterViewDetailsService } from '../service/interview-details.services';
 import { JobDetailsService } from '../service/jobdetails.services';
+import { UserInfoService } from '../service/userInfo.services';
 
 @Component({
   selector: 'app-interview-details',
@@ -17,7 +18,7 @@ export class InterviewDetailsComponent implements OnInit {
   titleInterviewDetails = "SET INTERVIEW DETAILS";
   submitted : boolean = false;
   jobdetails: Observable<JobDetails[]>;
-  userInfo: Observable<UserInfo[]>;
+  userInfos: UserInfo[];
 
   id: number;
 
@@ -26,7 +27,9 @@ export class InterviewDetailsComponent implements OnInit {
   boolVar1: boolean = true;
   boolVar2: boolean = false;
 
-  constructor(private interviewDetailsService : InterViewDetailsService,private route : ActivatedRoute,private jobDetailsService : JobDetailsService) { }
+  constructor(private interviewDetailsService : InterViewDetailsService,
+    private route : ActivatedRoute,private jobDetailsService : JobDetailsService,
+    private userInfoService : UserInfoService) { }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
@@ -38,6 +41,7 @@ export class InterviewDetailsComponent implements OnInit {
 
   reloadData() {
     this.jobdetails = this.jobDetailsService.getJobDetailsList();
+    this.userInfos = this.userInfoService.getUserInfo();
   }
   addAgain(){
     this.submitted = false;
