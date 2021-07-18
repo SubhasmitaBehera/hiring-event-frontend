@@ -21,6 +21,8 @@ import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info
 import { InterviewDetailsComponent } from './interview-details/interview-details.component';
 import { ViewInterviewDetailsComponent } from './interview-details/view-interview-details/view-interview-details.component';
 import { ViewSingleInterviewDetailsComponent } from './interview-details/view-single-interview-details/view-single-interview-details.component';
+import { RoundsComponent } from './rounds/rounds.component';
+import { ViewRoundsComponent } from './rounds/view-rounds/view-rounds.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ViewSingleInterviewDetailsComponent } from './interview-details/view-si
     ViewUserInfoComponent,
     InterviewDetailsComponent,
     ViewInterviewDetailsComponent,
-    ViewSingleInterviewDetailsComponent
+    ViewSingleInterviewDetailsComponent,
+    RoundsComponent,
+    ViewRoundsComponent
   ],
   imports: [
     BrowserModule,
