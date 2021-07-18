@@ -17,48 +17,37 @@ import { UserInfoService } from '../service/userInfo.services';
 export class InterviewDetailsComponent implements OnInit {
 
   titleInterviewDetails = "SET INTERVIEW DETAILS";
-  submitted : boolean = false;
+  submitted: boolean = false;
   jobdetails: Observable<JobDetails[]>;
-  userInfos: String[];
-  userInfo :UserInfo[];
+  userInfos: Observable<UserInfo[]>;
+  candidate = UserType[0];
 
   id: number;
 
-  interviewDetails : InterviewDetails = new InterviewDetails();
+  interviewDetails: InterviewDetails = new InterviewDetails();
 
   boolVar1: boolean = true;
   boolVar2: boolean = false;
 
-  constructor(private interviewDetailsService : InterViewDetailsService,
-    private route : ActivatedRoute,private jobDetailsService : JobDetailsService,
-    private userInfoService : UserInfoService) { 
-    this.getCandidateEmail();
+  constructor(private interviewDetailsService: InterViewDetailsService,
+    private route: ActivatedRoute, private jobDetailsService: JobDetailsService,
+    private userInfoService: UserInfoService) {
 
-    }
+  }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
-
-  
+    console.log(UserType);
+    console.log(this.candidate);
     this.reloadData();
   }
 
-getCandidateEmail(){
-for(let i of this.userInfo){
 
-  if(i.userType == UserType.CANDIDATE){
-    this.userInfos.push(i.email);
-    console.log(i.email);
-}
-    
-  }
-
-}
   reloadData() {
     this.jobdetails = this.jobDetailsService.getJobDetailsList();
     this.userInfos = this.userInfoService.getUserInfo();
   }
-  addAgain(){
+  addAgain() {
     this.submitted = false;
 
   }
@@ -71,15 +60,15 @@ for(let i of this.userInfo){
     this.boolVar1 = false;
   }
 
-  save(){
+  save() {
     this.interviewDetailsService
-    .createInterviewDetails(this.interviewDetails).subscribe((data) => {
-      console.log(data);
-      this.interviewDetails = new InterviewDetails();
-    },
-      (error) => console.log(error));
+      .createInterviewDetails(this.interviewDetails).subscribe((data) => {
+        console.log(data);
+        this.interviewDetails = new InterviewDetails();
+      },
+        (error) => console.log(error));
 
-  this.submitted = true;
+    this.submitted = true;
   }
 
 
