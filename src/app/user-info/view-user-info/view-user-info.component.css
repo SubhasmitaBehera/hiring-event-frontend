@@ -1,3 +1,14 @@
 .nav{
     background-color: lightgray !important;
 }
+
+.scrollbar{
+    overflow: hidden;
+    width: 100%;
+    max-height: 60vh; 
+}
+.scrollbar:hover{
+    overflow: auto;
+    width: 100%;
+    max-height:60vh; 
+}
