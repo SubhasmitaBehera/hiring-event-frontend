@@ -102,8 +102,17 @@
                         <div class="col mb-3">
                             <div class="form-group">
                                 <label for="status">Status : </label>
-                                <input type="text" class="form-control" id="status" name="status" ngModel #box9
-                                    [(ngModel)]="interviewRound.status" required>
+                                <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="interviewDetails.status" required name="INTERVIEW_STATUS" #box4
+                                    ngModel>
+
+                                    <option value="SCHEDULED">Scheduled</option>
+                                    <option value="CANCELLED">Cancelled</option>
+                                    <option value="POSITIVE">Positive</option>
+                                    <option value="NEGATIVE">Negative</option>
+                                    <option value="OFFERED">Offered</option>
+
+                                </select>
                             </div>
                         </div>
                     </div>
