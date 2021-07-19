@@ -28,10 +28,9 @@
               style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Interview Rounds</a>
         </li> -->
     <li class="nav-item" *ngIf="utilityService.link">
-      <a  routerLink="interview-rounds" class="nav-link text-dark" routerLinkActive="active"
+      <a class="nav-link text-dark active"
         style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"> Interview Rounds 
-          
-        <span class="btn-close" (click)="utilityService.utilityFunc1()"></span>
+        <button type="button" class="btn-close" aria-label="Close" (click)="utilityService.utilityFunc1()"></button>
       </a>
     </li>
 

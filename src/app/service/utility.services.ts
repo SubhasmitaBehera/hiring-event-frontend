@@ -12,11 +12,16 @@ export class UtilityService{
 
     
     utilityFunc() {
+        
+        console.log("service 1 loded");
          this.link = true;
          this.router.navigate(["interview-rounds"]);
     }
     utilityFunc1() {
-         this.link = false;
-         this.router.navigate(["interview-details"])
+        console.log("service 2 loded");
+        
+        this.router.navigate(["interview-details"])
+        this.link = false;
+        //  this.link = true;
     }
 }
