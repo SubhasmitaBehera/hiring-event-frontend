@@ -2,57 +2,25 @@
 
 <div *ngIf="interviewDetails" style="text-align: center;" class="text-center">
 
-    <!-- <div>
-        <label><b>Id: </b></label> {{interviewDetails.id}}
-    </div>
-    <div>
-        <label><b>Title: </b></label> {{interviewDetails.title}}
-    </div>
+   
 
-    <div>
-        <label><b>Job Details Id: </b></label> {{interviewDetails.jobDetailsId}}
-    </div>
-
-    <div>
-        <label><b>Candidate Email: </b></label> {{interviewDetails.candidateEmail}}
-    </div>
-
-    <div>
-        <label><b>Status: </b></label> {{interviewDetails.status}}
-    </div> -->
-
-    <div class="scrollbar">
-        <table class="table text-center table-striped ">
-            <thead>
-
-                <tr>
-                    <th scope="row" >Id</th>
-                    <th scope="row" >Title</th>
-                    <th scope="row" >Job Details Id</th>
-                    <th scope="row" >CANDIDATE EMAIL</th>
-                    <th scope="row" >STATUS</th>
-                </tr>
-            </thead>
-            <tbody >
-                <td class="col-2"><b>{{interviewDetails.id}}</b></td>
-                <td class="col-2"><b>{{interviewDetails.title}}</b></td>
-                <td class="col-2"><b>{{interviewDetails.jobDetailsId}}</b></td>
-                <td class="col-4"><b>{{interviewDetails.candidateEmail}}</b></td>
-                <td class="col-2"><b>{{interviewDetails.status}}</b></td>
-            </tbody>
-        </table>
-    </div>
-
-</div>
-
-<br>
-<br>
-<div class="row">
-    <span class="col-6" style="text-align: center;">
-        <button (click)="action()" class="btn btn-primary">Manage Rounds</button>
-    </span>
-    <span class="col-6" style="text-align: center;">
-        <button (click)="list()" class="btn btn-primary">Back to List</button>
-    </span>
-</div>
-<br>
+    <table style="width:100%">
+        <tr>
+          <th>Id:</th>
+          <td>{{interviewDetails.id}}</td>
+        </tr>
+        <tr>
+          <th>Title:</th>
+          <td>{{interviewDetails.title}}</td>
+        </tr>
+        <tr>
+          <th>Candidate Email:</th>
+          <td>{{interviewDetails.candidateEmail}}</td>
+        </tr>
+        <tr>
+          <th>Status:</th>
+          <td>{{interviewDetails.status}}</td>
+        </tr>
+      </table>
+   
+   
