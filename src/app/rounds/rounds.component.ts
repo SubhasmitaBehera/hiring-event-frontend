@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { InterviewRounds } from '../Models/interviewRounds.model';
+import { UserInfo } from '../Models/userinfo.model';
+import { UserType } from '../Models/userType.model';
 import { InterviewRoundService } from '../service/interview-round.services';
+import { UserInfoService } from '../service/userInfo.services';
 
 @Component({
   selector: 'app-rounds',
@@ -11,6 +15,9 @@ export class RoundsComponent implements OnInit {
   interviewRoundTitle = "DETAILS OF INTERVIEW ROUNDS ";
 
   interviewRound: InterviewRounds = new InterviewRounds();
+  userInfos: Observable<UserInfo[]>;
+  candidate = UserType[0];
+  interviewer = UserType[1];
 
   submitted: boolean = false;
   boolVar: boolean = false;
@@ -19,11 +26,16 @@ export class RoundsComponent implements OnInit {
   boolVar2: boolean = false;
 
 
-  constructor(private interviewRoundService : InterviewRoundService) { }
+  constructor(private interviewRoundService : InterviewRoundService,private userInfoService: UserInfoService) { }
 
   ngOnInit(): void {
+    this.reloadData();
   }
 
+
+  reloadData() {
+    this.userInfos = this.userInfoService.getUserInfo();
+  }
   addAgain() {
     this.submitted = false;
   }

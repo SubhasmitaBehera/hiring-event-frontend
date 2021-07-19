@@ -2,7 +2,7 @@
     <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 
       <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-      aria-controls="nav-create" aria-selected="true" (click)="enable()">Round Details</button>
+      aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Round Details</button>
 
       <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
       aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Round Details</button>
@@ -26,25 +26,39 @@
                                     [(ngModel)]="interviewRound.interviewId" required>
                             </div>
                         </div>
+                       
+
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="candidateEmailId">Candidate Email Id : </label>
-                                <input type="email" class="form-control" id="uid" name="candidateEmailId" #box2 ngModel
-                                    [(ngModel)]="interviewRound.candidateEmailId" required email #email="ngModel">
-                                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
-                                    email</span>
+                                <label for="firstName">Candidate Email : </label>
+                                <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="interviewRound.candidateEmail" required name="CANDIDATE_EMAIL" #box3
+                                    ngModel>
+                                    <ng-container *ngFor="let userInfo of userInfos | async ">
+                                        <option *ngIf="userInfo.userType=== candidate" [value]="userInfo.email">
+                                            {{userInfo.email}}
+                                        </option>
+                                    </ng-container>
+                                </select>
                             </div>
                         </div>
+
+
                     </div>
                     <div class="row">
                         
                         <div class="col mb-3">
                             <div class="form-group">
-                                <label for="interviewerEmailId">Interviewer Email Id : </label>
-                                <input type="email" class="form-control" id="uid" name="interviewerEmailId" #box3 ngModel
-                                    [(ngModel)]="interviewRound.interviewerEmailId" required email #email="ngModel">
-                                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
-                                    email</span>
+                                <label for="firstName">Interviewer Email Id : </label>
+                                <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="interviewRound.candidateEmail" required name="InterviewerEmailId" #box3
+                                    ngModel >
+                                    <ng-container *ngFor="let userInfo of userInfos | async ">
+                                        <option *ngIf="userInfo.userType=== interviewer" [value]="userInfo.email">
+                                            {{userInfo.email}}
+                                        </option>
+                                    </ng-container>
+                                </select>
                             </div>
                         </div>
                         <div class="col mb-3">
