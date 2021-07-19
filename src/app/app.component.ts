@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hiring-event';
+  // links:any[]=[];
+  link:boolean=false;
+  ngOnInit(): void{
+
+    console.log(this.link);
+  }
+  
 }
