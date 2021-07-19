@@ -27,9 +27,12 @@
             <a routerLink="interview-round" class="nav-link text-dark" routerLinkActive="active"
               style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Interview Rounds</a>
         </li> -->
-    <li class="nav-item" *ngIf="link" >
-      <a  routerLink="interview-round" class="nav-link text-dark" routerLinkActive="active"
-        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"> Interview Rounds </a>
+    <li class="nav-item" *ngIf="utilityService.link">
+      <a  routerLink="interview-rounds" class="nav-link text-dark" routerLinkActive="active"
+        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"> Interview Rounds 
+          
+        <span class="btn-close" (click)="utilityService.utilityFunc1()"></span>
+      </a>
     </li>
 
   </ul>

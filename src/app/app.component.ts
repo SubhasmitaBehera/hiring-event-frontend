@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilityService } from './service/utility.services';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hiring-event';
-  // links:any[]=[];
-  link:boolean=false;
-  ngOnInit(): void{
+  
 
-    console.log(this.link);
+  constructor(public utilityService : UtilityService) { }
+  ngOnInit(): void{
   }
   
 }

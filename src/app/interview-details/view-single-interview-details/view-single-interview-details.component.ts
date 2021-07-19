@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
 import { InterviewDetails } from 'src/app/Models/interviewDetails.model';
 import { InterViewDetailsService } from 'src/app/service/interview-details.services';
+import { UtilityService } from 'src/app/service/utility.services';
 
 @Component({
   selector: 'app-view-single-interview-details',
@@ -13,8 +14,11 @@ import { InterViewDetailsService } from 'src/app/service/interview-details.servi
 export class ViewSingleInterviewDetailsComponent implements OnInit {
   interviewDetails: InterviewDetails;
   id : number;
-  app = new AppComponent();
-  constructor(private route: ActivatedRoute,private interviewDetailsService : InterViewDetailsService,private router: Router) { }
+  // app = new AppComponent();
+  constructor(private route: ActivatedRoute,
+    private interviewDetailsService : InterViewDetailsService,
+    private utilityService : UtilityService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.interviewDetails= new InterviewDetails();
@@ -32,9 +36,7 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
     this.router.navigate(['interview-details/view-interview-details']);
   }
   action(){
-    this.app.link= true;
-    console.log(this.app.link);
-    
+    this.utilityService.utilityFunc();
     
   }
 
