@@ -22,8 +22,15 @@
                         <div class="col mb-3">
                             <div class="form-group">
                                 <label for="interviewId">Interview Id : </label>
-                                <input type="number" class="form-control" id="interviewId" name="interviewId" ngModel #box1
-                                    [(ngModel)]="interviewRound.interviewId" required>
+                                <!-- <input type="number" class="form-control" id="interviewId" name="interviewId" ngModel #box1
+                                    [(ngModel)]="interviewRound.interviewId" required> -->
+                                    <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="interviewRound.interviewId" required name="interviewId" #box1
+                                    ngModel>
+                                    <option *ngFor="let interviewDetails of interviewDetailsArr | async" [value]="interviewDetails.id">
+                                        {{interviewDetails.id}}.{{interviewDetails.title}}</option>
+
+                                </select>
                             </div>
                         </div>
                        
@@ -32,7 +39,7 @@
                             <div class="form-group">
                                 <label for="firstName">Candidate Email : </label>
                                 <select class="form-select" aria-label="Default select example"
-                                    [(ngModel)]="interviewRound.candidateEmail" required name="CANDIDATE_EMAIL" #box3
+                                    [(ngModel)]="interviewRound.candidateEmailId" required name="CANDIDATE_EMAIL" #box2
                                     ngModel>
                                     <ng-container *ngFor="let userInfo of userInfos | async ">
                                         <option *ngIf="userInfo.userType=== candidate" [value]="userInfo.email">
@@ -51,7 +58,7 @@
                             <div class="form-group">
                                 <label for="firstName">Interviewer Email Id : </label>
                                 <select class="form-select" aria-label="Default select example"
-                                    [(ngModel)]="interviewRound.candidateEmail" required name="InterviewerEmailId" #box3
+                                    [(ngModel)]="interviewRound.interviewerEmailId" required name="INTERVIEWER_EMAIL_ID" #box3
                                     ngModel >
                                     <ng-container *ngFor="let userInfo of userInfos | async ">
                                         <option *ngIf="userInfo.userType=== interviewer" [value]="userInfo.email">
@@ -74,7 +81,7 @@
                         <div class="col mb-3">
                             <div class="form-group">
                                 <label for="interviewDate">Interview Date : </label>
-                                <input type="date" class="form-control" id="uid" name="expDt" ngModel #box5
+                                <input type="date" class="form-control" id="interviewDate" name="interviewDate" ngModel #box5
                                     [(ngModel)]="interviewRound.interviewDate" required>
                             </div>
                         </div>
@@ -103,7 +110,7 @@
                             <div class="form-group">
                                 <label for="status">Status : </label>
                                 <select class="form-select" aria-label="Default select example"
-                                    [(ngModel)]="interviewDetails.status" required name="INTERVIEW_STATUS" #box4
+                                    [(ngModel)]="interviewRound.status" required name="INTERVIEW_STATUS" #box9
                                     ngModel>
 
                                     <option value="SCHEDULED">Scheduled</option>

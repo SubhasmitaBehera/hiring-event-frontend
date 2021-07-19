@@ -4,6 +4,7 @@ import { InterviewDetails } from '../Models/interviewDetails.model';
 import { InterviewRounds } from '../Models/interviewRounds.model';
 import { UserInfo } from '../Models/userinfo.model';
 import { UserType } from '../Models/userType.model';
+import { InterViewDetailsService } from '../service/interview-details.services';
 import { InterviewRoundService } from '../service/interview-round.services';
 import { UserInfoService } from '../service/userInfo.services';
 
@@ -14,7 +15,9 @@ import { UserInfoService } from '../service/userInfo.services';
 })
 export class RoundsComponent implements OnInit {
   interviewRoundTitle = "DETAILS OF INTERVIEW ROUNDS ";
+
   interviewDetails: InterviewDetails = new InterviewDetails();
+  interviewDetailsArr: Observable<InterviewDetails[]>;
 
   interviewRound: InterviewRounds = new InterviewRounds();
   userInfos: Observable<UserInfo[]>;
@@ -28,7 +31,8 @@ export class RoundsComponent implements OnInit {
   boolVar2: boolean = false;
 
 
-  constructor(private interviewRoundService : InterviewRoundService,private userInfoService: UserInfoService) { }
+  constructor(private interviewRoundService : InterviewRoundService,private userInfoService: UserInfoService,
+    private interviewDetailsService : InterViewDetailsService) { }
 
   ngOnInit(): void {
     this.reloadData();
@@ -37,6 +41,7 @@ export class RoundsComponent implements OnInit {
 
   reloadData() {
     this.userInfos = this.userInfoService.getUserInfo();
+    this.interviewDetailsArr = this.interviewDetailsService.getInterviewDetailsList();
   }
   addAgain() {
     this.submitted = false;

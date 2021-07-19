@@ -2,7 +2,7 @@
 
 <div *ngIf="interviewDetails" style="text-align: center;" class="text-center">
 
-    <div>
+    <!-- <div>
         <label><b>Id: </b></label> {{interviewDetails.id}}
     </div>
     <div>
@@ -19,6 +19,28 @@
 
     <div>
         <label><b>Status: </b></label> {{interviewDetails.status}}
+    </div> -->
+
+    <div class="scrollbar">
+        <table class="table text-center table-striped ">
+            <thead>
+
+                <tr>
+                    <th scope="row" >Id</th>
+                    <th scope="row" >Title</th>
+                    <th scope="row" >Job Details Id</th>
+                    <th scope="row" >CANDIDATE EMAIL</th>
+                    <th scope="row" >STATUS</th>
+                </tr>
+            </thead>
+            <tbody >
+                <td class="col-2"><b>{{interviewDetails.id}}</b></td>
+                <td class="col-2"><b>{{interviewDetails.title}}</b></td>
+                <td class="col-2"><b>{{interviewDetails.jobDetailsId}}</b></td>
+                <td class="col-4"><b>{{interviewDetails.candidateEmail}}</b></td>
+                <td class="col-2"><b>{{interviewDetails.status}}</b></td>
+            </tbody>
+        </table>
     </div>
 
 </div>

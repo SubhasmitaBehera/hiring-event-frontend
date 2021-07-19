@@ -39,7 +39,7 @@ export class UserInfoComponent implements OnInit {
   save(){
     console.log(this.userinfo.loginProvider);
       console.log(this.userinfo.userType);
-      console.log(this.userinfo.isMockUser);
+      console.log(this.userinfo.mockUser);
       console.log(this.userinfo.loginProvider);
     this.userinfoService
     .createUserInfo(this.userinfo).subscribe((data) => {
