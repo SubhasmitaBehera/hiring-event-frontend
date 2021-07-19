@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { InterviewDetails } from '../Models/interviewDetails.model';
 import { InterviewRounds } from '../Models/interviewRounds.model';
 import { UserInfo } from '../Models/userinfo.model';
 import { UserType } from '../Models/userType.model';
@@ -13,6 +14,7 @@ import { UserInfoService } from '../service/userInfo.services';
 })
 export class RoundsComponent implements OnInit {
   interviewRoundTitle = "DETAILS OF INTERVIEW ROUNDS ";
+  interviewDetails: InterviewDetails = new InterviewDetails();
 
   interviewRound: InterviewRounds = new InterviewRounds();
   userInfos: Observable<UserInfo[]>;
