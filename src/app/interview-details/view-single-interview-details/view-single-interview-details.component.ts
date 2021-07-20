@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AppComponent } from 'src/app/app.component';
 import { InterviewDetails } from 'src/app/Models/interviewDetails.model';
+import { InterviewRounds } from 'src/app/Models/interviewRounds.model';
 import { InterViewDetailsService } from 'src/app/service/interview-details.services';
 import { UtilityService } from 'src/app/service/utility.services';
 
@@ -14,6 +15,8 @@ import { UtilityService } from 'src/app/service/utility.services';
 export class ViewSingleInterviewDetailsComponent implements OnInit {
   interviewDetails: InterviewDetails;
   id : number;
+
+  interviewRounds: InterviewRounds;
   // app = new AppComponent();
   constructor(private route: ActivatedRoute,
     private interviewDetailsService : InterViewDetailsService,

@@ -11,6 +11,7 @@
                 <tr>
                     <th scope="col" class="col-3">CANDIDATE_EMAIL_ID</th>
                     <th scope="col" class="col-3">TITLE</th>
+                    <th scope="col" class="col-3">Interview ID</th>
                     <th scope="col" class="col-3">STATUS</th>
                     <th scope="col" class="col-3">ACTION</th>
                 </tr>
@@ -19,6 +20,7 @@
                 <tr *ngFor="let interviewRound of interviewRounds | async">
                     <td class="col-2">{{interviewRound.candidateEmailId}}</td>
                     <td class="col-5">{{interviewRound.title}}</td>
+                    <td class="col-5">{{interviewRound.interviewId}}</td>
                     <td class="col-5">{{interviewRound.status}}</td>
                     <td class="col-3">
                         <div class="row">
