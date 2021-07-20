@@ -2,26 +2,33 @@
 
 <div *ngIf="interviewDetails" style="text-align: center;" class="text-center">
 
+<table style=" width:70%; margin-left:15%; margin-right:15%;">
+  <tr>
+    <th>Id:</th>
+    <td><a routerLink="../../../job-details/view-job-details/view-single-job-details/{{interviewDetails.id}}">{{interviewDetails.id}}</a></td>
 
+  </tr>
+  <tr>
+    <th>Title:</th>
+    <td>{{interviewDetails.title}}</td>
+  </tr>
+  <tr>
+    <th>Candidate Email:</th>
+    <td>{{interviewDetails.candidateEmail}}</td>
+  </tr>
+  <tr>
+    <th>Status:</th>
+    <td>{{interviewDetails.status}}</td>
+  </tr>
+  
+</table>
+</div>
 
-  <table style="width:70%; margin-left: 15%; margin-bottom: 15%;">
-    <tr>
-      <th>Id:</th>
-      <td><a [routerLink]="[job-details/view-job-details]">{{interviewDetails.id}}</a></td>
-    </tr>
-    <tr>
-      <th>Title:</th>
-      <td>{{interviewDetails.title}}</td>
-    </tr>
-    <tr>
-      <th>Candidate Email:</th>
-      <td>{{interviewDetails.candidateEmail}}</td>
-    </tr>
-    <tr>
-      <th>Status:</th>
-      <td>{{interviewDetails.status}}</td>
-    </tr>
-  </table>
-      <button class="btn btn-primary m-5" (click)="action()">Manage Rounds</button>
-      <button class="btn btn-primary m-5" (click)="list()">Back To List</button>
-<!-- </div> -->
+<br>
+
+<div style="text-align: center;">
+<button (click)="action()" class="btn btn-primary m-5">Manage Rounds</button>
+<button (click)="list()" class="btn btn-primary m-5">Back to List</button>
+</div>
+<br>
+

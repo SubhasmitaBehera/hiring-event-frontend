@@ -30,7 +30,6 @@ const routes: Routes = [
   { path: "job-details", component: JobDetailsComponent },
   { path: "job-details/view-job-details", component: ViewJobDetailsComponent },
   { path: "job-details/edit-job-details/:id", component: EditJobDetailsComponent },
-  { path: "job-details/view-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
   { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
   { path: "user-info", component : UserInfoComponent },
@@ -41,7 +40,6 @@ const routes: Routes = [
   { path: "interview-rounds", component : RoundsComponent },
   { path: "interview-rounds/view-interview-rounds", component : ViewRoundsComponent },
   { path: "interview-rounds/view-interview-rounds/view-single-interview-round/:id", component : ViewSingleRoundsComponent },
- 
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
 ];

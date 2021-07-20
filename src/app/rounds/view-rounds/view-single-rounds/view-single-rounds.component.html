@@ -1,60 +1,51 @@
- 
-            <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+<div *ngIf="interviewRounds" style="text-align: center;" class="text-center">
+    <table style=" width:70%; margin-left:15%; margin-right:15%;">
+        <tr>
+            <th>Id:</th>
+            <td>{{interviewRounds.id}}</td>
+        </tr>
+        <tr>
+            <th>Interview Id:</th>
+            <td>{{interviewRounds.interviewId}}</td>
+        </tr>
+        <tr>
+            <th>Candidate Email Id:</th>
+            <td>{{interviewRounds.candidateEmailId}}</td>
+        </tr>
+        <tr>
+            <th>Interviewer Email Id:</th>
+            <td>{{interviewRounds.interviewerEmailId}}</td>
+        </tr>
+        <tr>
+            <th>Title:</th>
+            <td>{{interviewRounds.title}}</td>
+        </tr>
+        <tr>
+            <th>Interview Date:</th>
+            <td>{{interviewRounds.interviewDate}}</td>
+        </tr>
+        <tr>
+            <th>InterviewTime:</th>
+            <td>{{interviewRounds.interviewTime}}</td>
+        </tr>
+        <tr>
+            <th>Virtual Link:</th>
+            <td>{{interviewRounds.virtualLink}}</td>
+        </tr>
+        <tr>
+            <th>Interview FeedBack:</th>
+            <td>{{interviewRounds.interviewFeedBack}}</td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>{{interviewRounds.status}}</td>
+        </tr>
 
-
-
-            <div *ngIf="interviewRounds" style="text-align: center;" class="text-center">
-
-                <table style="width:70%; margin-left: 15%; margin-bottom: 15%;">
-                    <tr>
-                      <th>Id:</th>
-                      <td>{{interviewRounds.id}}</td>
-                    </tr>
-                    <tr>
-                      <th>Interview Id:</th>
-                      <td>{{interviewRounds.interviewId}}</td>
-                    </tr>
-                    <tr>
-                      <th>Candidate Email Id:</th>
-                      <td>{{interviewRounds.candidateEmailId}}</td>
-                    </tr>
-                    <tr>
-                      <th>Interviewer Email Id:</th>
-                      <td>{{interviewRounds.interviewerEmailId}}</td>
-                    </tr>
-                    <tr>
-                      <th>Title:</th>
-                      <td>{{interviewRounds.title}}</td>
-                    </tr>
-                    <tr>
-                      <th>Interview Date:</th>
-                      <td>{{interviewRounds.interviewDate}}</td>
-                    </tr>
-                    <tr>
-                      <th>InterviewTime:</th>
-                      <td>{{interviewRounds.interviewTime}}</td>
-                    </tr>
-                    <tr>
-                      <th>Virtual Link:</th>
-                      <td>{{interviewRounds.virtualLink}}</td>
-                    </tr>
-                    <tr>
-                      <th>Interview FeedBack:</th>
-                      <td>{{interviewRounds.interviewFeedBack}}</td>
-                    </tr>
-                    <tr>
-                      <th>Status:</th>
-                      <td>{{interviewRounds.status}}</td>
-                    </tr>
-                  </table>
-            
-                
-            
-            </div>
-            
-            <br>
-            <br>
-            <div style="text-align: center;">
-            <button (click)="list()" class="btn btn-primary">Back to List</button>
-            </div>
-            <br>
+    </table>
+</div>
+<br>
+<div style="text-align: center;">
+    <button (click)="list()" class="btn btn-primary m-5">Back to List</button>
+</div>
+<br>
