@@ -4,37 +4,49 @@
 
 
             <div *ngIf="interviewRounds" style="text-align: center;" class="text-center">
-                
-                <div>
-                    <label ><b>Id:  </b></label> {{interviewRounds.id}}
-                </div>
-                <div>
-                    <label ><b>Interview Id:  </b></label> {{interviewRounds.interviewId}}
-                </div>
-                <div>
-                    <label ><b>Candidate Email Id:  </b></label> {{interviewRounds.candidateEmailId}}
-                </div>
-                <div>
-                    <label ><b>Interviewer Email Id:  </b></label> {{interviewRounds.interviewerEmailId}}
-                </div>
-                <div>
-                    <label ><b>Title:  </b></label> {{interviewRounds.title}}
-                </div>
-                <div>
-                    <label ><b>Interview Date:  </b></label> {{interviewRounds.interviewDate}}
-                </div>
-                <div>
-                    <label ><b>InterviewTime:  </b></label> {{interviewRounds.interviewTime}}
-                </div>
-                <div>
-                    <label ><b>Virtual Link:  </b></label> {{interviewRounds.virtualLink}}
-                </div>
-                <div>
-                    <label ><b>Interview FeedBack:  </b></label> {{interviewRounds.interviewFeedBack}}
-                </div>
-                <div>
-                    <label ><b>Status:  </b></label> {{interviewRounds.status}}
-                </div>
+
+                <table style="width:70%; margin-left: 15%; margin-bottom: 15%;">
+                    <tr>
+                      <th>Id:</th>
+                      <td>{{interviewRounds.id}}</td>
+                    </tr>
+                    <tr>
+                      <th>Interview Id:</th>
+                      <td>{{interviewRounds.interviewId}}</td>
+                    </tr>
+                    <tr>
+                      <th>Candidate Email Id:</th>
+                      <td>{{interviewRounds.candidateEmailId}}</td>
+                    </tr>
+                    <tr>
+                      <th>Interviewer Email Id:</th>
+                      <td>{{interviewRounds.interviewerEmailId}}</td>
+                    </tr>
+                    <tr>
+                      <th>Title:</th>
+                      <td>{{interviewRounds.title}}</td>
+                    </tr>
+                    <tr>
+                      <th>Interview Date:</th>
+                      <td>{{interviewRounds.interviewDate}}</td>
+                    </tr>
+                    <tr>
+                      <th>InterviewTime:</th>
+                      <td>{{interviewRounds.interviewTime}}</td>
+                    </tr>
+                    <tr>
+                      <th>Virtual Link:</th>
+                      <td>{{interviewRounds.virtualLink}}</td>
+                    </tr>
+                    <tr>
+                      <th>Interview FeedBack:</th>
+                      <td>{{interviewRounds.interviewFeedBack}}</td>
+                    </tr>
+                    <tr>
+                      <th>Status:</th>
+                      <td>{{interviewRounds.status}}</td>
+                    </tr>
+                  </table>
             
                 
             

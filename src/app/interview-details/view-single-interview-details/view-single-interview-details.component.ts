@@ -39,5 +39,9 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
     this.utilityService.utilityFunc();
     
   }
+  viewJobDetails(id: number){
+    this.router.navigate(['job-details/view-job-details/view-single-job-details', id]);
+
+  }
 
 }

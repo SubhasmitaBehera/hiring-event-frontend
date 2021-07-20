@@ -9,30 +9,19 @@
         <table class="table text-center table-striped">
             <thead>
                 <tr>
-                    <!-- <th scope="col">ID</th> -->
                     <th scope="col" class="col-1">TITLE</th>
                     <th scope="col" class="col-3">DESCRIPTION</th>
-                    <!-- <th scope="col">TEAM</th> -->
                     <th scope="col" class="col-3">MANAGER_EMAIL</th>
-                    <!-- <th scope="col">NUM_OF_POSITIONS</th> -->
-                    <!-- <th scope="col">EXP_DT</th> -->
                     <th scope="col" class="col-1">MIN_EXPERIENCE</th>
-                    <!-- <th scope="col">MAX_EXP_DT</th> -->
-                   
                     <th  class="col-4">TAKE_ACTION</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let jobdetail of jobdetails | async">
-                    <!-- <td>{{jobdetail.id}}</td> -->
                     <td class="col-1">{{jobdetail.title}}</td>
                     <td class="col-3">{{jobdetail.description}}</td>
-                    <!-- <td>{{jobdetail.team}}</td> -->
                     <td class="col-3">{{jobdetail.hiringManagerEmail}}</td>
-                    <!-- <td>{{jobdetail.numOfPositions}}</td> -->
-                    <!-- <td>{{jobdetail.jobExpiryDate}}</td> -->
                     <td class="col-1">{{jobdetail.minExp}}</td>
-                    <!-- <td>{{jobdetail.maxExp}}</td> -->
                     <td class="col-4">
                         <div class="row">
                             <div class="col">

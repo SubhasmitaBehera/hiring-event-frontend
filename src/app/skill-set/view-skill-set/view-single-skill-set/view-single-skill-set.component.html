@@ -3,25 +3,34 @@
 
 
 <div *ngIf="skillset" style="text-align: center;" class="text-center">
+
+    <table style=" width:70%; margin-left:15%; margin-right:15%;">
+        <tr>
+          <th>Id:</th>
+          <td>{{skillset.id}}</td>
+        </tr>
+        <tr>
+          <th>Title:</th>
+          <td>{{skillset.skillName}}</td>
+        </tr>
+        <tr>
+          <th>Description:</th>
+          <td>{{skillset.description}}</td>
+        </tr>
+        <tr>
+          <th>Modified By:</th>
+          <td>{{skillset.modifiedBy}}</td>
+        </tr>
+        <tr>
+          <th>Resource ID:</th>
+          <td>{{skillset.resourceId}}</td>
+        </tr>
+        
+      </table>
     
-    <div>
-        <label ><b>Id:  </b></label> {{skillset.id}}
-    </div>
-    <div>
-        <label ><b>Title:  </b></label> {{skillset.skillName}}
-    </div>
+    
 
-    <div>
-        <label ><b>Description:  </b></label> {{skillset.description}}
-    </div>
-
-    <div>
-        <label ><b>Modified By:  </b></label> {{skillset.modifiedBy}}
-    </div>
-
-    <div>
-        <label ><b>Resource ID:  </b></label> {{skillset.resourceId}}
-    </div>
+   
 
 </div>
 

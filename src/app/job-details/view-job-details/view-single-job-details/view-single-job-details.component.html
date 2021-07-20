@@ -2,36 +2,52 @@
 
 <hr>
 <div *ngIf="jobdetail" style="text-align: center;" class="text-center">
-    <div>
-        <label ><b>ID:  </b></label>   {{jobdetail.id}}
-    </div>
 
-    <div>
-        <label ><b>Title: </b></label> {{jobdetail.title}}
-    </div>
+    <table style=" width:70%; margin-left:15%; margin-right:15%;">
+        <tr>
+          <th>Id:</th>
+          <td>{{jobdetail.id}}</td>
+        </tr>
+        <tr>
+          <th>Title:</th>
+          <td>{{jobdetail.title}}</td>
+        </tr>
+        <tr>
+          <th>Description:</th>
+          <td>{{jobdetail.description}}</td>
+        </tr>
+        <tr>
+          <th>Team:</th>
+          <td>{{jobdetail.team}}</td>
+        </tr>
+        <tr>
+          <th>Team:</th>
+          <td>{{jobdetail.team}}</td>
+        </tr>
+        <tr>
+          <th>Hiring Manager Email:</th>
+          <td>{{jobdetail.hiringManagerEmail}}</td>
+        </tr>
+        <tr>
+          <th>Number Of Positions:</th>
+          <td>{{jobdetail.numOfPositions}}</td>
+        </tr>
+        <tr>
+          <th>Job Expiry Date:</th>
+          <td>{{jobdetail.jobExpiryDate}}</td>
+        </tr>
+        <tr>
+          <th>Minimum Experience:</th>
+          <td>{{jobdetail.minExp}}</td>
+        </tr>
+        <tr>
+          <th>Maximum Experience:</th>
+          <td>{{jobdetail.maxExp}}</td>
+        </tr>
+      </table>
 
-    <div>
-        <label ><b>Description: </b></label> {{jobdetail.description}}
-    </div>
-
-    <div>
-        <label ><b>Team: </b></label>  {{jobdetail.team}}
-    </div>
-    <div>
-        <label ><b>Hiring Manager Email: </b></label> {{jobdetail.hiringManagerEmail}}
-    </div>
-    <div>
-        <label ><b>Number Of Positions: </b></label> {{jobdetail.numOfPositions}}
-    </div>
-    <div>
-        <label ><b>Job Expiry Date: </b></label> {{jobdetail.jobExpiryDate}}
-    </div>
-    <div>
-        <label ><b>Minimum Experience: </b></label> {{jobdetail.minExp}}
-    </div>
-    <div>
-        <label ><b>Maximum Experience: </b></label> {{jobdetail.maxExp}}
-    </div>
+   
+   
 
 </div>
 

@@ -2,25 +2,26 @@
 
 <div *ngIf="interviewDetails" style="text-align: center;" class="text-center">
 
-   
 
-    <table style="width:100%">
-        <tr>
-          <th>Id:</th>
-          <td>{{interviewDetails.id}}</td>
-        </tr>
-        <tr>
-          <th>Title:</th>
-          <td>{{interviewDetails.title}}</td>
-        </tr>
-        <tr>
-          <th>Candidate Email:</th>
-          <td>{{interviewDetails.candidateEmail}}</td>
-        </tr>
-        <tr>
-          <th>Status:</th>
-          <td>{{interviewDetails.status}}</td>
-        </tr>
-      </table>
-   
-   
+
+  <table style="width:70%; margin-left: 15%; margin-bottom: 15%;">
+    <tr>
+      <th>Id:</th>
+      <td><a [routerLink]="[job-details/view-job-details]">{{interviewDetails.id}}</a></td>
+    </tr>
+    <tr>
+      <th>Title:</th>
+      <td>{{interviewDetails.title}}</td>
+    </tr>
+    <tr>
+      <th>Candidate Email:</th>
+      <td>{{interviewDetails.candidateEmail}}</td>
+    </tr>
+    <tr>
+      <th>Status:</th>
+      <td>{{interviewDetails.status}}</td>
+    </tr>
+  </table>
+      <button class="btn btn-primary m-5" (click)="action()">Manage Rounds</button>
+      <button class="btn btn-primary m-5" (click)="list()">Back To List</button>
+<!-- </div> -->
