@@ -5,8 +5,12 @@
 <table style=" width:70%; margin-left:15%; margin-right:15%;">
   <tr>
     <th>Id:</th>
-    <td><a routerLink="../../../job-details/view-job-details/view-single-job-details/{{interviewDetails.id}}">{{interviewDetails.id}}</a></td>
-
+    <td>{{interviewDetails.id}}</td>
+  </tr>
+  <tr>
+    <th>Job Details Id:</th>
+    <td><a routerLink="../../../job-details/view-job-details/view-single-job-details/{{interviewDetails.jobDetailsId}}">
+      {{interviewDetails.jobDetailsId}}</a></td>
   </tr>
   <tr>
     <th>Title:</th>
