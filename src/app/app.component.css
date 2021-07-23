@@ -12,17 +12,22 @@ ul>li>a{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #c5d9ec6b!important;
-    color: rgb(0, 0, 0);
+    background-color: rgb(85,20,180) !important;
+
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
 
 .nav-item:hover{
-    background-color: rgba(115, 139, 165, 0.699);
+    background-color: #2B32B2;
     border-radius: 10px;
 }
 
 .active{
-    background-color: rgb(127 215 160 / 76%) !important
+    background-color: rgb(209 207 213 / 20%) !important;
+}
+
+.navbar{
+    background-color: rgb(85,20,180) !important;
 }

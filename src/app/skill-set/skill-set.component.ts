@@ -45,5 +45,4 @@ export class SkillSetComponent implements OnInit {
 
   this.submitted = true;
   }
-
 }

@@ -15,7 +15,9 @@ export class ViewRoundsComponent implements OnInit {
   boolVar : boolean = false;
   id:number;
   
-  constructor(private interviewRoundService : InterviewRoundService,private router: Router,private route: ActivatedRoute) { }
+  constructor(private interviewRoundService : InterviewRoundService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

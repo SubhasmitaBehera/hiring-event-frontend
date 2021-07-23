@@ -12,7 +12,6 @@
 </nav>
 <br>
 
-<!-- Material form group -->
 <div *ngIf="boolVar1">
 
     <div *ngIf="!submitted">
@@ -76,8 +75,10 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-sm btn-primary float-right" type="submit" type="button" (click)="save()"
-                        [disabled]="!f.valid">Add Interview Details</button>
+                    <div class="text-center">
+                        <button class="btn btn-sm btn-primary mt-3" style="margin: auto;" type="submit" type="button" (click)="save()"
+                            [disabled]="!f.valid">Add Interview Details</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,8 +1,13 @@
-
 .active{
-    background-color: black !important;
-    color: white !important;
-  }
+    background-color: white !important;
+    border-bottom: 2px solid rgb(85,20,180) !important;
+    color: black !important;
+}
+.nav-link:hover{
+    background-color: white !important;
+    border-bottom: 2px solid rgb(85,20,180) !important;
+    color: black !important;
+}
 .scrollbar{
     overflow: scroll;
     width: 100%;
@@ -18,11 +23,10 @@ h1>span{
 
 input.ng-invalid.ng-touched{
     border: 1px solid red;
-    
-  }
-  .help-block{
+}
+.help-block{
       color: red;
-  }
+}
 
 
 

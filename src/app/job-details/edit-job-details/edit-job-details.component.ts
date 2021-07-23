@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JobDetails } from 'src/app/Models/jobdetails.model';
-import { JobDetailsSkillSetMapping } from 'src/app/Models/jobdetailsSkillSetMapping.model';
 import { SkillSet } from 'src/app/Models/skillset.model';
 import { JobDetailsService } from 'src/app/service/jobdetails.services';
 import { SkillSetService } from 'src/app/service/skillset.services';

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserInfo } from 'src/app/Models/userinfo.model';
 import { UserInfoService } from 'src/app/service/userInfo.services';
 
@@ -13,16 +11,13 @@ export class ViewUserInfoComponent implements OnInit {
 
 
   userInfos : UserInfo[];
-  constructor(private userInfoService : UserInfoService,private router: Router,private route: ActivatedRoute) { }
+  constructor(private userInfoService : UserInfoService) { }
 
   ngOnInit(): void {
     this.reloadData();
   }
 
-
   reloadData() {
     this.userInfos = this.userInfoService.getUserInfo();
   }
-
-
 }

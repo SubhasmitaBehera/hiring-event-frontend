@@ -1,6 +1,12 @@
 .active{
-  background-color: black !important;
-  color: white !important;
+  background-color: white !important;
+  border-bottom: 2px solid rgb(85,20,180) !important;
+  color: black !important;
+}
+.nav-link:hover{
+  background-color: white !important;
+  border-bottom: 2px solid rgb(85,20,180) !important;
+  color: black !important;
 }
 
 input.ng-invalid.ng-touched{

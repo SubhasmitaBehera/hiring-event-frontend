@@ -2,7 +2,7 @@ import { InterviewStatus } from "./interviewStatus.model";
 
 export class InterviewRounds{
     id : number;
-    interviewId : string;
+    interviewId : number;
     candidateEmailId : string;
     interviewerEmailId : string;
     title : string;

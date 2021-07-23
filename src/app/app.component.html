@@ -1,34 +1,30 @@
-<nav class="navbar navnar-collapse navbar-expand-sm" style="background-color: #9bc4b6!important; ">
+<nav class="navbar navnar-collapse navbar-expand-sm">
   <ul class="nav nav-tabs" style="border-bottom: 0px;">
     <li class="nav-item">
-      <a routerLink="home" class="nav-link text-dark" routerLinkActive="active" style="font-family:'Times New Roman', Times, serif; font-weight: bolder;
+      <a routerLink="home" class="nav-link text-white" routerLinkActive="active" style="font-family:'Times New Roman', Times, serif; font-weight: bolder;
               font-size: 27px;">Hiring Service</a>
     </li>
   </ul>
   <ul class="nav nav-tabs" style="border-bottom: 0px; margin: auto;">
 
     <li class="nav-item">
-      <a routerLink="job-details" class="nav-link text-dark" routerLinkActive="active"
+      <a routerLink="job-details" class="nav-link text-white" routerLinkActive="active"
         style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Job Details</a>
     </li>
     <li class="nav-item">
-      <a routerLink="skill-set" class="nav-link text-dark" routerLinkActive="active"
+      <a routerLink="skill-set" class="nav-link text-white" routerLinkActive="active"
         style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Skill Set</a>
     </li>
     <li class="nav-item">
-      <a routerLink="user-info" class="nav-link text-dark" routerLinkActive="active"
+      <a routerLink="user-info" class="nav-link text-white" routerLinkActive="active"
         style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">User Info</a>
     </li>
     <li class="nav-item">
-      <a routerLink="interview-details" class="nav-link text-dark" routerLinkActive="active"
+      <a routerLink="interview-details" class="nav-link text-white" routerLinkActive="active"
         style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Interview Details</a>
     </li>
-    <!-- <li class="nav-item">
-            <a routerLink="interview-round" class="nav-link text-dark" routerLinkActive="active"
-              style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Interview Rounds</a>
-        </li> -->
     <li class="nav-item" *ngIf="utilityService.link">
-      <a class="nav-link text-dark active"
+      <a class="nav-link text-white active"
         style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"> Interview Rounds 
         <button type="button" class="btn-close btn-sm" aria-label="Close" (click)="utilityService.utilityFunc1()"></button>
       </a>

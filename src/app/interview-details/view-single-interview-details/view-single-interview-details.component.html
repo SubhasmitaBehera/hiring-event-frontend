@@ -2,40 +2,39 @@
 
 <div *ngIf="interviewDetails" style="text-align: center;" class="text-center">
 
-<table style=" width:70%; margin-left:15%; margin-right:15%;">
-  <tr>
-    <th>Id:</th>
-    <td>{{interviewDetails.id}}</td>
-  </tr>
-  <tr>
-    <th>Job Details Id:</th>
-    <td><a routerLink="../../../job-details/view-job-details/view-single-job-details/{{interviewDetails.jobDetailsId}}">
-      {{interviewDetails.jobDetailsId}}</a></td>
-  </tr>
-  <tr>
-    <th>Title:</th>
-    <td>{{interviewDetails.title}}</td>
-  </tr>
-  <tr>
-    <th>Candidate Email:</th>
-    <td>{{interviewDetails.candidateEmail}}</td>
-  </tr>
-  <tr>
-    <th>Status:</th>
-    <td>{{interviewDetails.status}}</td>
-  </tr>
-</table>
+    <table style=" width:70%; margin-left:15%; margin-right:15%;">
+        <tr>
+          <th>Id:</th>
+          <td>{{interviewDetails.id}}</td>
+        </tr>
+        <tr>
+          <th>Job Details Id:</th>
+          <td><a
+              routerLink="../../../job-details/view-job-details/view-single-job-details/{{interviewDetails.jobDetailsId}}">
+              {{interviewDetails.jobDetailsId}}</a></td>
+        </tr>
+        <tr>
+          <th>Title:</th>
+          <td>{{interviewDetails.title}}</td>
+        </tr>
+        <tr>
+          <th>Candidate Email:</th>
+          <td>{{interviewDetails.candidateEmail}}</td>
+        </tr>
+        <tr>
+          <th>Status:</th>
+          <td>{{interviewDetails.status}}</td>
+        </tr>
+    </table>
 
- 
+    <h3 class="text-center mt-2">Interview Rounds</h3>
+    <app-view-multiple-rounds></app-view-multiple-rounds>
 
-  <h3 class="text-center mt-2">Details Of Interview Rounds</h3>
-  <app-view-single-rounds></app-view-single-rounds>
 </div>
+
 <br>
 
 <div style="text-align: center;">
-<button (click)="action()" class="btn btn-primary m-5">Manage Rounds</button>
-<button (click)="list()" class="btn btn-primary m-5">Back to List</button>
+    <button (click)="action()" class="btn btn-primary m-5">Manage Rounds</button>
+    <button (click)="list()" class="btn btn-primary m-5">Back to List</button>
 </div>
-<br>
-

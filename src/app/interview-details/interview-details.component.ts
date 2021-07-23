@@ -42,7 +42,6 @@ export class InterviewDetailsComponent implements OnInit {
     this.reloadData();
   }
 
-
   reloadData() {
     this.jobdetails = this.jobDetailsService.getJobDetailsList();
     this.userInfos = this.userInfoService.getUserInfo();
@@ -70,6 +69,4 @@ export class InterviewDetailsComponent implements OnInit {
 
     this.submitted = true;
   }
-
-
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { AppComponent } from 'src/app/app.component';
 import { InterviewDetails } from 'src/app/Models/interviewDetails.model';
 import { InterviewRounds } from 'src/app/Models/interviewRounds.model';
 import { InterViewDetailsService } from 'src/app/service/interview-details.services';
@@ -17,7 +15,6 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
   id : number;
 
   interviewRounds: InterviewRounds;
-  // app = new AppComponent();
   constructor(private route: ActivatedRoute,
     private interviewDetailsService : InterViewDetailsService,
     private utilityService : UtilityService,
@@ -26,7 +23,7 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.interviewDetails= new InterviewDetails();
 
-    this.id = this.route.snapshot.params['id'];
+    this.id = +this.route.snapshot.params['id'];
     
     this.interviewDetailsService.getInterviewDetails(this.id)
       .subscribe(data => {
@@ -39,8 +36,8 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
     this.router.navigate(['interview-details/view-interview-details']);
   }
   action(){
-    this.utilityService.utilityFunc();
-    
+    this.id = +this.route.snapshot.params['id'];
+    this.utilityService.utilityFunc(this.id);
   }
   viewJobDetails(id: number){
     this.router.navigate(['job-details/view-job-details/view-single-job-details', id]);

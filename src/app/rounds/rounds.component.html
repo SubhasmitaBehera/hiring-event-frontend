@@ -22,15 +22,8 @@
                         <div class="col mb-3">
                             <div class="form-group">
                                 <label for="interviewId">Interview Id : </label>
-                                <!-- <input type="number" class="form-control" id="interviewId" name="interviewId" ngModel #box1
-                                    [(ngModel)]="interviewRound.interviewId" required> -->
-                                    <select class="form-select" aria-label="Default select example"
-                                    [(ngModel)]="interviewRound.interviewId" required name="interviewId" #box1
-                                    ngModel>
-                                    <option *ngFor="let interviewDetails of interviewDetailsArr | async" [value]="interviewDetails.id">
-                                        {{interviewDetails.id}}.{{interviewDetails.title}}</option>
-
-                                </select>
+                                <input type="number" class="form-control" id="interviewId" name="INTERVIEW_ID" ngModel #box1
+                                    [(ngModel)]="interviewRound.interviewId" [ngModel]="interviewID" disabled required >
                             </div>
                         </div>
                        
@@ -49,11 +42,8 @@
                                 </select>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="row">
-                        
                         <div class="col mb-3">
                             <div class="form-group">
                                 <label for="firstName">Interviewer Email Id : </label>
@@ -124,9 +114,10 @@
                         </div>
                     </div>
 
-
-                    <button class="btn btn-sm btn-primary float-right" type="submit" type="button" (click)="save()"
-                        [disabled]="!f.valid">Add Job Details</button>
+                    <div class="text-center">
+                        <button class="btn btn-sm btn-primary mt-3" type="submit" type="button" (click)="save()"
+                        [disabled]="!f.valid">Add Interview Rounds</button>
+                    </div>
                 </form>
             </div>
         </div>

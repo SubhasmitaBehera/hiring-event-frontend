@@ -24,10 +24,7 @@ export class ViewInterviewDetailsComponent implements OnInit {
     this.interviewDetails = this.interviewDetailsService.getInterviewDetailsList();
   }
 
-  
-
   viewInterviewDetails(id: number) {
     this.router.navigate(['interview-details/view-single-interview-details', id]);
   }
-
 }

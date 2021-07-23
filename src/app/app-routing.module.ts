@@ -12,6 +12,7 @@ import { ViewJobDetailsComponent } from './job-details/view-job-details/view-job
 import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RoundsComponent } from './rounds/rounds.component';
+import { ViewMultipleRoundsComponent } from './rounds/view-rounds/view-multiple-rounds/view-multiple-rounds.component';
 import { ViewRoundsComponent } from './rounds/view-rounds/view-rounds.component';
 import { ViewSingleRoundsComponent } from './rounds/view-rounds/view-single-rounds/view-single-rounds.component';
 import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set.component';
@@ -37,9 +38,10 @@ const routes: Routes = [
   { path: "interview-details", component : InterviewDetailsComponent },
   { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent },
   { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent },
-  { path: "interview-rounds", component : RoundsComponent },
-  { path: "interview-rounds/view-interview-rounds", component : ViewRoundsComponent },
+  { path: "interview-rounds/:id", component : RoundsComponent },
+  { path: "interview-rounds/:id/view-interview-rounds", component : ViewRoundsComponent },
   { path: "interview-rounds/view-interview-rounds/view-single-interview-round/:id", component : ViewSingleRoundsComponent },
+  { path: "interview-rounds/view-interview-rounds/view-multiple-interview-round/:id", component : ViewMultipleRoundsComponent },
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
 ];

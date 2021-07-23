@@ -24,9 +24,4 @@ export class ViewSingleRoundsComponent implements OnInit {
         this.interviewRounds = data;
       }, error => console.log(error));
   }
-  
-  list(){
-    this.router.navigate(['interview-rounds/view-interview-rounds']);
-  }
-
 }

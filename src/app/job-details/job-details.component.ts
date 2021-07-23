@@ -17,9 +17,7 @@ export class JobDetailsComponent implements OnInit {
 
   boolVar1: boolean = true;
   boolVar2: boolean = false;
-
-
-
+  
   constructor(private jobDetailsService: JobDetailsService) { }
 
   ngOnInit(): void {

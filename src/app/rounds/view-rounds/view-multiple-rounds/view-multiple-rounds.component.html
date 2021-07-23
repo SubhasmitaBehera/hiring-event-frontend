@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="scrollbar">
+        <table class="table text-center table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" class="col-3">CANDIDATE_EMAIL_ID</th>
+                    <th scope="col" class="col-3">TITLE</th>
+                    <th scope="col" class="col-3">Interview ID</th>
+                    <th scope="col" class="col-3">STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let interviewRound of interviewRounds | async">
+                    <tr *ngIf="interviewRound.interviewId == id">
+                        <td class="col-2">{{interviewRound.candidateEmailId}}</td>
+                        <td class="col-5">{{interviewRound.title}}</td>
+                        <td class="col-5">{{interviewRound.interviewId}}</td>
+                        <td class="col-5">{{interviewRound.status}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -13,7 +13,6 @@
 
 <br>
 
-<!-- Material form group -->
 <div *ngIf="boolVar1">
 
     <div *ngIf="!submitted">
@@ -45,8 +44,6 @@
                                         <option value="CANDIDATE">Candidate</option>
                                         <option value="INTERVIEWER">Interviewer</option>
                                     </select>
-                                    <!-- <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.userType"
-                                        name="userinfo.userType"  required #userType="ngModel"> -->
                                 </div>
                             </div>
                             <div class="col">
@@ -58,8 +55,6 @@
                                         <option value="GITHUB">Github</option>
                                         <option value="MOCK">Mock</option>
                                     </select>
-                                    <!-- <input type="text" class="form-control" id="EMAIL" [(ngModel)]="userinfo.loginProvider"
-                                        name="userinfo.loginProvider"  required #loginProvider="ngModel"> -->
                                 </div>
                             </div>
                             <div class="col">
@@ -71,13 +66,13 @@
                                         <option [ngValue]="true">true</option>
                                         <option [ngValue]="false">false</option>
                                     </select>
-                                    <!-- <input type="text" class="form-control" id="MOCK_USER" [(ngModel)]="userinfo.isMockUser"
-                                        name="userinfo.isMockUser"  required #isMockUser="ngModel"> -->
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-sm btn-primary float-right" type="submit" type="button" (click)="save()"
-                            [disabled]="!f.valid">Add User Info</button>
+                        <div class="text-center">
+                            <button class="btn btn-sm btn-primary mt-3" type="submit" type="button" (click)="save()"
+                                [disabled]="!f.valid">Add User Info</button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -24,6 +24,7 @@ import { ViewSingleInterviewDetailsComponent } from './interview-details/view-si
 import { RoundsComponent } from './rounds/rounds.component';
 import { ViewRoundsComponent } from './rounds/view-rounds/view-rounds.component';
 import { ViewSingleRoundsComponent } from './rounds/view-rounds/view-single-rounds/view-single-rounds.component';
+import { ViewMultipleRoundsComponent } from './rounds/view-rounds/view-multiple-rounds/view-multiple-rounds.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ViewSingleRoundsComponent } from './rounds/view-rounds/view-single-roun
     ViewSingleInterviewDetailsComponent,
     RoundsComponent,
     ViewRoundsComponent,
-    ViewSingleRoundsComponent
+    ViewSingleRoundsComponent,
+    ViewMultipleRoundsComponent
   ],
   imports: [
     BrowserModule,

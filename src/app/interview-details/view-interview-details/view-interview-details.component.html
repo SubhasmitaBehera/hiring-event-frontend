@@ -9,6 +9,7 @@
             <thead>
 
                 <tr>
+                    <th scope="col" class="col-2">ID</th>
                     <th scope="col" class="col-2">TITLE</th>
                     <th scope="col" class="col-2">JOB DETAILS ID</th>
                     <th scope="col" class="col-4">CANDIDATE EMAIL</th>
@@ -18,6 +19,7 @@
             </thead>
             <tbody >
                 <tr *ngFor="let interviewDetail of interviewDetails | async">
+                    <td class="col-2">{{interviewDetail.id}}</td>
                     <td class="col-2">{{interviewDetail.title}}</td>
                     <td class="col-2">{{interviewDetail.jobDetailsId}}</td>
                     <td class="col-4">{{interviewDetail.candidateEmail}}</td>
