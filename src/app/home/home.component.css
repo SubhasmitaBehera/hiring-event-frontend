@@ -6,3 +6,7 @@ h1>span{
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+.btn-success{
+    background-color: rgb(85,20,180) !important;
+    color: white !important;
+}
