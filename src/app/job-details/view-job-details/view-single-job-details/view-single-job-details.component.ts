@@ -25,18 +25,16 @@ export class ViewSingleJobDetailsComponent implements OnInit {
         this.jobdetail = data;
       }, error => console.log(error));
   }
+
+  enable() {
+    this.router.navigate(["job-details"])
+  }
+  enable1() {
+    this.router.navigate(["job-details/view-job-details"])
+  }
   
   list(){
     this.router.navigate(['job-details/view-job-details']);
   }
-  enable() {
-    this.router.navigate(["job-details"])
-    // this.boolVar1 = true;
-    // this.boolVar2 = false;
-  }
-  enable1() {
-    this.router.navigate(["job-details/view-job-details"])
-    // this.boolVar2 = true;
-    // this.boolVar1 = false;
-  }
+
 }

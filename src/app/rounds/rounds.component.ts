@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { InterviewDetails } from '../Models/interviewDetails.model';
 import { InterviewRounds } from '../Models/interviewRounds.model';
@@ -21,6 +21,7 @@ export class RoundsComponent implements OnInit {
   interviewDetailsArr: Observable<InterviewDetails[]>;
 
   interviewRound: InterviewRounds = new InterviewRounds();
+  id : number;
   interviewID :number = +this.route.snapshot.params["id"];
   userInfos: Observable<UserInfo[]>;
   candidate = UserType[0];
@@ -35,7 +36,8 @@ export class RoundsComponent implements OnInit {
 
   constructor(private interviewRoundService : InterviewRoundService,private userInfoService: UserInfoService,
     private interviewDetailsService : InterViewDetailsService,
-    private route : ActivatedRoute) { }
+    private route : ActivatedRoute,
+    private router : Router) { }
 
   ngOnInit(): void {
     this.reloadData();
@@ -54,12 +56,11 @@ export class RoundsComponent implements OnInit {
     this.submitted = false;
   }
   enable() {
-    this.boolVar1 = true;
-    this.boolVar2 = false;
+    this.id = this.route.snapshot.params["id"];
+    this.router.navigate(["interview-rounds", this.id])
   }
   enable1() {
-    this.boolVar2 = true;
-    this.boolVar1 = false;
+    this.router.navigate(["interview-rounds/1/view-interview-rounds"])
   }
 
   save() {

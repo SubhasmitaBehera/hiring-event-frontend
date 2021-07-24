@@ -14,10 +14,6 @@ export class JobDetailsComponent implements OnInit {
   jobdetails: JobDetails = new JobDetails();
 
   submitted: boolean = false;
-  boolVar: boolean = false;
-
-  boolVar1: boolean = true;
-  boolVar2: boolean = false;
   
   constructor(private jobDetailsService: JobDetailsService,private  router : Router) { }
 
@@ -29,13 +25,9 @@ export class JobDetailsComponent implements OnInit {
   }
   enable() {
     this.router.navigate(["job-details"])
-    // this.boolVar1 = true;
-    // this.boolVar2 = false;
   }
   enable1() {
     this.router.navigate(["job-details/view-job-details"])
-    this.boolVar2 = true;
-    this.boolVar1 = false;
   }
 
   save() {

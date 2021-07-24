@@ -28,6 +28,12 @@ export class EditSkillSetComponent implements OnInit {
         this.skillset = data;
       }, error => console.log(error));
   }
+  enable() {
+    this.router.navigate(["skill-set"])
+  }
+  enable1() {
+    this.router.navigate(["skill-set/view-skill-set"])
+  }
 
   updateSkillSet() {
     this.skillsetService.updateSkillSet(this.id, this.skillset)

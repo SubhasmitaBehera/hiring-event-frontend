@@ -23,13 +23,9 @@ export class ViewJobDetailsComponent implements OnInit {
   }
   enable() {
     this.router.navigate(["job-details"])
-    // this.boolVar1 = true;
-    // this.boolVar2 = false;
   }
   enable1() {
     this.router.navigate(["job-details/view-job-details"])
-    // this.boolVar2 = true;
-    // this.boolVar1 = false;
   }
   reloadData() {
     this.jobdetails = this.jobDetailsService.getJobDetailsList();

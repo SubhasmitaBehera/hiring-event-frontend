@@ -24,4 +24,12 @@ export class ViewSingleRoundsComponent implements OnInit {
         this.interviewRounds = data;
       }, error => console.log(error));
   }
+
+  enable() {
+    this.id = this.route.snapshot.params["id"];
+    this.router.navigate(["interview-rounds", this.id])
+  }
+  enable1() {
+    this.router.navigate(["interview-rounds/1/view-interview-rounds"])
+  }
 }

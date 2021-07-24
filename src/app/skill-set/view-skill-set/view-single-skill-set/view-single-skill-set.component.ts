@@ -24,7 +24,12 @@ export class ViewSingleSkillSetComponent implements OnInit {
         this.skillset = data;
       }, error => console.log(error));
   }
-  
+  enable() {
+    this.router.navigate(["skill-set"])
+  }
+  enable1() {
+    this.router.navigate(["skill-set/view-skill-set"])
+  }
   list(){
     this.router.navigate(['skill-set/view-skill-set']);
   }

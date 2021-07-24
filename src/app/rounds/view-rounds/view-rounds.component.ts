@@ -23,7 +23,13 @@ export class ViewRoundsComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.reloadData();
   }
-
+  enable() {
+    this.id = this.route.snapshot.params["id"];
+    this.router.navigate(["interview-rounds", this.id])
+  }
+  enable1() {
+    this.router.navigate(["interview-rounds/1/view-interview-rounds"])
+  }
   reloadData() {
     this.interviewRounds = this.interviewRoundService.getInterviewRoundList();
   }

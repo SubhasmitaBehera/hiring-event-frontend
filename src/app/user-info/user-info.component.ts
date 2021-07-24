@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserInfo } from '../Models/userinfo.model';
 import { UserInfoService } from '../service/userInfo.services';
 
@@ -17,7 +17,7 @@ export class UserInfoComponent implements OnInit {
   boolVar1: boolean = true;
   boolVar2: boolean = false;
 
-  constructor(private userinfoService : UserInfoService,private route : ActivatedRoute) { }
+  constructor(private userinfoService : UserInfoService,private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -28,12 +28,10 @@ export class UserInfoComponent implements OnInit {
 
   }
   enable() {
-    this.boolVar1 = true;
-    this.boolVar2 = false;
+    this.router.navigate(["user-info"]);
   }
   enable1() {
-    this.boolVar2 = true;
-    this.boolVar1 = false;
+    this.router.navigate(["user-info/view-user-info"]);
   }
 
   save(){

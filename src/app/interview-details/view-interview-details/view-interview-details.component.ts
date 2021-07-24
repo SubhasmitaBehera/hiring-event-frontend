@@ -11,7 +11,6 @@ import { InterViewDetailsService } from 'src/app/service/interview-details.servi
 })
 export class ViewInterviewDetailsComponent implements OnInit {
   interviewDetails: Observable<InterviewDetails[]>;
-  boolVar : boolean = false;
   id:number;
   constructor(private interviewDetailsService : InterViewDetailsService,private router: Router,private route: ActivatedRoute) { }
 
@@ -19,7 +18,12 @@ export class ViewInterviewDetailsComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.reloadData();
   }
-
+  enable() {
+    this.router.navigate(["interview-details"])
+  }
+  enable1() {
+    this.router.navigate(["interview-details/view-interview-details"])
+  }
   reloadData() {
     this.interviewDetails = this.interviewDetailsService.getInterviewDetailsList();
   }

@@ -31,7 +31,12 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
         this.interviewDetails = data;
       }, error => console.log(error));
   }
-  
+  enable() {
+    this.router.navigate(["interview-details"])
+  }
+  enable1() {
+    this.router.navigate(["interview-details/view-interview-details"])
+  }
   list(){
     this.router.navigate(['interview-details/view-interview-details']);
   }

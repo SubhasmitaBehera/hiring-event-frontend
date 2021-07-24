@@ -21,7 +21,12 @@ export class ViewSkillSetComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.reloadData();
   }
-
+  enable() {
+    this.router.navigate(["skill-set"])
+  }
+  enable1() {
+    this.router.navigate(["skill-set/view-skill-set"])
+  }
   reloadData() {
     this.skillsets = this.skillSetService.getSkillSetList();
   }

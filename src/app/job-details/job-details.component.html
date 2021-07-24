@@ -1,13 +1,3 @@
-<!-- <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
-
-      <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-      aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Job Details</button>
-
-      <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-      aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Job Details</button>
-    </div>
-</nav> -->
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 
@@ -21,98 +11,94 @@
 <br>
 
 <div class="tab-content" id="nav-tabContent">
-    <div *ngIf="boolVar1">
-        <div *ngIf="!submitted">
-            <br>
-            <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-                <span class="utility1 rounded"><span>{{jobdetailstitle}}</span></span>
-            </h1>
-            <div class="container">
-                <form #f="ngForm">
-                    <div class="row">
-                        <div class="col  mb-3">
-                            <div class="form-group">
-                                <label for="firstName">TITLE : </label>
-                                <input type="text" class="form-control" id="TITLE" [(ngModel)]="jobdetails.title"
-                                    name="TITLE" #box1 required>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="description">DESCRIPTION : </label>
-                                <input type="text" class="form-control" id="uid" name="description" ngModel #box2
-                                    [(ngModel)]="jobdetails.description" required>
-                            </div>
+    <div *ngIf="!submitted">
+        <br>
+        <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
+            <span class="utility1 rounded"><span>{{jobdetailstitle}}</span></span>
+        </h1>
+        <div class="container">
+            <form #f="ngForm">
+                <div class="row">
+                    <div class="col  mb-3">
+                        <div class="form-group">
+                            <label for="firstName">TITLE : </label>
+                            <input type="text" class="form-control" id="TITLE" [(ngModel)]="jobdetails.title"
+                                name="TITLE" #box1 required>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="managerEmail">MANAGER_EMAIL : </label>
-                                <input type="text" class="form-control" id="uid" name="managerEmail" #box3 ngModel
-                                    [(ngModel)]="jobdetails.hiringManagerEmail" required email #email="ngModel">
-                                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
-                                    email</span>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="noOfPositions">NUM_OF_POSITIONS : </label>
-                                <input type="number" class="form-control" id="firstName" name="noOfPositions" ngModel
-                                    #box4 [(ngModel)]="jobdetails.numOfPositions" required>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="team">TEAM : </label>
-                                <input type="text" class="form-control" id="firstName" name="team" ngModel #box5
-                                    [(ngModel)]="jobdetails.team" required>
-                            </div>
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="description">DESCRIPTION : </label>
+                            <input type="text" class="form-control" id="uid" name="description" ngModel #box2
+                                [(ngModel)]="jobdetails.description" required>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="expDt">EXP_DT : </label>
-                                <input type="date" class="form-control" id="uid" name="expDt" ngModel #box6
-                                    [(ngModel)]="jobdetails.jobExpiryDate" required>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="MinExp">MIN_EXPERIENCE : </label>
-                                <input type="number" class="form-control" id="firstName" name="MinExp" ngModel #box7
-                                    [(ngModel)]="jobdetails.minExp" required>
-                            </div>
-                        </div>
-                        <div class="col mb-3">
-                            <div class="form-group">
-                                <label for="maxExp">MAX_EXPERIENCE : </label>
-                                <input type="number" class="form-control" id="firstName" name="maxExp" ngModel #box8
-                                    [(ngModel)]="jobdetails.maxExp" required>
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="text-center">
-                    <button class="btn btn-sm btn-primary mt-1" type="submit" type="button" (click)="save()"
-                    [disabled]="!f.valid">Add Job Details</button>
                 </div>
-                    
-                </form>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="managerEmail">MANAGER_EMAIL : </label>
+                            <input type="text" class="form-control" id="uid" name="managerEmail" #box3 ngModel
+                                [(ngModel)]="jobdetails.hiringManagerEmail" required email #email="ngModel">
+                            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
+                                email</span>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="noOfPositions">NUM_OF_POSITIONS : </label>
+                            <input type="number" class="form-control" id="firstName" name="noOfPositions" ngModel
+                                #box4 [(ngModel)]="jobdetails.numOfPositions" required>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="team">TEAM : </label>
+                            <input type="text" class="form-control" id="firstName" name="team" ngModel #box5
+                                [(ngModel)]="jobdetails.team" required>
+                        </div>
+                    </div>
+                </div>
 
-        <div *ngIf="submitted" class="text-center">
-            <h2>Form Submitted Successfully !</h2>
-            <br>
-            <button class="btn btn-primary" routerLink="view-job-details">View_List</button>
-            <br>
-            <br>
-            <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
+                <div class="row">
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="expDt">EXP_DT : </label>
+                            <input type="date" class="form-control" id="uid" name="expDt" ngModel #box6
+                                [(ngModel)]="jobdetails.jobExpiryDate" required>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="MinExp">MIN_EXPERIENCE : </label>
+                            <input type="number" class="form-control" id="firstName" name="MinExp" ngModel #box7
+                                [(ngModel)]="jobdetails.minExp" required>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <div class="form-group">
+                            <label for="maxExp">MAX_EXPERIENCE : </label>
+                            <input type="number" class="form-control" id="firstName" name="maxExp" ngModel #box8
+                                [(ngModel)]="jobdetails.maxExp" required>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="text-center">
+                <button class="btn btn-sm btn-primary mt-1" type="submit" type="button" (click)="save()"
+                [disabled]="!f.valid">Add Job Details</button>
+            </div>
+                
+            </form>
         </div>
     </div>
-</div>
 
-<app-view-job-details *ngIf="boolVar2"></app-view-job-details>
+    <div *ngIf="submitted" class="text-center">
+        <h2>Form Submitted Successfully !</h2>
+        <br>
+        <button class="btn btn-primary" routerLink="view-job-details">View_List</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" (click)="addAgain()">Add_again</button>
+    </div>
+</div>

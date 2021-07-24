@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { SkillSet } from '../Models/skillset.model';
 import { SkillSetService } from '../service/skillset.services';
 
@@ -17,7 +17,7 @@ export class SkillSetComponent implements OnInit {
   boolVar1: boolean = true;
   boolVar2: boolean = false;
 
-  constructor(private skillsetService : SkillSetService,private route : ActivatedRoute) { }
+  constructor(private skillsetService : SkillSetService,private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -27,12 +27,10 @@ export class SkillSetComponent implements OnInit {
 
   }
   enable() {
-    this.boolVar1 = true;
-    this.boolVar2 = false;
+    this.router.navigate(["skill-set"])
   }
   enable1() {
-    this.boolVar2 = true;
-    this.boolVar1 = false;
+    this.router.navigate(["skill-set/view-skill-set"])
   }
 
   save(){

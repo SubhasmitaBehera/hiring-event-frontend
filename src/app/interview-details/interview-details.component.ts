@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { InterviewDetails } from '../Models/interviewDetails.model';
 import { JobDetails } from '../Models/jobdetails.model';
@@ -26,12 +26,10 @@ export class InterviewDetailsComponent implements OnInit {
 
   interviewDetails: InterviewDetails = new InterviewDetails();
 
-  boolVar1: boolean = true;
-  boolVar2: boolean = false;
-
   constructor(private interviewDetailsService: InterViewDetailsService,
     private route: ActivatedRoute, private jobDetailsService: JobDetailsService,
-    private userInfoService: UserInfoService) {
+    private userInfoService: UserInfoService,
+    private router : Router) {
 
   }
 
@@ -51,12 +49,10 @@ export class InterviewDetailsComponent implements OnInit {
 
   }
   enable() {
-    this.boolVar1 = true;
-    this.boolVar2 = false;
+    this.router.navigate(["interview-details"])
   }
   enable1() {
-    this.boolVar2 = true;
-    this.boolVar1 = false;
+    this.router.navigate(["interview-details/view-interview-details"])
   }
 
   save() {
