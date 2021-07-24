@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JobDetails } from '../Models/jobdetails.model';
 import { JobDetailsService } from '../service/jobdetails.services';
 
@@ -18,7 +19,7 @@ export class JobDetailsComponent implements OnInit {
   boolVar1: boolean = true;
   boolVar2: boolean = false;
   
-  constructor(private jobDetailsService: JobDetailsService) { }
+  constructor(private jobDetailsService: JobDetailsService,private  router : Router) { }
 
   ngOnInit(): void {
   }
@@ -27,10 +28,12 @@ export class JobDetailsComponent implements OnInit {
     this.submitted = false;
   }
   enable() {
-    this.boolVar1 = true;
-    this.boolVar2 = false;
+    this.router.navigate(["job-details"])
+    // this.boolVar1 = true;
+    // this.boolVar2 = false;
   }
   enable1() {
+    this.router.navigate(["job-details/view-job-details"])
     this.boolVar2 = true;
     this.boolVar1 = false;
   }
