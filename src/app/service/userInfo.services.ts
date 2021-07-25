@@ -14,7 +14,18 @@ export class UserInfoService{
         
         return this.http.post(`${this.baseUrl}`, userinfo);
     }
-    getUserInfo(): any {
+    getUserInfoList(): any {
         return this.http.get(`${this.baseUrl}`);
     }
+    getUserInfo(id: number): any {
+        return this.http.get(`${this.baseUrl}/${id}`);
+      }
+    
+      updateUserInfo(id: number, value: any): Observable<Object> {
+        return this.http.put(`${this.baseUrl}/${id}`, value);
+      }
+    
+      deleteUserInfo(id: number): Observable<any> {
+        return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+      }
 }

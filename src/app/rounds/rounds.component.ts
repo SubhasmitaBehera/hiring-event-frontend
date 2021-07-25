@@ -49,7 +49,7 @@ export class RoundsComponent implements OnInit {
 
 
   reloadData() {
-    this.userInfos = this.userInfoService.getUserInfo();
+    this.userInfos = this.userInfoService.getUserInfoList();
     this.interviewDetailsArr = this.interviewDetailsService.getInterviewDetailsList();
   }
   addAgain() {

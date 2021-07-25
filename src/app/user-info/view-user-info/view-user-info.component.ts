@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UserInfo } from 'src/app/Models/userinfo.model';
 import { UserInfoService } from 'src/app/service/userInfo.services';
 
@@ -11,11 +12,12 @@ import { UserInfoService } from 'src/app/service/userInfo.services';
 export class ViewUserInfoComponent implements OnInit {
 
 
-  userInfos : UserInfo[];
-  constructor(private userInfoService : UserInfoService,
-    private router : Router) { }
-
+  userInfos : Observable<UserInfo[]>;
+  boolVar: boolean;
+  id: number;
+  constructor(private userInfoService : UserInfoService,private router : Router, private route: ActivatedRoute) { }
   ngOnInit(): void {
+    this.id = +this.route.snapshot.params['id'];
     this.reloadData();
   }
   enable() {
@@ -26,6 +28,29 @@ export class ViewUserInfoComponent implements OnInit {
   }
 
   reloadData() {
-    this.userInfos = this.userInfoService.getUserInfo();
+    this.userInfos = this.userInfoService.getUserInfoList();
+    
+  }
+
+  deleteUserInfo(id: number) {
+    this.boolVar = confirm("Are You Sure to Delete ?");
+    if (this.boolVar === true) {
+      this.userInfoService.deleteUserInfo(id)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.reloadData();
+          },
+          error => console.log(error));
+    }
+  }
+  viewUserInfo(id: number){
+    this.router.navigate(['user-info/view-user-info/view-single-user-info', id]);
+    console.log(id);
+    
+
+  }
+  updateUserInfo(id: number) {
+    this.router.navigate(['user-info/edit-user-info', id]);
   }
 }

@@ -21,18 +21,38 @@
         <table class="table text-center table-striped">
             <thead>
                 <tr>
-                    <th scope="col" class="col-2">Email Id</th>
-                    <th scope="col" class="col-5">User Type</th>
-                    <th scope="col" class="col-3">Login Provider</th>
-                    <th scope="col" class="col-3">Is Mock</th>
+                    <th scope="col" class="col-3">Id</th>
+                    <th scope="col" class="col-3">Email Id</th>
+                    <th scope="col" class="col-2">User Type</th>
+                    <th scope="col" class="col-2">Login Provider</th>
+                    <th scope="col" class="col-2">Is Mock</th>
+                    <th scope="col" class="col-3">Action</th>
                 </tr>
             </thead>
             <tbody >
                 <tr *ngFor="let userInfo of userInfos | async">
-                    <td class="col-2">{{userInfo.email}}</td>
-                    <td class="col-5">{{userInfo.userType}}</td>
-                    <td class="col-5">{{userInfo.loginProvider}}</td>
-                    <td class="col-5">{{userInfo.mockUser}}</td>
+                    <td class="col-3">{{userInfo.id}}</td>
+                    <td class="col-3">{{userInfo.email}}</td>
+                    <td class="col-2">{{userInfo.userType}}</td>
+                    <td class="col-2">{{userInfo.loginProvider}}</td>
+                    <td class="col-2">{{userInfo.mockUser}}</td>
+                    <td class="col-3">
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-success" (click)="viewUserInfo(userInfo.id)">View</button>
+                            </div>
+                       
+                            <div class="col">
+                                <button class="btn btn-primary" (click)="updateUserInfo(userInfo.id)">Edit</button>
+
+                            </div>
+                        
+                            <div class="col">
+                                <button class="btn btn-danger" (click)="deleteUserInfo(userInfo.id)">Delete</button>
+                            </div>
+
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>

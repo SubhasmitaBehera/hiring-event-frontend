@@ -22,4 +22,11 @@ export class InterViewDetailsService{
       createInterviewDetails(interviewDetails: Object): Observable<Object> {
         return this.http.post(`${this.baseUrl}`, interviewDetails);
       }
+      updateInterviewDetails(id: number, value: any): Observable<Object> {
+        return this.http.put(`${this.baseUrl}/${id}`, value);
+      }
+    
+      deleteInterviewDetails(id: number): Observable<any> {
+        return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+      }
 }

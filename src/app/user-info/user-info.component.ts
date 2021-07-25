@@ -53,7 +53,7 @@ export class UserInfoComponent implements OnInit {
   this.submitted = true;
   }
   reloadCurrentPage() {
-    window.location.reload();
+    // window.location.reload();
   }
 
 

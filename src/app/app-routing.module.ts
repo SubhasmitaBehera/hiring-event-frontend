@@ -19,7 +19,9 @@ import { EditSkillSetComponent } from './skill-set/edit-skill-set/edit-skill-set
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { ViewSingleSkillSetComponent } from './skill-set/view-skill-set/view-single-skill-set/view-single-skill-set.component';
 import { ViewSkillSetComponent } from './skill-set/view-skill-set/view-skill-set.component';
+import { EditUserInfoComponent } from './user-info/edit-user-info/edit-user-info.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { ViewSingleUserInfoComponent } from './user-info/view-user-info/view-single-user-info/view-single-user-info.component';
 import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info.component';
 
 const routes: Routes = [
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
   { path: "user-info", component : UserInfoComponent },
   { path: "user-info/view-user-info", component : ViewUserInfoComponent },
+  { path: "user-info/view-user-info/view-single-user-info/:id", component : ViewSingleUserInfoComponent },
+  { path: "user-info/edit-user-info/:id", component : EditUserInfoComponent },
   { path: "interview-details", component : InterviewDetailsComponent },
   { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent },
   { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent },
