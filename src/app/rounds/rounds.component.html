@@ -31,15 +31,8 @@
                         <div class="col mb-3">
                             <div class="form-group">
                                 <label for="firstName">Candidate Email : </label>
-                                <select class="form-select" aria-label="Default select example"
-                                    [(ngModel)]="interviewRound.candidateEmailId" required name="CANDIDATE_EMAIL" #box2
-                                    ngModel>
-                                    <ng-container *ngFor="let userInfo of userInfos | async ">
-                                        <option *ngIf="userInfo.userType=== candidate" [value]="userInfo.email">
-                                            {{userInfo.email}}
-                                        </option>
-                                    </ng-container>
-                                </select>
+                                <input type="text" class="form-control" id="candidateEmailId" name="candidateEmailId" ngModel #box1
+                                    [(ngModel)]="interviewRound.candidateEmailId" [ngModel]="candidateEmailID" disabled required >
                             </div>
                         </div>
                     </div>
@@ -133,4 +126,3 @@
     </div>
 </div>
 
-<app-view-rounds *ngIf="boolVar2"></app-view-rounds>

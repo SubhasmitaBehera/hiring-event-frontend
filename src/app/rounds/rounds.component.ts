@@ -22,27 +22,23 @@ export class RoundsComponent implements OnInit {
 
   interviewRound: InterviewRounds = new InterviewRounds();
   id : number;
+
   interviewID :number = +this.route.snapshot.params["id"];
   userInfos: Observable<UserInfo[]>;
   candidate = UserType[0];
   interviewer = UserType[1];
-
+  candidateEmailID : string;
   submitted: boolean = false;
   boolVar: boolean = false;
-
   boolVar1: boolean = true;
   boolVar2: boolean = false;
-
-
   constructor(private interviewRoundService : InterviewRoundService,private userInfoService: UserInfoService,
     private interviewDetailsService : InterViewDetailsService,
-    private route : ActivatedRoute,
-    private router : Router) { }
+    private route : ActivatedRoute,private router : Router) { }
 
   ngOnInit(): void {
     this.reloadData();
     console.log("inside ngOninit interviewID : "+this.interviewID);
-    
     this.interviewID = +this.route.snapshot.params["id"];
     console.log("inside ngOninit interviewID v1: "+this.interviewID);
   }
@@ -51,6 +47,13 @@ export class RoundsComponent implements OnInit {
   reloadData() {
     this.userInfos = this.userInfoService.getUserInfoList();
     this.interviewDetailsArr = this.interviewDetailsService.getInterviewDetailsList();
+    this.interviewDetailsService.getInterviewDetails(this.interviewID)
+      .subscribe(data => {
+        console.log(data)
+        this.interviewDetails = data;
+        this.candidateEmailID =data.candidateEmail;
+        
+      }, error => console.log(error));
   }
   addAgain() {
     this.submitted = false;

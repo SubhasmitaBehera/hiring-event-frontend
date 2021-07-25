@@ -20,25 +20,35 @@
            
             <thead>
                 <tr>
-                    <th scope="col" class="col-3">CANDIDATE_EMAIL_ID</th>
-                    <th scope="col" class="col-3">TITLE</th>
-                    <th scope="col" class="col-3">Interview ID</th>
-                    <th scope="col" class="col-3">STATUS</th>
-                    <th scope="col" class="col-3">ACTION</th>
+                    <th scope="col" class="col-2">CANDIDATE_EMAIL_ID</th>
+                    <th scope="col" class="col-2">TITLE</th>
+                    <th scope="col" class="col-2">Interview ID</th>
+                    <th scope="col" class="col-2">STATUS</th>
+                    <th scope="col" class="col-4">ACTION</th>
                 </tr>
             </thead>
             <tbody >
                 <tr *ngFor="let interviewRound of interviewRounds | async">
                     <td class="col-2">{{interviewRound.candidateEmailId}}</td>
-                    <td class="col-5">{{interviewRound.title}}</td>
-                    <td class="col-5">{{interviewRound.interviewId}}</td>
-                    <td class="col-5">{{interviewRound.status}}</td>
-                    <td class="col-3">
+                    <td class="col-2">{{interviewRound.title}}</td>
+                    <td class="col-2">{{interviewRound.interviewId}}</td>
+                    <td class="col-2">{{interviewRound.status}}</td>
+                    <td class="col-4">
                         <div class="row">
                             <div  class="col">
                                 <button class="btn btn-success"
                                 (click)="viewInterviewRound(interviewRound.id)"
                                 >View</button>
+                            </div>
+                            <div  class="col">
+                                <button class="btn btn-primary"
+                                (click)="updateInterviewRound(interviewRound.id)"
+                                >Edit</button>
+                            </div>
+                            <div  class="col">
+                                <button class="btn btn-danger"
+                                (click)="deleteInterviewRound(interviewRound.id)"
+                                >Delete</button>
                             </div>
                             
                         </div>

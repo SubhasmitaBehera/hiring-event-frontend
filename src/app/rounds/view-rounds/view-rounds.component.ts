@@ -34,7 +34,7 @@ export class ViewRoundsComponent implements OnInit {
     this.interviewRounds = this.interviewRoundService.getInterviewRoundList();
   }
 
-  deleteSkillSet(id: number) {
+  deleteInterviewRound(id: number) {
     this.boolVar = confirm("Are You Sure to Delete ?");
     if (this.boolVar === true) {
       this.interviewRoundService.deleteInterviewRound(id)
@@ -49,6 +49,12 @@ export class ViewRoundsComponent implements OnInit {
 
   viewInterviewRound(id: number) {
     this.router.navigate(['interview-rounds/view-interview-rounds/view-single-interview-round', id]);
+  }
+
+  
+  
+  updateInterviewRound(id: number) {
+    this.router.navigate(['interview-rounds/2/edit-interview-rounds', id]);
   }
 
 }
