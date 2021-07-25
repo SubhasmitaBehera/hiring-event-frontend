@@ -1,10 +1,10 @@
 <!-- <p class="mt-5 text-center" *ngIf="!boolVar"> -->
-<p class="mt-5 text-center" >
+<p class="text-center" >
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
     aria-controls="multiCollapseExample1">Manage Skillset</a>
 </p>
 <!-- <div class="row justify-content-center" *ngIf="!boolVar"> -->
-<div class="row justify-content-center" >
+<div class="row justify-content-center" style="max-height:20vh;"  >
   <div class="col-6">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
       <form [formGroup]="form" (ngSubmit)="submitForm()">
@@ -17,9 +17,11 @@
             </label>
           </div>
         </div>
+
         <div class="text-center ">
-          <button class="btn btn-success m-3" type="submit" value="submit">Save</button>
+          <button class="btn btn-success" type="submit" value="submit">Save</button>
         </div>
+
       </form>
     </div>
   </div>

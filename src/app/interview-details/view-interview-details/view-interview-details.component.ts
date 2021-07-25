@@ -10,6 +10,7 @@ import { InterViewDetailsService } from 'src/app/service/interview-details.servi
   styleUrls: ['./view-interview-details.component.css']
 })
 export class ViewInterviewDetailsComponent implements OnInit {
+  boolVar : boolean = false;
   interviewDetails: Observable<InterviewDetails[]>;
   id:number;
   constructor(private interviewDetailsService : InterViewDetailsService,private router: Router,private route: ActivatedRoute) { }
@@ -26,6 +27,23 @@ export class ViewInterviewDetailsComponent implements OnInit {
   }
   reloadData() {
     this.interviewDetails = this.interviewDetailsService.getInterviewDetailsList();
+  }
+
+  deleteSkillSet(id: number) {
+    this.boolVar = confirm("Are You Sure to Delete ?");
+    if (this.boolVar === true) {
+      this.interviewDetailsService.deleteInterviewDetails(id)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.reloadData();
+          },
+          error => console.log(error));
+    }
+  }
+
+  updateSkillSet(id: number) {
+    this.router.navigate(['interview-details/edit-interview-details', id]);
   }
 
   viewInterviewDetails(id: number) {

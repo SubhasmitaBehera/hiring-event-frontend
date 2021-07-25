@@ -10,6 +10,7 @@
             Details</button>
     </div>
   </nav>
+  <br>
 <div class="row">
     <div class="col">
         <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;"> 
@@ -21,27 +22,37 @@
             <thead>
 
                 <tr>
-                    <th scope="col" class="col-2">ID</th>
-                    <th scope="col" class="col-2">TITLE</th>
+                    <th scope="col" class="col-1">ID</th>
+                    <th scope="col" class="col-1">TITLE</th>
                     <th scope="col" class="col-2">JOB DETAILS ID</th>
-                    <th scope="col" class="col-4">CANDIDATE EMAIL</th>
+                    <th scope="col" class="col-2">CANDIDATE EMAIL</th>
                     <th scope="col" class="col-2">STATUS</th>
-                    <th scope="col" class="col-2">ACTION</th>
+                    <th scope="col" class="col-4">ACTION</th>
                 </tr>
             </thead>
             <tbody >
                 <tr *ngFor="let interviewDetail of interviewDetails | async">
-                    <td class="col-2">{{interviewDetail.id}}</td>
-                    <td class="col-2">{{interviewDetail.title}}</td>
+                    <td class="col-1">{{interviewDetail.id}}</td>
+                    <td class="col-1">{{interviewDetail.title}}</td>
                     <td class="col-2">{{interviewDetail.jobDetailsId}}</td>
-                    <td class="col-4">{{interviewDetail.candidateEmail}}</td>
+                    <td class="col-2">{{interviewDetail.candidateEmail}}</td>
                     <td class="col-2">{{interviewDetail.status}}</td>
-                    <td class="col-2">
+                    <td class="col-4">
                         <div class="row">
                             <div  class="col">
                                 <button class="btn btn-success"
                                 (click)="viewInterviewDetails(interviewDetail.id)"
                                 >View</button>
+                            </div>
+                            <div  class="col">
+                                <button class="btn btn-primary"
+                                (click)="updateSkillSet(interviewDetail.id)"
+                                >Edit</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger"
+                                (click)="deleteSkillSet(interviewDetail.id)"
+                                >Delete</button>
                             </div>
                             
                         </div>

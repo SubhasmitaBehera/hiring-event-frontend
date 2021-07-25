@@ -1,11 +1,13 @@
 <nav>
   <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
 
-    <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-    aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Job Details</button>
+    <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab"
+      data-bs-target="#nav-create" type="button" role="tab" aria-controls="nav-create" aria-selected="true"
+      (click)="enable()">Create Job Details</button>
 
-    <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-    aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Job Details</button>
+    <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view"
+      type="button" role="tab" aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Job
+      Details</button>
   </div>
 </nav>
 <br>
@@ -14,18 +16,38 @@
 </h1>
 
 <div class="form" *ngIf="!boolVar">
+    <div class="row">
+        <div class="col">
+            <div class="form-group ">
+              <label><b>Update Title : </b></label>
+              <input type="text" class="form-control" [(ngModel)]="jobdetails.title" id="name" name="title">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group ">
+              <label><b>Update Description : </b></label>
+              <input type="text" class="form-control" [(ngModel)]="jobdetails.description" id="description" name="description">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group ">
+              <label><b>Update Manager Email : </b></label>
+              <input type="email" class="form-control" [(ngModel)]="jobdetails.hiringManagerEmail" id="hiringManagerEmail" name="hiringManagerEmail">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group ">
+              <label><b>Update MinExp : </b></label>
+              <input type="number" class="form-control" [(ngModel)]="jobdetails.minExp" id="minExp" name="minExp">
+            </div>
+        </div>
+    </div>
 
-  <div class="form-group ">
-    <label><b>Update Title : </b></label>
-    <input type="text" class="form-control" [(ngModel)]="jobdetails.title" id="name" name="title">
-  </div>
-
-
-  <div class="float-end">
-    <button class="btn btn-primary" type="button" (click)="updateJobDetails()">Update</button>
-  </div>
-
+    <div class="text-center mt-4">
+      <button class="btn btn-primary" type="button" (click)="updateJobDetails()">Update</button>
+    </div>
 </div>
+
 <div *ngIf="boolVar" class="row justify-content-center">
   <div class="col-6">
     <div class="card ">
@@ -40,5 +62,5 @@
 </div>
 
 <br>
-<hr>
+<br>
 <app-jobdetails-skillset-mapping></app-jobdetails-skillset-mapping>

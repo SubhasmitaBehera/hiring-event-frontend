@@ -21,8 +21,8 @@
         <table class="table text-center table-striped">
             <thead>
                 <tr>
-                    <th scope="col" class="col-3">Id</th>
-                    <th scope="col" class="col-3">Email Id</th>
+                    <th scope="col" class="col-1">Id</th>
+                    <th scope="col" class="col-2">Email Id</th>
                     <th scope="col" class="col-2">User Type</th>
                     <th scope="col" class="col-2">Login Provider</th>
                     <th scope="col" class="col-2">Is Mock</th>
@@ -31,8 +31,8 @@
             </thead>
             <tbody >
                 <tr *ngFor="let userInfo of userInfos | async">
-                    <td class="col-3">{{userInfo.id}}</td>
-                    <td class="col-3">{{userInfo.email}}</td>
+                    <td class="col-1">{{userInfo.id}}</td>
+                    <td class="col-2">{{userInfo.email}}</td>
                     <td class="col-2">{{userInfo.userType}}</td>
                     <td class="col-2">{{userInfo.loginProvider}}</td>
                     <td class="col-2">{{userInfo.mockUser}}</td>

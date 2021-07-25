@@ -15,10 +15,21 @@
 
 
 <div class="form" *ngIf="!boolVar">
-    <div class="form-group">
-        <label><b>Update Skill Name : </b></label>
-        <input type="text" class="form-control" [(ngModel)]="skillset.skillName" id="name" name="skillName">
+  <div class="row">
+    <div class="col">
+        <div class="form-group">
+          <label><b>Update Skill Name : </b></label>
+          <input type="text" class="form-control" [(ngModel)]="skillset.skillName" id="name" name="skillName">
+        </div>
     </div>
+    <div class="col">
+        <div class="form-group">
+          <label><b>Update Description : </b></label>
+          <input type="text" class="form-control" [(ngModel)]="skillset.description" id="name" name="description">
+        </div>
+    </div>
+  </div>
+    
     
     <button class="btn btn-primary" type="button"  (click)="updateSkillSet()">Update</button>
 </div>

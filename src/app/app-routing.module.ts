@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { EditInterviewDetailsComponent } from './interview-details/edit-interview-details/edit-interview-details.component';
 import { InterviewDetailsComponent } from './interview-details/interview-details.component';
 import { ViewInterviewDetailsComponent } from './interview-details/view-interview-details/view-interview-details.component';
 import { ViewSingleInterviewDetailsComponent } from './interview-details/view-single-interview-details/view-single-interview-details.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: "interview-details", component : InterviewDetailsComponent },
   { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent },
   { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent },
+  { path: "interview-details/edit-interview-details/:id", component : EditInterviewDetailsComponent },
   { path: "interview-rounds/:id", component : RoundsComponent },
   { path: "interview-rounds/:id/view-interview-rounds", component : ViewRoundsComponent },
   { path: "interview-rounds/view-interview-rounds/view-single-interview-round/:id", component : ViewSingleRoundsComponent },

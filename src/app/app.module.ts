@@ -27,6 +27,8 @@ import { ViewSingleRoundsComponent } from './rounds/view-rounds/view-single-roun
 import { ViewMultipleRoundsComponent } from './rounds/view-rounds/view-multiple-rounds/view-multiple-rounds.component';
 import { ViewSingleUserInfoComponent } from './user-info/view-user-info/view-single-user-info/view-single-user-info.component';
 import { EditUserInfoComponent } from './user-info/edit-user-info/edit-user-info.component';
+import { EditInterviewDetailsComponent } from './interview-details/edit-interview-details/edit-interview-details.component';
+import { EditRoundsComponent } from './rounds/edit-rounds/edit-rounds.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { EditUserInfoComponent } from './user-info/edit-user-info/edit-user-info
     ViewMultipleRoundsComponent,
     ViewSingleUserInfoComponent,
     EditUserInfoComponent,
+    EditInterviewDetailsComponent,
+    EditRoundsComponent,
   ],
   imports: [
     BrowserModule,

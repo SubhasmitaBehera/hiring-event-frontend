@@ -1,0 +1,88 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
+  
+        <button class="nav-link  text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-create" type="button" role="tab" aria-controls="nav-create" aria-selected="true"
+            (click)="enable()">Create Interview Details</button>
+  
+        <button class="nav-link active text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view"
+            type="button" role="tab" aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Interview
+            Details</button>
+    </div>
+ </nav>
+  <br>
+  <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
+    <span class="utility1 rounded "><span>Update Interview Details</span></span>
+  </h1>
+  
+  <div class="form" *ngIf="!boolVar">
+      <div class="row">
+          <div class="col">
+              <div class="form-group ">
+                <label><b>Update Title : </b></label>
+                <input type="text" class="form-control" [(ngModel)]="interviewDetail.title" id="title" name="title">
+              </div>
+          </div>
+
+          <div class="col">
+              <div class="form-group ">
+                <label><b>Update Job Details ID : </b></label>
+                <select class="form-select" aria-label="Default select example"
+                    [(ngModel)]="interviewDetail.jobDetailsId" name="JOB_DETAILS_ID">
+                    <option *ngFor="let jobdetail of jobdetails | async " [value]="jobdetail.id">
+                        {{jobdetail.id}}.{{jobdetail.title}}
+                    </option>
+                </select>
+              </div>
+          </div>
+
+          <div class="col">
+              <div class="form-group ">
+                <label><b>Update Candidate Email : </b></label>
+                <select class="form-select" aria-label="Default select example"
+                    [(ngModel)]="interviewDetail.candidateEmail" name="CANDIDATE_EMAIL">
+                    <ng-container *ngFor="let userInfo of userInfos | async ">
+                        <option *ngIf="userInfo.userType=== candidate" [value]="userInfo.email">
+                            {{userInfo.email}}
+                        </option>
+                    </ng-container>
+                </select>
+              </div>
+          </div>
+
+          <div class="col">
+              <div class="form-group ">
+                <label><b>Update Status : </b></label>
+                <select class="form-select" aria-label="Default select example"
+                    [(ngModel)]="interviewDetail.status" name="INTERVIEW_STATUS">
+                    <option value="SCHEDULED">Scheduled</option>
+                    <option value="CANCELLED">Cancelled</option>
+                    <option value="POSITIVE">Positive</option>
+                    <option value="NEGATIVE">Negative</option>
+                    <option value="OFFERED">Offered</option>
+                </select>
+              </div>
+          </div>
+      </div>
+  
+      <div class="text-center mt-4">
+        <button class="btn btn-primary" type="button" (click)="updateInterviewDetails()">Update</button>
+      </div>
+  </div>
+  
+  <div *ngIf="boolVar" class="row justify-content-center">
+    <div class="col-6">
+      <div class="card ">
+        <div class="text-center">
+          <h2 class="text-success text-center ">The Page Updated Successfully</h2>
+          <h4 class="text-success text-center">Thank You !</h4>
+          <button class="btn btn-primary " type="button" (click)="list()">Back to List</button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <br>
+  <br>
+  <app-jobdetails-skillset-mapping></app-jobdetails-skillset-mapping>
