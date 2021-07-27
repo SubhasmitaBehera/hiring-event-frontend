@@ -32,4 +32,7 @@ export class ViewSingleRoundsComponent implements OnInit {
   enable1() {
     this.router.navigate(["interview-rounds/1/view-interview-rounds"])
   }
+  list(){
+    this.router.navigate(['interview-rounds/1/view-interview-rounds']);
+  }
 }
