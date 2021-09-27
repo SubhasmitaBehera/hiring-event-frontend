@@ -1,3 +1,10 @@
+
+<ng-container *ngFor="let interviewRound of interviewRounds | async">
+    <div *ngIf="interviewRound.interviewId == null">
+        <h2>No interview Records added !</h2>
+    </div>
+</ng-container>
+
 <div class="row">
     <div class="scrollbar">
         <table class="table text-center table-striped">
