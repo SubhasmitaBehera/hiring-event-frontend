@@ -1,32 +1,76 @@
-
 <ng-container *ngFor="let interviewRound of interviewRounds | async">
-    <div *ngIf="interviewRound.interviewId == null">
-        <h2>No interview Records added !</h2>
-    </div>
+  <div *ngIf="interviewRound.interviewId == null">
+    <h2>No interview Records added !</h2>
+  </div>
 </ng-container>
 
 <div class="row">
-    <div class="scrollbar">
-        <table class="table text-center table-striped">
-            <thead>
-                <tr>
-                    <th scope="col" class="col-3">CANDIDATE_EMAIL_ID</th>
-                    <th scope="col" class="col-3">TITLE</th>
-                    <th scope="col" class="col-3">Interview ID</th>
-                    <th scope="col" class="col-3">STATUS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <ng-container *ngFor="let interviewRound of interviewRounds | async">
-                    <tr *ngIf="interviewRound.interviewId == id">
-                        <td class="col-2">{{interviewRound.candidateEmailId}}</td>
-                        <td class="col-5">{{interviewRound.title}}</td>
-                        <td class="col-5">{{interviewRound.interviewId}}</td>
-                        <td class="col-5">{{interviewRound.status}}</td>
-                    </tr>
-                </ng-container>
-            </tbody>
-        </table>
-    </div>
-</div>
+  <div class="scrollbar">
+    <table class="table text-center table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="col-2">CANDIDATE_EMAIL_ID</th>
+          <th scope="col" class="col-2">TITLE</th>
+          <th scope="col" class="col-2">Interview ID</th>
+          <th scope="col" class="col-2">STATUS</th>
+          <th scope="col" class="col-4">ACTION</th>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let interviewRound of interviewRounds | async;let i = index">
+          <tr *ngIf="interviewRound.interviewId == id">
+            <td class="col-2">{{interviewRound.candidateEmailId}}</td>
+            <td class="col-2">{{interviewRound.title}}</td>
+            <td class="col-2">{{interviewRound.interviewId}}</td>
+            <td class="col-2">{{interviewRound.status}}</td>
+            <td class="col-4">
+              <div class="row">
+                <div class="col">
+                  <!-- <button class="btn btn-success"
+                                  (click)="viewInterviewRound(interviewRound.id)"
+                                  >View</button> -->
+                  <button class="btn btn-success"
+                   (click)= "viewSingleRoundModal(interviewRound.id)">
+                   View{{interviewRound.id}}</button>
+                  <!-- Modal -->
+                  <app-modal >
+                    <!--  body of the modal  -->
+                  </app-modal>
+                </div>
+                <div class="col">
+                  <!-- <button class="btn btn-primary"
+                                  (click)="updateInterviewRound(interviewRound.id)"
+                                  >Edit</button> -->
+                  <button class="btn btn-primary"
+                  data-bs-toggle="modal" data-bs-target="#editSingleRoundModal">Edit</button>
+                 <!-- Modal -->
+                 <div class="modal fade" id="editSingleRoundModal" tabindex="-1"
+                   aria-labelledby="editSingleRoundModalLabel" aria-hidden="true">
+                   <div class="modal-dialog modal-dialog-centered modal-lg">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title" id="editSingleRoundModalLabel">Edit Round Details</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       </div>
+                       <div class="modal-body mt-4">
+                         <div class="tab-content" id="nav-tabContent">
+                           <!-- <app-edit-rounds></app-edit-rounds> -->
 
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                </div>
+                <div class="col">
+                  <button class="btn btn-danger" (click)="deleteInterviewRound(interviewRound.id)">Delete</button>
+                </div>
+
+
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

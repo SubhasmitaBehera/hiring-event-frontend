@@ -29,6 +29,8 @@ import { ViewSingleUserInfoComponent } from './user-info/view-user-info/view-sin
 import { EditUserInfoComponent } from './user-info/edit-user-info/edit-user-info.component';
 import { EditInterviewDetailsComponent } from './interview-details/edit-interview-details/edit-interview-details.component';
 import { EditRoundsComponent } from './rounds/edit-rounds/edit-rounds.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { EditRoundsComponent } from './rounds/edit-rounds/edit-rounds.component'
     EditUserInfoComponent,
     EditInterviewDetailsComponent,
     EditRoundsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import { EditRoundsComponent } from './rounds/edit-rounds/edit-rounds.component'
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

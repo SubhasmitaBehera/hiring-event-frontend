@@ -17,7 +17,7 @@ export class ViewSingleRoundsComponent implements OnInit {
     this.interviewRounds= new InterviewRounds();
 
     this.id = this.route.snapshot.params['id'];
-    
+
     this.interviewRoundService.getInterviewRound(this.id)
       .subscribe(data => {
         console.log(data)

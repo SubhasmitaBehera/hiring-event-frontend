@@ -39,6 +39,18 @@ export class EditRoundsComponent implements OnInit {
   }
   reloadData() {
     this.userInfos = this.userInfoService.getUserInfoList();
+
+
+    ////
+
+    // this.interviewDetailsArr = this.interviewDetailsService.getInterviewDetailsList();
+    // this.interviewDetailsService.getInterviewDetails(this.interviewID)
+    //   .subscribe(data => {
+    //     console.log(data)
+    //     this.interviewDetails = data;
+    //     this.candidateEmailID =data.candidateEmail;
+
+    //   }, error => console.log(error));
   }
   enable() {
     this.router.navigate(["interview-rounds", this.id])
