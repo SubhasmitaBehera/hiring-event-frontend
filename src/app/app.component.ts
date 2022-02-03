@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UtilityService } from './service/utility.services';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +10,20 @@ import { UtilityService } from './service/utility.services';
 })
 export class AppComponent {
   title = 'hiring-event';
-  
 
-  constructor(public utilityService : UtilityService) { }
+  token:string;
+  constructor(public utilityService : UtilityService , private route : ActivatedRoute) { }
   ngOnInit(): void{
+    this.route.queryParams
+    .subscribe(params => {
+      console.log("query string",params);
+      if(params.token!=null)
+       this.token = params.token;
+      localStorage.setItem('token', this.token);
+      console.log("get token",localStorage.getItem('token'));
+
+      console.log(this.token);
+    });
+
   }
-  
 }

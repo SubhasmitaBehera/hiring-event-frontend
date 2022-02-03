@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 import { HomeComponent } from './home/home.component';
 import { EditInterviewDetailsComponent } from './interview-details/edit-interview-details/edit-interview-details.component';
@@ -28,28 +29,28 @@ import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "home", component: HomeComponent },
-  { path: "skill-set", component: SkillSetComponent },
-  { path: "skill-set/view-skill-set", component: ViewSkillSetComponent },
-  { path: "skill-set/edit-skill-set/:id", component: EditSkillSetComponent },
-  { path: "job-details", component: JobDetailsComponent },
-  { path: "job-details/view-job-details", component: ViewJobDetailsComponent },
-  { path: "job-details/edit-job-details/:id", component: EditJobDetailsComponent },
-  { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent },
-  { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent },
-  { path: "user-info", component : UserInfoComponent },
-  { path: "user-info/view-user-info", component : ViewUserInfoComponent },
-  { path: "user-info/view-user-info/view-single-user-info/:id", component : ViewSingleUserInfoComponent },
-  { path: "user-info/edit-user-info/:id", component : EditUserInfoComponent },
-  { path: "interview-details", component : InterviewDetailsComponent },
-  { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent },
-  { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent },
-  { path: "interview-details/edit-interview-details/:id", component : EditInterviewDetailsComponent },
-  { path: "interview-rounds/:id", component : RoundsComponent },
-  { path: "interview-rounds/:id/edit-interview-rounds/:id", component : EditRoundsComponent },
-  { path: "interview-rounds/:id/view-interview-rounds", component : ViewRoundsComponent },
-  { path: "interview-rounds/view-interview-rounds/view-single-interview-round/:id", component : ViewSingleRoundsComponent },
-  { path: "interview-rounds/view-interview-rounds/view-multiple-interview-round/:id", component : ViewMultipleRoundsComponent },
+  { path: "home", component: HomeComponent , canActivate: [AuthGuard]},
+  { path: "skill-set", component: SkillSetComponent, canActivate: [AuthGuard] },
+  { path: "skill-set/view-skill-set", component: ViewSkillSetComponent, canActivate: [AuthGuard] },
+  { path: "skill-set/edit-skill-set/:id", component: EditSkillSetComponent, canActivate: [AuthGuard] },
+  { path: "job-details", component: JobDetailsComponent, canActivate: [AuthGuard] },
+  { path: "job-details/view-job-details", component: ViewJobDetailsComponent, canActivate: [AuthGuard] },
+  { path: "job-details/edit-job-details/:id", component: EditJobDetailsComponent, canActivate: [AuthGuard] },
+  { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent , canActivate: [AuthGuard]},
+  { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent , canActivate: [AuthGuard]},
+  { path: "user-info", component : UserInfoComponent , canActivate: [AuthGuard]},
+  { path: "user-info/view-user-info", component : ViewUserInfoComponent , canActivate: [AuthGuard]},
+  { path: "user-info/view-user-info/view-single-user-info/:id", component : ViewSingleUserInfoComponent , canActivate: [AuthGuard]},
+  { path: "user-info/edit-user-info/:id", component : EditUserInfoComponent, canActivate: [AuthGuard] },
+  { path: "interview-details", component : InterviewDetailsComponent, canActivate: [AuthGuard] },
+  { path: "interview-details/view-interview-details", component : ViewInterviewDetailsComponent , canActivate: [AuthGuard]},
+  { path: "interview-details/view-single-interview-details/:id", component : ViewSingleInterviewDetailsComponent , canActivate: [AuthGuard]},
+  { path: "interview-details/edit-interview-details/:id", component : EditInterviewDetailsComponent , canActivate: [AuthGuard]},
+  { path: "interview-rounds/:id", component : RoundsComponent, canActivate: [AuthGuard] },
+  { path: "interview-rounds/:id/edit-interview-rounds/:id", component : EditRoundsComponent, canActivate: [AuthGuard] },
+  { path: "interview-rounds/:id/view-interview-rounds", component : ViewRoundsComponent , canActivate: [AuthGuard]},
+  { path: "interview-rounds/view-interview-rounds/view-single-interview-round/:id", component : ViewSingleRoundsComponent , canActivate: [AuthGuard]},
+  { path: "interview-rounds/view-interview-rounds/view-multiple-interview-round/:id", component : ViewMultipleRoundsComponent, canActivate: [AuthGuard] },
   { path: "page-not-found", component: PageNotFoundComponent },
   { path: "**", redirectTo: "page-not-found" }
 ];
