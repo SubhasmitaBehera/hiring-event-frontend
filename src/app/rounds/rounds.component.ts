@@ -69,7 +69,7 @@ export class RoundsComponent implements OnInit {
   save() {
     this.interviewRound.interviewId = this.interviewID;
     console.log("interview id "+this.interviewRound.interviewId);
-    
+    this.interviewRound.candidateEmailId = this.candidateEmailID;
     this.interviewRoundService
       .createInterviewRound(this.interviewRound).subscribe((data) => {
         console.log(data);

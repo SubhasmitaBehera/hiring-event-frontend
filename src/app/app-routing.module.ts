@@ -28,7 +28,7 @@ import { ViewSingleUserInfoComponent } from './user-info/view-user-info/view-sin
 import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", component: HomeComponent},
   { path: "home", component: HomeComponent , canActivate: [AuthGuard]},
   { path: "skill-set", component: SkillSetComponent, canActivate: [AuthGuard] },
   { path: "skill-set/view-skill-set", component: ViewSkillSetComponent, canActivate: [AuthGuard] },

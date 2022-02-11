@@ -1,12 +1,16 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { AuthGuard } from "../auth/auth.guard";
 
 @Injectable({
     providedIn: 'root'
 })
 export class UtilityService{
     // id : number;
-    constructor(private router : Router) {}
+    token;
+    constructor(private router : Router, private authService : AuthGuard) {
+        this.token = this.authService.getToken();
+    }
 
     link : boolean = false;
 

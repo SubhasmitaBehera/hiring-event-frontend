@@ -19,8 +19,8 @@ export class AppComponent {
       console.log("query string",params);
       if(params.token!=null)
        this.token = params.token;
-      localStorage.setItem('token', this.token);
-      console.log("get token",localStorage.getItem('token'));
+      sessionStorage.setItem('token', this.token);
+      console.log("get token",sessionStorage.getItem('token'));
 
       console.log(this.token);
     });
