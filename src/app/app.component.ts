@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilityService } from './service/utility.services';
 import { filter } from 'rxjs/operators';
+import { async } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,11 @@ export class AppComponent {
 
   token:string;
   constructor(public utilityService : UtilityService , private route : ActivatedRoute) { }
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.route.queryParams
     .subscribe(params => {
       console.log("query string",params);
-      if(params.token!=null)
+      if(params.token!="undefined" && params.token!=null )
        this.token = params.token;
       sessionStorage.setItem('token', this.token);
       console.log("get token",sessionStorage.getItem('token'));

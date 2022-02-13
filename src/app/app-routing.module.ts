@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
+import { RoleGuard } from './guard/role.guard';
 
 import { HomeComponent } from './home/home.component';
 import { EditInterviewDetailsComponent } from './interview-details/edit-interview-details/edit-interview-details.component';
@@ -39,7 +40,12 @@ const routes: Routes = [
   { path: "job-details/view-job-details/view-single-job-details/:id", component: ViewSingleJobDetailsComponent , canActivate: [AuthGuard]},
   { path: "skill-set/view-skill-set/view-single-skill-set/:id", component: ViewSingleSkillSetComponent , canActivate: [AuthGuard]},
   { path: "user-info", component : UserInfoComponent , canActivate: [AuthGuard]},
-  { path: "user-info/view-user-info", component : ViewUserInfoComponent , canActivate: [AuthGuard]},
+  { path: "user-info/view-user-info",
+   component : ViewUserInfoComponent ,
+    canActivate: [AuthGuard, RoleGuard],
+    data:{
+      expectedRoles:['Admin','User']
+    }},
   { path: "user-info/view-user-info/view-single-user-info/:id", component : ViewSingleUserInfoComponent , canActivate: [AuthGuard]},
   { path: "user-info/edit-user-info/:id", component : EditUserInfoComponent, canActivate: [AuthGuard] },
   { path: "interview-details", component : InterviewDetailsComponent, canActivate: [AuthGuard] },

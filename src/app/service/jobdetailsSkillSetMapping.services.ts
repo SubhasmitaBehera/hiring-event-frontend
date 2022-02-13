@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { AuthGuard } from "../auth/auth.guard";
+import { AuthGuard } from "../guard/auth.guard";
 
 @Injectable({
     providedIn: 'root'
@@ -14,10 +14,10 @@ export class JobdetailsSkillSetmappingService{
     constructor(private http: HttpClient, private authService : AuthGuard) {
       this.token = authService.getToken();
      }
-     
-    
+
+
     createJobDetailsSkillSetMapping(jobdetailsSkillSetmapping: Object): Observable<Object> {
-        
+
         return this.http.post(`${this.baseUrl}`, jobdetailsSkillSetmapping, {headers: new HttpHeaders().set("Authorization", "Bearer "+this.token)});
     }
     getSkillSetIds(id: number): Observable<any> {

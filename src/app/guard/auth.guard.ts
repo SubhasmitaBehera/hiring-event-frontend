@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 // import {  JwtHelperService } from '@auth0/angular-jwt';
 
 import { Injectable } from '@angular/core';
+import { RoleService } from '../service/roles.services';
 @Injectable({
   providedIn: 'root',
 })
@@ -29,7 +30,7 @@ export class AuthGuard implements CanActivate {
     console.log(this.token, 'token');
 
     if (this.token != "undefined" && this.token != null) {
-      
+
       // const helper = new JwtHelperService();
       // if(helper.isTokenExpired(token)){
       //   document.location.href = 'http://localhost:4200';  //login portal url
@@ -40,7 +41,7 @@ export class AuthGuard implements CanActivate {
       // else
       return true;
     } else {
-      
+
       console.log('Please login to continue...');
       document.location.href = 'http://localhost:4300'; //login portal url
     }
@@ -51,4 +52,13 @@ export class AuthGuard implements CanActivate {
   getToken() {
     return this.token;
   }
+  haveAccess(){
+    var loginToken = this.getToken();
+    var extractedToken = loginToken.split('.')[1];
+    var atobData = atob(extractedToken);
+    var finalData = JSON.parse(atobData);
+    console.log(finalData);
+
+  }
+
 }
