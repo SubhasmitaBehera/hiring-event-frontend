@@ -15,7 +15,7 @@ import { RoleService } from '../service/roles.services';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   token = '';
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -28,6 +28,36 @@ export class AuthGuard implements CanActivate {
     console.log('token');
     this.token = sessionStorage.getItem('token');
     console.log(this.token, 'token');
+
+    console.log("token");
+    this.token = sessionStorage.getItem('token');
+    // const bearerToken: any = sessionStorage.getItem('BearerToken');
+    // console.log("BearerToken", bearerToken);
+
+    console.log(this.token, "token");
+
+//     if (this.token != null) {
+//       const helper = new JwtHelperService();
+//       console.log(helper);
+//       if (this.token.startsWith("Bearer ")) {
+//         if (helper.isTokenExpired(this.token)) {
+//           this.router.navigate(['/login']);
+//           console.warn("Session expired! Please login again");
+//           return false;
+//         }
+//         else
+//           return true;
+//       }
+
+//       else
+//         return true;
+//     }
+
+//     else{
+//   console.warn("Please login to continue...");
+//   this.router.navigate(['/login'])
+// }
+// return true;
 
     if (this.token != "undefined" && this.token != null) {
 
@@ -60,5 +90,8 @@ export class AuthGuard implements CanActivate {
     console.log(finalData);
 
   }
+
+
+
 
 }

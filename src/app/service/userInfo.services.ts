@@ -23,7 +23,7 @@ export class UserInfoService{
         return this.http.get(`${this.baseUrl}`, {headers: new HttpHeaders().set("Authorization", "Bearer "+this.token)});
     }
     getUserInfo(id: number): any {
-        return this.http.get(`${this.baseUrl}${id}`);
+        return this.http.get(`${this.baseUrl}${id}`, {headers: new HttpHeaders().set("Authorization", "Bearer "+this.token)});
       }
 
       updateUserInfo(id: number, value: any): Observable<Object> {

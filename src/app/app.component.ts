@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Event, NavigationEnd, Router } from '@angular/router';
 import { UtilityService } from './service/utility.services';
 import { filter } from 'rxjs/operators';
 import { async } from 'rxjs';
@@ -13,18 +13,49 @@ export class AppComponent {
   title = 'hiring-event';
 
   token:string;
-  constructor(public utilityService : UtilityService , private route : ActivatedRoute) { }
+  constructor(public utilityService : UtilityService , private route : ActivatedRoute, private router: Router) { }
   ngOnInit(): void {
-    this.route.queryParams
-    .subscribe(params => {
-      console.log("query string",params);
-      if(params.token!="undefined" && params.token!=null )
-       this.token = params.token;
-      sessionStorage.setItem('token', this.token);
-      console.log("get token",sessionStorage.getItem('token'));
+    // this.route.queryParams
+    // .subscribe(params => {
+    //   console.log("query string",params);
+    //   if(params.token!="undefined" && params.token!=null )
+    //    this.token = params.token;
+      // sessionStorage.setItem('token', this.token);
+      this.token=sessionStorage.getItem('token');
+      // console.log("get token",sessionStorage.getItem('token'));
 
-      console.log(this.token);
-    });
+      console.log("app",this.token);
+      console.log("params ",this.route);
+
+    // });
+
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
+  navTrue(){
+  let obj: Event;
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(event => {
+          console.log(event.url);
+          obj=event
+
+      });
+      console.log("obj",obj);
+
+      if(obj.url == "/" || obj.url == "/login"){
+        console.log(obj.url == "/" || obj.url == "/login");
+        return false
+
+      }
+      else
+      return true;
 
   }
 }

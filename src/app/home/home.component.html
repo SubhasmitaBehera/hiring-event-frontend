@@ -1,33 +1,45 @@
+<div class="row flex-nowrap vh-100 " style="background-color: rgb(240, 240, 240);">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
 
-    <br>
-<h1 style="text-align: center;">
-  <span class="utility1 rounded"><span>{{title}}</span></span>
-</h1>
-<hr>
+    <app-welcome></app-welcome>
+  </div>
 
-<div class="container" style="text-align: center;">
-    <h2>
-        Welcome to Hiring Event and Service !
-    </h2>
-    <h4>
-        Available features 👇 !
-    </h4>
-    <br>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-success"
-            (click)="onLoadJobDetails()"
-            >Jump to Job Details</button>
-        </div>
-        <div class="col">
-            <button class="btn btn-success"
-            (click)="onLoadSkillSet()"
-            >Jump to Skill Set</button>
-        </div>
+    <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem; margin-bottom: 9px;">
+
+      <br>
+      <h1 style="text-align: center;">
+        <span class="utility1 rounded"><span>{{title}}</span></span>
+      </h1>
+      <hr>
+
+      <div class="container" style="text-align: center;">
+          <h2>
+              Welcome to Hiring Event and Service !
+          </h2>
+          <h4>
+              Available features 👇 !
+          </h4>
+          <br>
+          <br>
+          <br>
+          <div class="row">
+              <div class="col">
+                  <button class="btn btn-success"
+                  (click)="onLoadJobDetails()"
+                  >Jump to Job Details</button>
+              </div>
+              <div class="col">
+                  <button class="btn btn-success"
+                  (click)="onLoadSkillSet()"
+                  >Jump to Skill Set</button>
+              </div>
+          </div>
+      </div>
+
     </div>
 </div>
+
+
 <!-- <app-job-details></app-job-details> -->
 
 

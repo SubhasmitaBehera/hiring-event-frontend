@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guard/auth.guard';
 import { RoleGuard } from './guard/role.guard';
 
@@ -13,7 +16,9 @@ import { JobDetailsComponent } from './job-details/job-details.component';
 
 import { ViewJobDetailsComponent } from './job-details/view-job-details/view-job-details.component';
 import { ViewSingleJobDetailsComponent } from './job-details/view-job-details/view-single-job-details/view-single-job-details.component';
+import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { EditRoundsComponent } from './rounds/edit-rounds/edit-rounds.component';
 import { RoundsComponent } from './rounds/rounds.component';
 import { ViewMultipleRoundsComponent } from './rounds/view-rounds/view-multiple-rounds/view-multiple-rounds.component';
@@ -27,9 +32,20 @@ import { EditUserInfoComponent } from './user-info/edit-user-info/edit-user-info
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ViewSingleUserInfoComponent } from './user-info/view-user-info/view-single-user-info/view-single-user-info.component';
 import { ViewUserInfoComponent } from './user-info/view-user-info/view-user-info.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent},
+  {path : 'login', component : LoginComponent},
+  {path : 'app', component : AppComponent},
+  {path : 'create-user', component : CreateUserComponent, canActivate: [AuthGuard] },
+// {path: 'reset-password', component : ResetPasswordComponent }
+   {path: 'reset-password/:userName', component : ResetPasswordComponent, canActivate: [AuthGuard] },
+   {path: 'dashboard', component : DashboardComponent },
+   {path: 'welcome', component : WelcomeComponent, canActivate: [AuthGuard] },
+   // {path:'dashboard', redirectTo : 'http://localhost:49400/', pathMatch:'full',canActivate: [AuthGuard]},
+   // {path: 'reset-password', component : ResetPasswordComponent},
+  //  {path:'', redirectTo : '/login', pathMatch:'full'},
+  { path: "", component: DashboardComponent},
   { path: "home", component: HomeComponent , canActivate: [AuthGuard]},
   { path: "skill-set", component: SkillSetComponent, canActivate: [AuthGuard] },
   { path: "skill-set/view-skill-set", component: ViewSkillSetComponent, canActivate: [AuthGuard] },
@@ -58,7 +74,7 @@ const routes: Routes = [
   { path: "interview-rounds/view-interview-rounds/view-single-interview-round/:id", component : ViewSingleRoundsComponent , canActivate: [AuthGuard]},
   { path: "interview-rounds/view-interview-rounds/view-multiple-interview-round/:id", component : ViewMultipleRoundsComponent, canActivate: [AuthGuard] },
   { path: "page-not-found", component: PageNotFoundComponent },
-  { path: "**", redirectTo: "page-not-found" }
+  // { path: "**", redirectTo: "page-not-found" }
 ];
 
 @NgModule({

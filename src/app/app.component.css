@@ -12,7 +12,7 @@ ul>li>a{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgb(85,20,180) !important;
+    background-color: rgb(59, 25, 110) !important;
 
     color: rgb(255, 255, 255);
     text-align: center;
@@ -29,5 +29,5 @@ ul>li>a{
 }
 
 .navbar{
-    background-color: rgb(85,20,180) !important;
+    background-color: rgb(59, 25, 110) !important;
 }

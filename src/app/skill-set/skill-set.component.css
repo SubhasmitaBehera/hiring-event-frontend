@@ -17,4 +17,42 @@ h1>span{
 input.ng-invalid.ng-touched{
     border: 1px solid red;
 }
+ 
+
+
+
+.card{
+  margin-top: 5px;
+  margin-bottom: 20%
+}
+
+ul>li>a{
+  font-size: large;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(85,20,180) !important;
+
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+
+.nav-item:hover{
+  background-color: #2B32B2;
+  border-radius: 10px;
+}
+
+.active{
+  background-color: rgb(209 207 213 / 20%) !important;
+}
+
+.navbar{
+  background-color: rgb(85,20,180) !important;
+}
+
 

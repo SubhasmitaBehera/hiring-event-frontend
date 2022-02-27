@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   title = 'Hiring-service v2.0';
+  isDropdownOpen=false;
 
   constructor(private router : Router) { }
 

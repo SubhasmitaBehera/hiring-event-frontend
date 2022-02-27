@@ -31,10 +31,21 @@ import { EditInterviewDetailsComponent } from './interview-details/edit-intervie
 import { EditRoundsComponent } from './rounds/edit-rounds/edit-rounds.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
+import { LoginComponent } from './login/login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    ResetPasswordComponent,
+    DashboardComponent,
+    CreateUserComponent,
     JobDetailsComponent,
     SkillSetComponent,
     HomeComponent,
@@ -59,6 +70,9 @@ import { ModalComponent } from './modal/modal.component';
     EditInterviewDetailsComponent,
     EditRoundsComponent,
     ModalComponent,
+    WelcomeComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
