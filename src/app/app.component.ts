@@ -45,17 +45,20 @@ export class AppComponent {
       .subscribe(event => {
           console.log(event.url);
           obj=event
+          if(event.url == "/" || event.url == "/login"){
+            console.log(event.url == "/" || event.url == "/login");
+            return false
+
+
+          }
+
+      else
+      return true;
+
 
       });
       console.log("obj",obj);
 
-      if(obj.url == "/" || obj.url == "/login"){
-        console.log(obj.url == "/" || obj.url == "/login");
-        return false
-
-      }
-      else
-      return true;
 
   }
 }
