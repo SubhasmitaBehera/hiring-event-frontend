@@ -1,62 +1,63 @@
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
+<div class="row flex-nowrap  shadow-lg " style="height:100vh; background-color: rgb(231, 231, 231); width: 100vw;">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
 
-    <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-    aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Job Details</button>
-
-    <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-    aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Job Details</button>
+    <app-welcome></app-welcome>
   </div>
-</nav>
+  <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem;">
+    <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
 
-<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+    <br>
+    <div *ngIf="jobdetail" style="text-align: center;" class="text-center">
 
-<br>
-<div *ngIf="jobdetail" style="text-align: center;" class="text-center">
+        <table style=" width:70%; margin-left:15%; margin-right:15%;">
+            <tr>
+              <th>Id:</th>
+              <td>{{jobdetail.id}}</td>
+            </tr>
+            <tr>
+              <th>Title:</th>
+              <td>{{jobdetail.title}}</td>
+            </tr>
+            <tr>
+              <th>Description:</th>
+              <td>{{jobdetail.description}}</td>
+            </tr>
+            <tr>
+              <th>Team:</th>
+              <td>{{jobdetail.team}}</td>
+            </tr>
+            <tr>
+              <th>Hiring Manager Email:</th>
+              <td>{{jobdetail.hiringManagerEmail}}</td>
+            </tr>
+            <tr>
+              <th>Number Of Positions:</th>
+              <td>{{jobdetail.numOfPositions}}</td>
+            </tr>
+            <tr>
+              <th>Job Expiry Date:</th>
+              <td>{{jobdetail.jobExpiryDate}}</td>
+            </tr>
+            <tr>
+              <th>Minimum Experience:</th>
+              <td>{{jobdetail.minExp}}</td>
+            </tr>
+            <tr>
+              <th>Maximum Experience:</th>
+              <td>{{jobdetail.maxExp}}</td>
+            </tr>
+          </table>
+    </div>
 
-    <table style=" width:70%; margin-left:15%; margin-right:15%;">
-        <tr>
-          <th>Id:</th>
-          <td>{{jobdetail.id}}</td>
-        </tr>
-        <tr>
-          <th>Title:</th>
-          <td>{{jobdetail.title}}</td>
-        </tr>
-        <tr>
-          <th>Description:</th>
-          <td>{{jobdetail.description}}</td>
-        </tr>
-        <tr>
-          <th>Team:</th>
-          <td>{{jobdetail.team}}</td>
-        </tr>
-        <tr>
-          <th>Hiring Manager Email:</th>
-          <td>{{jobdetail.hiringManagerEmail}}</td>
-        </tr>
-        <tr>
-          <th>Number Of Positions:</th>
-          <td>{{jobdetail.numOfPositions}}</td>
-        </tr>
-        <tr>
-          <th>Job Expiry Date:</th>
-          <td>{{jobdetail.jobExpiryDate}}</td>
-        </tr>
-        <tr>
-          <th>Minimum Experience:</th>
-          <td>{{jobdetail.minExp}}</td>
-        </tr>
-        <tr>
-          <th>Maximum Experience:</th>
-          <td>{{jobdetail.maxExp}}</td>
-        </tr>
-      </table>
+    <br>
+    <br>
+    <div style="text-align: center;">
+    <button (click)="list()" class="btn btn-primary">Back to List</button>
+    </div>
+    <br>
+
+</div>
 </div>
 
-<br>
-<br>
-<div style="text-align: center;">
-<button (click)="list()" class="btn btn-primary">Back to List</button>
-</div>
-<br>
+
+

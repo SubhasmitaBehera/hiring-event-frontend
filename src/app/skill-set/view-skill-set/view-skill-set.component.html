@@ -1,3 +1,58 @@
+<div class="row flex-nowrap shadow-lg " style="height:100vh; background-color: rgb(231, 231, 231); width: 100vw;">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
+
+    <app-welcome></app-welcome>
+  </div>
+
+    <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem;">
+
+      <div class="row">
+        <div class="col">
+            <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">
+            <span class="utility1 rounded ">List of SkillSet</span>
+         </h2>
+        </div>
+        <div class="scrollbar">
+            <table class="table text-center table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" class="col-2">SKILL_NAME</th>
+                        <th scope="col" class="col-5">DESCRIPTION</th>
+                        <th scope="col" class="col-3">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let skillset of skillsets | async">
+                        <td class="col-2">{{skillset.skillName}}</td>
+                        <td class="col-5">{{skillset.description}}</td>
+                        <td class="col-3">
+                            <div class="row">
+                                <div  class="col">
+                                    <button class="btn btn-success"
+                                    (click)="viewSkillSet(skillset.id)"
+                                    >View</button>
+                                </div>
+                                <div  class="col">
+                                    <button class="btn btn-primary"
+                                    (click)="updateSkillSet(skillset.id)"
+                                    >Edit</button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-danger"
+                                    (click)="deleteSkillSet(skillset.id)"
+                                    >Delete</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!--
 <nav class="navbar navnar-collapse ">
   <ul class="nav nav-tabs" style="border-bottom: 0px;">
 
@@ -32,48 +87,5 @@
       <button class="nav-link active text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab"
       aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Skillset</button>
     </div>
-</nav>
+</nav> -->
 
-<div class="row">
-    <div class="col">
-        <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">
-        <span class="utility1 rounded ">List of SkillSet</span>
-     </h2>
-    </div>
-    <div class="scrollbar">
-        <table class="table text-center table-striped">
-            <thead>
-                <tr>
-                    <th scope="col" class="col-2">SKILL_NAME</th>
-                    <th scope="col" class="col-5">DESCRIPTION</th>
-                    <th scope="col" class="col-3">ACTION</th>
-                </tr>
-            </thead>
-            <tbody >
-                <tr *ngFor="let skillset of skillsets | async">
-                    <td class="col-2">{{skillset.skillName}}</td>
-                    <td class="col-5">{{skillset.description}}</td>
-                    <td class="col-3">
-                        <div class="row">
-                            <div  class="col">
-                                <button class="btn btn-success"
-                                (click)="viewSkillSet(skillset.id)"
-                                >View</button>
-                            </div>
-                            <div  class="col">
-                                <button class="btn btn-primary"
-                                (click)="updateSkillSet(skillset.id)"
-                                >Edit</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-danger"
-                                (click)="deleteSkillSet(skillset.id)"
-                                >Delete</button>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>

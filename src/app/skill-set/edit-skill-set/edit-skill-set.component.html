@@ -1,49 +1,50 @@
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
+<div class="row flex-nowrap shadow-lg " style="height:100vh; background-color: rgb(231, 231, 231); width: 100vw;">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
 
-    <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-    aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Skillset</button>
-
-    <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-    aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Skillset</button>
+    <app-welcome></app-welcome>
   </div>
-</nav>
 
-<h1 style="font-family: 'Audiowide', cursive; text-align: center;">
-<span class="utility1 rounded"><span>Update Skill Details</span></span>
-</h1>
+    <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem;">
+      <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
+        <span class="utility1 rounded"><span>Update Skill Details</span></span>
+        </h1>
 
 
-<div class="form" *ngIf="!boolVar">
-  <div class="row">
-    <div class="col">
-        <div class="form-group">
-          <label><b>Update Skill Name : </b></label>
-          <input type="text" class="form-control" [(ngModel)]="skillset.skillName" id="name" name="skillName">
+        <div class="form" *ngIf="!boolVar">
+          <div class="row">
+            <div class="col">
+                <div class="form-group">
+                  <label><b>Update Skill Name : </b></label>
+                  <input type="text" class="form-control" [(ngModel)]="skillset.skillName" id="name" name="skillName">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                  <label><b>Update Description : </b></label>
+                  <input type="text" class="form-control" [(ngModel)]="skillset.description" id="name" name="description">
+                </div>
+            </div>
+          </div>
+
+
+            <button class="btn btn-primary" type="button"  (click)="updateSkillSet()">Update</button>
         </div>
+
+
+        <div *ngIf="boolVar" class="row justify-content-center">
+            <div class="col-6">
+              <div class="card ">
+                <div class="text-center">
+                  <h2 class="text-success text-center ">The Page Updated Successfully</h2>
+                  <h4 class="text-success text-center">Thank You !</h4>
+                  <button class="btn btn-primary " type="button" (click)="list()">Back to List</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
     </div>
-    <div class="col">
-        <div class="form-group">
-          <label><b>Update Description : </b></label>
-          <input type="text" class="form-control" [(ngModel)]="skillset.description" id="name" name="description">
-        </div>
-    </div>
-  </div>
-    
-    
-    <button class="btn btn-primary" type="button"  (click)="updateSkillSet()">Update</button>
 </div>
 
 
-<div *ngIf="boolVar" class="row justify-content-center">
-    <div class="col-6">
-      <div class="card ">
-        <div class="text-center">
-          <h2 class="text-success text-center ">The Page Updated Successfully</h2>
-          <h4 class="text-success text-center">Thank You !</h4>
-          <button class="btn btn-primary " type="button" (click)="list()">Back to List</button>
-        </div>
-      </div>
-    </div>
-  
-  </div>

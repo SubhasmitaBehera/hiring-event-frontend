@@ -1,51 +1,52 @@
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
+<div class="row flex-nowrap shadow-lg " style="height:100vh; background-color: rgb(231, 231, 231); width: 100vw;">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
 
-    <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create" type="button" role="tab" 
-    aria-controls="nav-create" aria-selected="true" (click)="enable()">Create Skillset</button>
-
-    <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view" type="button" role="tab" 
-    aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Skillset</button>
+    <app-welcome></app-welcome>
   </div>
-</nav>
 
-<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
+    <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem;">
 
-<div *ngIf="skillset" style="text-align: center;" class="text-center">
+      <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;   text-align: center;">Details</h2>
 
-    <table style=" width:70%; margin-left:15%; margin-right:15%;">
-        <tr>
-          <th>Id:</th>
-          <td>{{skillset.id}}</td>
-        </tr>
-        <tr>
-          <th>Title:</th>
-          <td>{{skillset.skillName}}</td>
-        </tr>
-        <tr>
-          <th>Description:</th>
-          <td>{{skillset.description}}</td>
-        </tr>
-        <tr>
-          <th>Modified By:</th>
-          <td>{{skillset.modifiedBy}}</td>
-        </tr>
-        <tr>
-          <th>Resource ID:</th>
-          <td>{{skillset.resourceId}}</td>
-        </tr>
-        
-      </table>
-    
-    
+      <div *ngIf="skillset" style="text-align: center;" class="text-center">
 
-   
+          <table style=" width:70%; margin-left:15%; margin-right:15%;">
+              <tr>
+                <th>Id:</th>
+                <td>{{skillset.id}}</td>
+              </tr>
+              <tr>
+                <th>Title:</th>
+                <td>{{skillset.skillName}}</td>
+              </tr>
+              <tr>
+                <th>Description:</th>
+                <td>{{skillset.description}}</td>
+              </tr>
+              <tr>
+                <th>Modified By:</th>
+                <td>{{skillset.modifiedBy}}</td>
+              </tr>
+              <tr>
+                <th>Resource ID:</th>
+                <td>{{skillset.resourceId}}</td>
+              </tr>
 
+            </table>
+
+
+
+
+
+      </div>
+
+      <br>
+      <br>
+      <div style="text-align: center;">
+      <button (click)="list()" class="btn btn-primary">Back to List</button>
+      </div>
+      <br>
+
+    </div>
 </div>
 
-<br>
-<br>
-<div style="text-align: center;">
-<button (click)="list()" class="btn btn-primary">Back to List</button>
-</div>
-<br>

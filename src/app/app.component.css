@@ -17,6 +17,9 @@ ul>li>a{
     color: rgb(255, 255, 255);
     text-align: center;
 }
+.router{
+  background-color: rgb(90, 127, 160);
+}
 
 
 .nav-item:hover{

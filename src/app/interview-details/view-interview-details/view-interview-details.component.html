@@ -1,64 +1,61 @@
-<nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
-  
-        <button class="nav-link  text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab"
-            data-bs-target="#nav-create" type="button" role="tab" aria-controls="nav-create" aria-selected="true"
-            (click)="enable()">Create Interview Details</button>
-  
-        <button class="nav-link active text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view"
-            type="button" role="tab" aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Interview
-            Details</button>
-    </div>
-  </nav>
-  <br>
-<div class="row">
-    <div class="col">
-        <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;"> 
-        <span class="utility1 rounded">List of Interview Details</span> 
-     </h2>
-    </div>
-    <div class="scrollbar">
-        <table class="table text-center table-striped">
-            <thead>
+<div class="row flex-nowrap  shadow-lg " style="height:100vh; background-color: rgb(231, 231, 231); width: 100vw;">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
 
-                <tr>
-                    <th scope="col" class="col-1">ID</th>
-                    <th scope="col" class="col-1">TITLE</th>
-                    <th scope="col" class="col-2">JOB DETAILS ID</th>
-                    <th scope="col" class="col-2">CANDIDATE EMAIL</th>
-                    <th scope="col" class="col-2">STATUS</th>
-                    <th scope="col" class="col-4">ACTION</th>
-                </tr>
-            </thead>
-            <tbody >
-                <tr *ngFor="let interviewDetail of interviewDetails | async">
-                    <td class="col-1">{{interviewDetail.id}}</td>
-                    <td class="col-1">{{interviewDetail.title}}</td>
-                    <td class="col-2">{{interviewDetail.jobDetailsId}}</td>
-                    <td class="col-2">{{interviewDetail.candidateEmail}}</td>
-                    <td class="col-2">{{interviewDetail.status}}</td>
-                    <td class="col-4">
-                        <div class="row">
-                            <div  class="col">
-                                <button class="btn btn-success"
-                                (click)="viewInterviewDetails(interviewDetail.id)"
-                                >View</button>
+    <app-welcome></app-welcome>
+  </div>
+  <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem;">
+    <br>
+    <div class="row">
+        <div class="col">
+            <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">
+            <span class="utility1 rounded">List of Interview Details</span>
+         </h2>
+        </div>
+        <div class="scrollbar">
+            <table class="table text-center table-striped">
+                <thead>
+
+                    <tr>
+                        <th scope="col" class="col-1">ID</th>
+                        <th scope="col" class="col-1">TITLE</th>
+                        <th scope="col" class="col-2">JOB DETAILS ID</th>
+                        <th scope="col" class="col-2">CANDIDATE EMAIL</th>
+                        <th scope="col" class="col-2">STATUS</th>
+                        <th scope="col" class="col-4">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let interviewDetail of interviewDetails | async">
+                        <td class="col-1">{{interviewDetail.id}}</td>
+                        <td class="col-1">{{interviewDetail.title}}</td>
+                        <td class="col-2">{{interviewDetail.jobDetailsId}}</td>
+                        <td class="col-2">{{interviewDetail.candidateEmail}}</td>
+                        <td class="col-2">{{interviewDetail.status}}</td>
+                        <td class="col-4">
+                            <div class="row">
+                                <div  class="col">
+                                    <button class="btn btn-success"
+                                    (click)="viewInterviewDetails(interviewDetail.id)"
+                                    >View</button>
+                                </div>
+                                <div  class="col">
+                                    <button class="btn btn-primary"
+                                    (click)="updateSkillSet(interviewDetail.id)"
+                                    >Edit</button>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-danger"
+                                    (click)="deleteSkillSet(interviewDetail.id)"
+                                    >Delete</button>
+                                </div>
+
                             </div>
-                            <div  class="col">
-                                <button class="btn btn-primary"
-                                (click)="updateSkillSet(interviewDetail.id)"
-                                >Edit</button>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-danger"
-                                (click)="deleteSkillSet(interviewDetail.id)"
-                                >Delete</button>
-                            </div>
-                            
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+</div>
 </div>

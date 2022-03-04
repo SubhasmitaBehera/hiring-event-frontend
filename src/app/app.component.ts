@@ -11,9 +11,16 @@ import { async } from 'rxjs';
 })
 export class AppComponent {
   title = 'hiring-event';
-
+  navBool=true;
   token:string;
-  constructor(public utilityService : UtilityService , private route : ActivatedRoute, private router: Router) { }
+  constructor(public utilityService : UtilityService , private route : ActivatedRoute, private router: Router) {
+    // this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+    //   .subscribe(event => {
+    //       if(event.url == "/" || event.url == "/login"){
+    //         this.navBool = false;
+    //       }
+    // });
+  }
   ngOnInit(): void {
     // this.route.queryParams
     // .subscribe(params => {
@@ -26,8 +33,7 @@ export class AppComponent {
 
       console.log("app",this.token);
       console.log("params ",this.route);
-
-    // });
+      // this.navTrue();
 
   }
   logout(){
@@ -39,26 +45,27 @@ export class AppComponent {
   addUser(){
     this.router.navigate(["/create-user"])
   }
-  navTrue(){
-  let obj: Event;
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(event => {
-          console.log(event.url);
-          obj=event
-          if(event.url == "/" || event.url == "/login"){
-            console.log(event.url == "/" || event.url == "/login");
-            return false
+  // navTrue(){
+  // // let obj: Event;
+  //   this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+  //     .subscribe(event => {
+  //         console.log(event.url);
+  //         // obj=event
+  //         if(event.url == "/" || event.url == "/login"){
+  //           console.log(event.url == "/" || event.url == "/login");
+  //           this.navBool = false;
+  //           // return false;
 
 
-          }
+  //         }
 
-      else
-      return true;
-
-
-      });
-      console.log("obj",obj);
+  //     // else
 
 
-  }
+  //     });
+  //     // console.log("obj",obj);
+  //     // return true;
+
+
+  // }
 }

@@ -1,15 +1,10 @@
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="border-bottom: 0px;">
+<div class="row flex-nowrap  shadow-lg " style="height:100vh; background-color: rgb(231, 231, 231); width: 100vw;">
+  <div class="card-body col-1 " style="margin-left: 10px; margin-top: 1rem;">
 
-    <button class="nav-link active text-dark fw-bold" id="nav-create-tab" data-bs-toggle="tab"
-      data-bs-target="#nav-create" type="button" role="tab" aria-controls="nav-create" aria-selected="true"
-      (click)="enable()">Create Job Details</button>
-
-    <button class="nav-link text-dark fw-bold" id="nav-view-tab" data-bs-toggle="tab" data-bs-target="#nav-view"
-      type="button" role="tab" aria-controls="nav-view" aria-selected="false" (click)="enable1()">View Job
-      Details</button>
+    <app-welcome></app-welcome>
   </div>
-</nav>
+  <div class="card card-body col-8 " style=" margin-top: 2rem; margin-right: 2rem;">
+
 <br>
 <h1 style="font-family: 'Audiowide', cursive; text-align: center;">
   <span class="utility1 rounded "><span>Update Job Details</span></span>
@@ -64,3 +59,9 @@
 <br>
 <br>
 <app-jobdetails-skillset-mapping></app-jobdetails-skillset-mapping>
+
+</div>
+</div>
+
+
+
