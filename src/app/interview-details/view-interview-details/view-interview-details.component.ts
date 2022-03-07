@@ -49,4 +49,13 @@ export class ViewInterviewDetailsComponent implements OnInit {
   viewInterviewDetails(id: number) {
     this.router.navigate(['interview-details/view-single-interview-details', id]);
   }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
 }

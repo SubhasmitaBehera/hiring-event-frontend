@@ -18,7 +18,7 @@ export class ViewSingleJobDetailsComponent implements OnInit {
     this.jobdetail= new JobDetails();
 
     this.id = this.route.snapshot.params['id'];
-    
+
     this.jobDetailsService.getSingleJobDetails(this.id)
       .subscribe(data => {
         console.log(data)
@@ -32,9 +32,18 @@ export class ViewSingleJobDetailsComponent implements OnInit {
   enable1() {
     this.router.navigate(["job-details/view-job-details"])
   }
-  
+
   list(){
     this.router.navigate(['job-details/view-job-details']);
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
   }
 
 }

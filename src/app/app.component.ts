@@ -36,15 +36,7 @@ export class AppComponent {
       // this.navTrue();
 
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
-  addUser(){
-    this.router.navigate(["/create-user"])
-  }
   // navTrue(){
   // // let obj: Event;
   //   this.router.events.pipe(filter(event => event instanceof NavigationEnd))

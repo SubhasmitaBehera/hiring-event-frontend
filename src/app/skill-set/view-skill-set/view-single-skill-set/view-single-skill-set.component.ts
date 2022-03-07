@@ -17,7 +17,7 @@ export class ViewSingleSkillSetComponent implements OnInit {
     this.skillset= new SkillSet();
 
     this.id = this.route.snapshot.params['id'];
-    
+
     this.skillSetService.getSingleSkillSet(this.id)
       .subscribe(data => {
         console.log(data)
@@ -32,6 +32,15 @@ export class ViewSingleSkillSetComponent implements OnInit {
   }
   list(){
     this.router.navigate(['skill-set/view-skill-set']);
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
   }
 
 }

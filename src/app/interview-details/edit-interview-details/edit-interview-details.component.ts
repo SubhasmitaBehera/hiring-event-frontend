@@ -63,5 +63,14 @@ export class EditInterviewDetailsComponent implements OnInit {
   list(){
     this.router.navigate(['interview-details/view-interview-details']);
   }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
 
 }

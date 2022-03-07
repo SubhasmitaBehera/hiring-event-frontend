@@ -14,7 +14,7 @@ export class ViewJobDetailsComponent implements OnInit {
   jobdetails: Observable<JobDetails[]>;
   boolVar : boolean = false;
   id:number;
-  
+
   constructor(private route: ActivatedRoute, private jobDetailsService : JobDetailsService,private router: Router) { }
 
   ngOnInit(): void {
@@ -49,5 +49,14 @@ export class ViewJobDetailsComponent implements OnInit {
   }
   updateJobDetails(id: number) {
     this.router.navigate(['job-details/edit-job-details', id]);
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
   }
 }

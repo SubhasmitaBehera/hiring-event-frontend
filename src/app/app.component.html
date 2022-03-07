@@ -1,33 +1,8 @@
-<nav class="navbar navnar-collapse " *ngIf="navBool">
+<nav class="navbar navnar-collapse " *ngIf="false">
   <ul class="nav nav-tabs" style="border-bottom: 0px;">
     <h2 class="text-white" style="font-family: Georgia, 'Times New Roman', Times, serif; font-weight: bolder;">Hiring Event</h2>
   </ul>
-  <!-- <ul class="nav nav-tabs" style="border-bottom: 0px;margin: auto;">
 
-    <li class="nav-item">
-      <a routerLink="job-details" class="nav-link text-white me-2" routerLinkActive="active"
-        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Jobs</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="skill-set" class="nav-link text-white  me-2" routerLinkActive="active"
-        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Skills</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="user-info" class="nav-link text-white  me-2" routerLinkActive="active"
-        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Users</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="interview-details" class="nav-link text-white  me-2" routerLinkActive="active"
-        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;">Interviews</a>
-    </li>
-    <li class="nav-item" *ngIf="utilityService.link">
-      <a class="nav-link text-white active  me-2"
-        style="font-family:Arial, Helvetica, sans-serif; font-weight: bolder;"> Interview Rounds
-        <button type="button" class="btn-close btn-sm" aria-label="Close" (click)="utilityService.utilityFunc1()"></button>
-      </a>
-    </li>
-
-  </ul> -->
 <ul class="nav ">
   <button  class="btn btn-warning text-white" style="border-radius: 5px; margin-right: 1rem" (click)="addUser()">Add User</button>
   <button  class="btn btn-danger" style="border-radius: 5px; margin-right: 1rem" (click)="logout()">Logout</button>
@@ -38,10 +13,10 @@
   <router-outlet style="background-color: aqua;"></router-outlet>
 <!-- </div> -->
 
-<div class="footer ">
+<!-- <div class="footer ">
   <h4>&copy; <a href="https://github.com/umaa-java-sept-2020/hiring-events"
      target="_blank"
      style="text-decoration: none; color: white;"> Hiring_Event v2.0</a> </h4>
-</div>
+</div> -->
 
 

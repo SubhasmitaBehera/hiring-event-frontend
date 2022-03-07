@@ -115,5 +115,14 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
 
     this.submitted = true;
   }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
 
 }

@@ -48,4 +48,14 @@ export class EditSkillSetComponent implements OnInit {
     this.router.navigate(['skill-set/view-skill-set']);
   }
 
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
+
 }

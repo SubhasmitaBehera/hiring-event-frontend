@@ -14,7 +14,7 @@ export class JobDetailsComponent implements OnInit {
   jobdetails: JobDetails = new JobDetails();
 
   submitted: boolean = false;
-  
+
   constructor(private jobDetailsService: JobDetailsService,private  router : Router) { }
 
   ngOnInit(): void {
@@ -39,5 +39,14 @@ export class JobDetailsComponent implements OnInit {
         (error) => console.log(error));
 
     this.submitted = true;
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
   }
 }

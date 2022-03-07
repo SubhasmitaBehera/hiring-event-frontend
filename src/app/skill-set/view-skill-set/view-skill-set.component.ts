@@ -14,7 +14,7 @@ export class ViewSkillSetComponent implements OnInit {
   skillsets: Observable<SkillSet[]>;
   boolVar : boolean = false;
   id:number;
-  
+
   constructor(private skillSetService : SkillSetService,private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -49,6 +49,15 @@ export class ViewSkillSetComponent implements OnInit {
   }
   viewSkillSet(id: number) {
     this.router.navigate(['skill-set/view-skill-set/view-single-skill-set', id]);
+  }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
   }
 
 }

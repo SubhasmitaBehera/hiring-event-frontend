@@ -23,4 +23,13 @@ export class HomeComponent implements OnInit {
   onLoadJobDetails() {
     this.router.navigate(['/job-details'])
   }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
 }

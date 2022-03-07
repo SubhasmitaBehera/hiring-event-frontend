@@ -57,5 +57,14 @@ export class EditJobDetailsComponent implements OnInit {
   enable1() {
     this.router.navigate(["job-details/view-job-details"])
   }
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('bearerToken');
+    this.router.navigate(["/login"])
+
+  }
+  addUser(){
+    this.router.navigate(["/create-user"])
+  }
 
 }
