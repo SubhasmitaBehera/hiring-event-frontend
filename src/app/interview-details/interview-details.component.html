@@ -86,7 +86,7 @@
                   style="color: black;"> Create Interview</a>
               </li>
               <li>
-                <a routerLink="../interview-details/view-interview-details" routerLinkActive="active"
+                <a routerLink="../interview-details/view-interview-details" 
                   class="nav-link px-0" style="color: black;"> View Interviews</a>
               </li>
 
@@ -106,7 +106,6 @@
       </h1>
 
       <div class="container ">
-          <div class="scrollbar">
               <form #f="ngForm">
                   <div class="row">
                       <div class="col">
@@ -165,7 +164,6 @@
                           [disabled]="!f.valid">Add Interview Details</button>
                   </div>
               </form>
-          </div>
       </div>
   </div>
 

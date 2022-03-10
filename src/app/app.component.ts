@@ -32,7 +32,6 @@ export class AppComponent {
       // console.log("get token",sessionStorage.getItem('token'));
 
       console.log("app",this.token);
-      console.log("params ",this.route);
       // this.navTrue();
 
   }
