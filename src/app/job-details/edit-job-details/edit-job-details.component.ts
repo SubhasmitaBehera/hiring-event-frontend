@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { JobDetails } from 'src/app/Models/jobdetails.model';
 import { SkillSet } from 'src/app/Models/skillset.model';
 import { JobDetailsService } from 'src/app/service/jobdetails.services';
+import { LogOutService } from 'src/app/service/logout.service';
 import { SkillSetService } from 'src/app/service/skillset.services';
 
 @Component({
@@ -20,7 +21,7 @@ export class EditJobDetailsComponent implements OnInit {
   form: FormGroup;
   constructor(private route: ActivatedRoute,
      private router: Router,private skillSetService : SkillSetService,
-     private jobDetailsService: JobDetailsService) {}
+     private jobDetailsService: JobDetailsService, private logoutService : LogOutService) {}
 
   ngOnInit(): void {
     this.jobdetails = new JobDetails();
@@ -57,12 +58,7 @@ export class EditJobDetailsComponent implements OnInit {
   enable1() {
     this.router.navigate(["job-details/view-job-details"])
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
   addUser(){
     this.router.navigate(["/create-user"])
   }

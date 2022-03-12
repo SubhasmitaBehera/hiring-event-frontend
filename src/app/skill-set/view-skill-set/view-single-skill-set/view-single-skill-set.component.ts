@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SkillSet } from 'src/app/Models/skillset.model';
+import { LogOutService } from 'src/app/service/logout.service';
 import { SkillSetService } from 'src/app/service/skillset.services';
 
 @Component({
@@ -11,7 +12,8 @@ import { SkillSetService } from 'src/app/service/skillset.services';
 export class ViewSingleSkillSetComponent implements OnInit {
   skillset: SkillSet;
   id : number;
-  constructor(private route: ActivatedRoute,private skillSetService : SkillSetService,private router: Router) { }
+  constructor(private route: ActivatedRoute,private skillSetService : SkillSetService,
+    private router: Router, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
     this.skillset= new SkillSet();
@@ -32,12 +34,6 @@ export class ViewSingleSkillSetComponent implements OnInit {
   }
   list(){
     this.router.navigate(['skill-set/view-skill-set']);
-  }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
-
   }
   addUser(){
     this.router.navigate(["/create-user"])

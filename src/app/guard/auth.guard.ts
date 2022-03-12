@@ -25,11 +25,11 @@ export class AuthGuard implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    console.log('token');
-    this.token = sessionStorage.getItem('token');
-    console.log(this.token, 'token');
+    // console.log('token');
+    // this.token = sessionStorage.getItem('token');
+    // console.log(this.token, 'token');
 
-    console.log("token");
+    // console.log("token");
     this.token = sessionStorage.getItem('token');
     // const bearerToken: any = sessionStorage.getItem('BearerToken');
     // console.log("BearerToken", bearerToken);
@@ -71,12 +71,15 @@ export class AuthGuard implements CanActivate {
       // else
       return true;
     } else {
-
+      this.router.navigate(['/login']);
+      //           console.warn("Session expired! Please login again");
       console.log('Please login to continue...');
-      document.location.href = 'http://localhost:4300'; //login portal url
+      // document.location.href = 'http://localhost:4300'; //login portal url
+                return false;
+
     }
     // if()
-    return true;
+    // return true;
   }
 
   getToken() {

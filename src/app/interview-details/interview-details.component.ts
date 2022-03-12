@@ -7,6 +7,7 @@ import { UserInfo } from '../Models/userinfo.model';
 import { UserType } from '../Models/userType.model';
 import { InterViewDetailsService } from '../service/interview-details.services';
 import { JobDetailsService } from '../service/jobdetails.services';
+import { LogOutService } from '../service/logout.service';
 import { UserInfoService } from '../service/userInfo.services';
 
 @Component({
@@ -29,7 +30,7 @@ export class InterviewDetailsComponent implements OnInit {
   constructor(private interviewDetailsService: InterViewDetailsService,
     private route: ActivatedRoute, private jobDetailsService: JobDetailsService,
     private userInfoService: UserInfoService,
-    private router : Router) {
+    private router : Router, private logoutService : LogOutService) {
 
   }
 
@@ -65,12 +66,7 @@ export class InterviewDetailsComponent implements OnInit {
 
     this.submitted = true;
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
   addUser(){
     this.router.navigate(["/create-user"])
   }

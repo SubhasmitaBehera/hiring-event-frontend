@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LogOutService } from '../service/logout.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   title = 'Hiring-service v2.0';
   isDropdownOpen=false;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
   }
@@ -23,12 +24,7 @@ export class HomeComponent implements OnInit {
   onLoadJobDetails() {
     this.router.navigate(['/job-details'])
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
   addUser(){
     this.router.navigate(["/create-user"])
   }

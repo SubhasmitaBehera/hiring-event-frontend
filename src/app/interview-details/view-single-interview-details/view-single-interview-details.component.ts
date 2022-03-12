@@ -7,6 +7,7 @@ import { UserInfo } from 'src/app/Models/userinfo.model';
 import { UserType } from 'src/app/Models/userType.model';
 import { InterViewDetailsService } from 'src/app/service/interview-details.services';
 import { InterviewRoundService } from 'src/app/service/interview-round.services';
+import { LogOutService } from 'src/app/service/logout.service';
 import { UserInfoService } from 'src/app/service/userInfo.services';
 import { UtilityService } from 'src/app/service/utility.services';
 
@@ -40,7 +41,7 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
     private interviewDetailsService : InterViewDetailsService,
     private utilityService : UtilityService,
     private router: Router,private interviewRoundService : InterviewRoundService,
-    private userInfoService: UserInfoService) { }
+    private userInfoService: UserInfoService, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
     this.interviewDetails= new InterviewDetails();
@@ -115,12 +116,7 @@ export class ViewSingleInterviewDetailsComponent implements OnInit {
 
     this.submitted = true;
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
   addUser(){
     this.router.navigate(["/create-user"])
   }

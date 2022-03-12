@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SkillSet } from '../Models/skillset.model';
+import { LogOutService } from '../service/logout.service';
 import { SkillSetService } from '../service/skillset.services';
 
 @Component({
@@ -17,7 +18,7 @@ export class SkillSetComponent implements OnInit {
   boolVar1: boolean = true;
   boolVar2: boolean = false;
 
-  constructor(private skillsetService : SkillSetService,private router : Router) { }
+  constructor(private skillsetService : SkillSetService,private router : Router , private logoutService : LogOutService) { }
 
   ngOnInit(): void {
   }
@@ -43,13 +44,10 @@ export class SkillSetComponent implements OnInit {
 
   this.submitted = true;
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
+  // logout(){
+  //   sessionStorage.removeItem('token');
+  //   this.router.navigate(["/login"])
 
-  }
-  addUser(){
-    this.router.navigate(["/create-user"])
-  }
+  // }
+
 }

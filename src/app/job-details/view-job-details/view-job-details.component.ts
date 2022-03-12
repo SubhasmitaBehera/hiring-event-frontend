@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JobDetails } from 'src/app/Models/jobdetails.model';
 import { JobDetailsService } from 'src/app/service/jobdetails.services';
+import { LogOutService } from 'src/app/service/logout.service';
 
 @Component({
   selector: 'app-view-job-details',
@@ -15,7 +16,8 @@ export class ViewJobDetailsComponent implements OnInit {
   boolVar : boolean = false;
   id:number;
 
-  constructor(private route: ActivatedRoute, private jobDetailsService : JobDetailsService,private router: Router) { }
+  constructor(private route: ActivatedRoute, private jobDetailsService : JobDetailsService,
+    private router: Router, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -49,12 +51,6 @@ export class ViewJobDetailsComponent implements OnInit {
   }
   updateJobDetails(id: number) {
     this.router.navigate(['job-details/edit-job-details', id]);
-  }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
-
   }
   addUser(){
     this.router.navigate(["/create-user"])

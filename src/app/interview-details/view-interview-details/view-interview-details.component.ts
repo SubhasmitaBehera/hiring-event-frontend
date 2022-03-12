@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { InterviewDetails } from 'src/app/Models/interviewDetails.model';
 import { InterViewDetailsService } from 'src/app/service/interview-details.services';
+import { LogOutService } from 'src/app/service/logout.service';
 
 @Component({
   selector: 'app-view-interview-details',
@@ -13,7 +14,8 @@ export class ViewInterviewDetailsComponent implements OnInit {
   boolVar : boolean = false;
   interviewDetails: Observable<InterviewDetails[]>;
   id:number;
-  constructor(private interviewDetailsService : InterViewDetailsService,private router: Router,private route: ActivatedRoute) { }
+  constructor(private interviewDetailsService : InterViewDetailsService,private router: Router,
+    private route: ActivatedRoute, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -49,12 +51,7 @@ export class ViewInterviewDetailsComponent implements OnInit {
   viewInterviewDetails(id: number) {
     this.router.navigate(['interview-details/view-single-interview-details', id]);
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
   addUser(){
     this.router.navigate(["/create-user"])
   }

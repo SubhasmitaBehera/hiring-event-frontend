@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JobDetails } from 'src/app/Models/jobdetails.model';
 import { JobDetailsService } from 'src/app/service/jobdetails.services';
+import { LogOutService } from 'src/app/service/logout.service';
 
 @Component({
   selector: 'app-view-single-job-details',
@@ -12,7 +13,8 @@ export class ViewSingleJobDetailsComponent implements OnInit {
   jobdetail: JobDetails;
   id : number;
 
-  constructor(private route: ActivatedRoute,private jobDetailsService : JobDetailsService,private router: Router) { }
+  constructor(private route: ActivatedRoute,private jobDetailsService : JobDetailsService,
+    private router: Router, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
     this.jobdetail= new JobDetails();
@@ -35,12 +37,6 @@ export class ViewSingleJobDetailsComponent implements OnInit {
 
   list(){
     this.router.navigate(['job-details/view-job-details']);
-  }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
-
   }
   addUser(){
     this.router.navigate(["/create-user"])

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SkillSet } from 'src/app/Models/skillset.model';
+import { LogOutService } from 'src/app/service/logout.service';
 import { SkillSetService } from 'src/app/service/skillset.services';
 
 @Component({
@@ -15,7 +16,7 @@ export class ViewSkillSetComponent implements OnInit {
   boolVar : boolean = false;
   id:number;
 
-  constructor(private skillSetService : SkillSetService,private router: Router,private route: ActivatedRoute) { }
+  constructor(private skillSetService : SkillSetService,private router: Router,private route: ActivatedRoute,private logoutService : LogOutService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { JobDetails } from '../Models/jobdetails.model';
 import { JobDetailsService } from '../service/jobdetails.services';
+import { LogOutService } from '../service/logout.service';
 
 @Component({
   selector: 'app-job-details',
@@ -15,7 +16,7 @@ export class JobDetailsComponent implements OnInit {
 
   submitted: boolean = false;
 
-  constructor(private jobDetailsService: JobDetailsService,private  router : Router) { }
+  constructor(private jobDetailsService: JobDetailsService,private  router : Router, private logoutService : LogOutService) { }
 
   ngOnInit(): void {
   }
@@ -40,12 +41,7 @@ export class JobDetailsComponent implements OnInit {
 
     this.submitted = true;
   }
-  logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('bearerToken');
-    this.router.navigate(["/login"])
 
-  }
   addUser(){
     this.router.navigate(["/create-user"])
   }
