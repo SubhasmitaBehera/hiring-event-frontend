@@ -5,8 +5,15 @@
   </ul>
 
   <ul class="nav ">
-    <button class="btn btn-warning text-white" style="border-radius: 5px; margin-right: 1rem" (click)="addUser()">Add
-      User</button>
+    <button class="btn btn-warning text-white" style="border-radius: 5px; margin-right: 1rem"
+     data-bs-toggle="modal" data-bs-target="#addUserModal">Add User</button>
+     <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md" >
+        <div class="modal-content">
+            <app-create-user></app-create-user>
+        </div>
+      </div>
+    </div>
     <button class="btn btn-danger" style="border-radius: 5px; margin-right: 1rem" (click)="logoutService.LogOut()">Logout</button>
   </ul>
 </nav>
@@ -86,7 +93,7 @@
                   style="color: black;"> Create Interview</a>
               </li>
               <li>
-                <a routerLink="../interview-details/view-interview-details" 
+                <a routerLink="../interview-details/view-interview-details"
                   class="nav-link px-0" style="color: black;"> View Interviews</a>
               </li>
 
