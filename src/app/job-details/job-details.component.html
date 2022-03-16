@@ -5,8 +5,15 @@
   </ul>
 
   <ul class="nav ">
-    <button class="btn btn-warning text-white" style="border-radius: 5px; margin-right: 1rem" (click)="addUser()">Add
-      User</button>
+    <button class="btn btn-warning text-white" style="border-radius: 5px; margin-right: 1rem"
+     data-bs-toggle="modal" data-bs-target="#addUserModal">Add User</button>
+     <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md" >
+        <div class="modal-content">
+            <app-create-user></app-create-user>
+        </div>
+      </div>
+    </div>
     <button class="btn btn-danger" style="border-radius: 5px; margin-right: 1rem" (click)="logoutService.LogOut()">Logout</button>
   </ul>
 </nav>
@@ -118,7 +125,7 @@
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="description">DESCRIPTION : </label>
-                          <input type="text" class="form-control" id="uid" name="description" ngModel #box2
+                          <input type="text" class="form-control" id="description" name="description" ngModel #box2
                               [(ngModel)]="jobdetails.description" required>
                       </div>
                   </div>
@@ -127,7 +134,7 @@
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="managerEmail">MANAGER_EMAIL : </label>
-                          <input type="text" class="form-control" id="uid" name="managerEmail" #box3 ngModel
+                          <input type="text" class="form-control" id="managerEmail" name="managerEmail" #box3 ngModel
                               [(ngModel)]="jobdetails.hiringManagerEmail" required email #email="ngModel">
                           <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid
                               email</span>
@@ -136,14 +143,14 @@
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="noOfPositions">NUM_OF_POSITIONS : </label>
-                          <input type="number" class="form-control" id="firstName" name="noOfPositions" ngModel
+                          <input type="number" class="form-control" id="noOfPositions" name="noOfPositions" ngModel
                               #box4 [(ngModel)]="jobdetails.numOfPositions" required>
                       </div>
                   </div>
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="team">TEAM : </label>
-                          <input type="text" class="form-control" id="firstName" name="team" ngModel #box5
+                          <input type="text" class="form-control" id="team" name="team" ngModel #box5
                               [(ngModel)]="jobdetails.team" required>
                       </div>
                   </div>
@@ -153,21 +160,21 @@
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="expDt">EXP_DT : </label>
-                          <input type="date" class="form-control" id="uid" name="expDt" ngModel #box6
+                          <input type="date" class="form-control" id="expDt" name="expDt" ngModel #box6
                               [(ngModel)]="jobdetails.jobExpiryDate" required>
                       </div>
                   </div>
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="MinExp">MIN_EXPERIENCE : </label>
-                          <input type="number" class="form-control" id="firstName" name="MinExp" ngModel #box7
+                          <input type="number" class="form-control" id="MinExp" name="MinExp" ngModel #box7
                               [(ngModel)]="jobdetails.minExp" required>
                       </div>
                   </div>
                   <div class="col mb-3">
                       <div class="form-group">
                           <label for="maxExp">MAX_EXPERIENCE : </label>
-                          <input type="number" class="form-control" id="firstName" name="maxExp" ngModel #box8
+                          <input type="number" class="form-control" id="maxExp" name="maxExp" ngModel #box8
                               [(ngModel)]="jobdetails.maxExp" required>
                       </div>
                   </div>

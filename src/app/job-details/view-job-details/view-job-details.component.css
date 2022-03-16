@@ -36,13 +36,23 @@
 .active{
   background-color: rgba(102, 99, 107, 0.2) !important;
 }
-.scrollbar{
+.tableScrollbar{
   overflow: hidden;
   width: 100%;
-  max-height: 75vh;
+  max-height: 70vh;
 }
-.scrollbar:hover{
+.tableScrollbar:hover{
   overflow: auto;
   width: 100%;
-  max-height:75vh;
+  max-height:70vh;
+}
+.rowScrollbar{
+  overflow: auto;
+  width: 100%;
+  max-height:6vh;
+}
+.rowScrollbar:hover{
+  overflow: auto;
+  /* width: 100%; */
+  max-height:6vh;
 }

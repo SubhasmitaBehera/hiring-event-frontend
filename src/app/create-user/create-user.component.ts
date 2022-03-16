@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CreateUser } from 'src/app/models/createUser.model';
 import { CreateUserService } from '../service/createUser.service';
+// import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-create-user',
@@ -14,17 +15,22 @@ export class CreateUserComponent implements OnInit {
   hide1: boolean = false;
   hide2: boolean = true;
   confirmPassword : string = "";
+  show:boolean = false;
+
+  // @ContentChild(IonInput) input: IonInput;
+
   constructor(private createUserService : CreateUserService , private router : Router) { }
 
   ngOnInit(): void {
     // this.createUserModel.
+    this.createUserModel.password = "Password@123"
   }
   createUser(){
     this.createUserService.createUser(this.createUserModel).subscribe((data : any  ) => {
       console.log(data);
 
       sessionStorage.removeItem('token');
-      this.router.navigate(["/login"])
+      // this.router.navigate(["/login"])
     },error  =>
       console.error(error.error.message+" "+error.error.details)
     );

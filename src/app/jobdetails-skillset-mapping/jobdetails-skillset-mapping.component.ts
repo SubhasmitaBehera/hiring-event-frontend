@@ -3,7 +3,7 @@ import { JobDetailsSkillSetMapping } from '../Models/jobdetailsSkillSetMapping.m
 import { JobdetailsSkillSetmappingService } from 'src/app/service/jobdetailsSkillSetMapping.services';
 import { SkillSet } from '../Models/skillset.model';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SkillSetService } from '../service/skillset.services';
 
 @Component({
@@ -20,10 +20,11 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
   skillset: SkillSet = new SkillSet();
   enable1: number[] = [];
   enable: SkillSet[] = [];
+  alertShow:boolean = true;
 
   constructor(private jobdetailsSkillSetmappingService: JobdetailsSkillSetmappingService,
-    private fb: FormBuilder, private route: ActivatedRoute, private skillSetService: SkillSetService
-  ) {
+    private fb: FormBuilder, private route: ActivatedRoute, private skillSetService: SkillSetService,
+    private router : Router) {
     this.form = this.fb.group({
       checkArray: this.fb.array([], [Validators.required])
     })
@@ -77,11 +78,16 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
         (error) => console.log(error));
 
         setTimeout(() => {
-          this.reloadCurrentPage()
+          // this.reloadCurrentPage()
+          // this.show = false;
+          this.alertShow=false;
+          this.router.navigate(["job-details/edit-job-details",this.id])
+          console.log(this.route);
+
         }, 2500);
         // this.reloadCurrentPage();
         // this.refreshComponent();
-        this.boolVar= true;
+        // this.boolVar= true;
   }
   checkedOnRefresh() {
     this.jobdetailsSkillSetMapping.jobId = +this.route.snapshot.params['id'];
@@ -99,6 +105,7 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
       // console.log(this.form.value.checkArray);
     }, (error) => console.log(error));
   }
+
 
   check(e) {   //9 , 1
     for (let j = 0; j < this.enable1.length; j++) {

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Login } from 'src/app/models/Login';
 import { LoginService } from '../service/login.service';
+import { RoleService } from '../service/roles.services';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   isFetching : boolean = false;
   error = null;
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router , private roleService :RoleService) { }
 
   ngOnInit(): void {
   }
@@ -38,16 +39,26 @@ export class LoginComponent implements OnInit {
 
         sessionStorage.setItem('token', bearerToken);
          this.router.navigate(["/home"]);
-        // this.router.navigate(["http://localhost:49400"]);
 
       }
       this.isFetching = false;
+      this.roleService
+      .getUserDetails().subscribe((data) => {
+        console.log("data ", data);
+        data.roles = "User";
+        console.log("data.roles ", data.roles);
+        sessionStorage.setItem('role', data.roles);
+
+      },
+        (error) => console.log(error));
 
     }, error =>{
-      // console.error(error.error.message + " " + error.error.details)
       this.error = error.message;
       }
-    );
+     );
+
+
+
   }
 
 }

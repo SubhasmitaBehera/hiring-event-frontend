@@ -43,6 +43,8 @@ export class SkillSetComponent implements OnInit {
       (error) => console.log(error));
 
   this.submitted = true;
+  console.log(this.submitted );
+
   }
   // logout(){
   //   sessionStorage.removeItem('token');
