@@ -1,7 +1,4 @@
-<!-- <div class="container text-center">
-  <img src="../assets/log-in.png" alt="login-logo" style="margin-top: 5vh; height: 100px;">
-  <h4 class="text-center p-4 text-muted" >Sign-up to HIRING-EVENTS v2.0</h4>
-</div> -->
+
 <div class="container shadow-lg p-1" style="max-width: 35vw;" [hidden]="hide1">
   <div class="card" style="background-color: rgb(243, 246, 250);">
     <div class="card-header text-center text-white" style="background-color: rgb(85,20,180);
@@ -17,59 +14,45 @@
 
             <span class="input-group-text" id="basic-addon1"><img src="../../assets/user.png" alt=""
                 style="height: 30px;"> </span>
-            <input type="text" class="form-control" id="formGroupExampleInput" ngModel #b1
-              placeholder="Enter username" name="username" [(ngModel)]="createUserModel.username" required>
+            <input type="text" class="form-control" id="formGroupExampleInput" ngModel #b1 placeholder="Enter username"
+              name="username" [(ngModel)]="createUserModel.username" required>
           </div>
 
         </div>
         <div class="form-group m-1">
           <div class="input-group mb-4 " id="pwd">
-              <span class="input-group-text" id="basic-addon1"><img src="../../assets/key.png" alt=""
-                  style="height: 30px;"> </span>
+            <span class="input-group-text" id="basic-addon1"><img src="../../assets/key.png" alt=""
+                style="height: 30px;"> </span>
             <input type="password" class="form-control" id="password" name="password" ngModel
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&]).{8,}" [(ngModel)]="createUserModel.password"
               placeholder="Enter new Password" required #password="ngModel">
-              <!-- <div class="input-group-append"> -->
-                <span class="input-group-text">
+            <span class="input-group-text">
 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16"  *ngIf="!show">
-                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                  </svg>
-                  <!-- <i class="fas fa-eye-slash"></i> -->
-                </span>
-             <!-- </div> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye"
+                viewBox="0 0 16 16" *ngIf="!show">
+                <path
+                  d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+              </svg>
+            </span>
             <span class="help-block" style="display: block;" *ngIf="!password.valid && password.touched">
               Must have at least one number, one lowercase and one uppercase letter.</span>
           </div>
 
         </div>
-        <!-- <div class="form-group m-1">
-          <div class="input-group mb-4 " id="confirm_pwd">
-              <span class="input-group-text" id="basic-addon1"><img src="../../assets/key.png" alt=""
-                  style="height: 30px;"> </span>
-            <input type="password" style="display: block;" class="form-control" id="confirmPassword" name="confirmPassword" ngModel
-              [(ngModel)]="confirmPassword" placeholder="Retype password" required
-              #confirm_password="ngModel">
-            <span class="help-block"
-              *ngIf="!(password.model === confirmPassword) && confirm_password.touched">Password and Confirm
-              Password must be match</span>
-            </div>
-        </div> -->
-        <div class="form-group m-1">
-          <div class="input-group mb-4 " id="role">
-              <span class="input-group-text" id="basic-addon1"><img src="../../assets/key.png" alt=""
-                  style="height: 30px;"> </span>
-            <input type="password" style="display: block;" class="form-control" id="confirmPassword" name="confirmPassword" ngModel
-              [(ngModel)]="confirmPassword" placeholder="Retype password" required
-              #confirm_password="ngModel">
-            <span class="help-block"
-              *ngIf="!(password.model === confirmPassword) && confirm_password.touched">Password and Confirm
-              Password must be match</span>
-            </div>
+        <div class="container mt-5">
+          <ng-multiselect-dropdown
+          [placeholder]="'Roles'"
+          [settings]="dropdownSettings"
+          [data]="dropdownList" [(ngModel)]="createUserModel.roles" name="roles"
+          (onSelect)="onItemSelect($event)" (onUnSelect)="onItemUnSelect($event)"
+          (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
         </div>
         <div class="text-center mt-4">
-          <button class="btn btn-success text-white" type="button" (click)="createUser()" [disabled]="!f.valid">Save</button>
+          <button class="btn btn-success text-white" type="button" (click)="createUser()"
+            [disabled]="!f.valid">Save</button>
         </div>
       </form>
 

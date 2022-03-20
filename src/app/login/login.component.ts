@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Login } from 'src/app/models/Login';
+import { AuthGuard } from '../guard/auth.guard';
 import { LoginService } from '../service/login.service';
 import { RoleService } from '../service/roles.services';
 
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   isFetching : boolean = false;
   error = null;
 
-  constructor(private loginService: LoginService, private router: Router , private roleService :RoleService) { }
+  constructor(private loginService: LoginService, private router: Router , private authGuard :AuthGuard) { }
 
   ngOnInit(): void {
   }
@@ -39,23 +40,16 @@ export class LoginComponent implements OnInit {
 
         sessionStorage.setItem('token', bearerToken);
          this.router.navigate(["/home"]);
+        let token = sessionStorage.getItem('token');
+    console.log(token, "inside login method the bearer token");
 
       }
       this.isFetching = false;
-      this.roleService
-      .getUserDetails().subscribe((data) => {
-        console.log("data ", data);
-        data.roles = "User";
-        console.log("data.roles ", data.roles);
-        sessionStorage.setItem('role', data.roles);
-
-      },
-        (error) => console.log(error));
 
     }, error =>{
       this.error = error.message;
-      }
-     );
+    }
+    ) ;
 
 
 

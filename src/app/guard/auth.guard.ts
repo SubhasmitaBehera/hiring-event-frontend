@@ -7,15 +7,15 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
-// import {  JwtHelperService } from '@auth0/angular-jwt';
 
 import { Injectable } from '@angular/core';
-import { RoleService } from '../service/roles.services';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) { }
+  private baseUrl = 'http://localhost:8085';
+  constructor(private router: Router,private http: HttpClient) { }
   token = '';
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -52,5 +52,9 @@ export class AuthGuard implements CanActivate {
   getToken() {
     return this.token;
   }
+  getUserDetails(): any {
+    console.log("inside auth guard getUserDetails() ",this.token);
+      return this.http.get(`${this.baseUrl}/user/me`, {headers: new HttpHeaders().set("Authorization", "Bearer "+this.token)});
+    }
 
 }

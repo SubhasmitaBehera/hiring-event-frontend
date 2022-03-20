@@ -38,6 +38,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,9 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgMultiSelectDropDownModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ export class CreateUserService{
   constructor(private http : HttpClient , private authService : AuthGuard,private router : Router){}
   token = this.authService.getToken();
   createUser(user: Object):Observable<Object>{
-    console.log(this.authService.getToken());
+    console.log("inside create user ",this.token);
       return this.http.post(`${this.baseUrl}/register-user`,user , {headers: new HttpHeaders().set("Authorization", "Bearer "+this.token)});
 
 }

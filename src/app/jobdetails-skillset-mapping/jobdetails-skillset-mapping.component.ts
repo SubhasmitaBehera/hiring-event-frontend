@@ -3,7 +3,7 @@ import { JobDetailsSkillSetMapping } from '../Models/jobdetailsSkillSetMapping.m
 import { JobdetailsSkillSetmappingService } from 'src/app/service/jobdetailsSkillSetMapping.services';
 import { SkillSet } from '../Models/skillset.model';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { SkillSetService } from '../service/skillset.services';
 
 @Component({
@@ -20,20 +20,34 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
   skillset: SkillSet = new SkillSet();
   enable1: number[] = [];
   enable: SkillSet[] = [];
-  alertShow:boolean = true;
-
+  mySubscription: any;
   constructor(private jobdetailsSkillSetmappingService: JobdetailsSkillSetmappingService,
     private fb: FormBuilder, private route: ActivatedRoute, private skillSetService: SkillSetService,
-    private router : Router) {
+    private router: Router) {
     this.form = this.fb.group({
       checkArray: this.fb.array([], [Validators.required])
     })
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+    this.mySubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Trick the Router into believing it's last link wasn't previously loaded
+        this.router.navigated = false;
+      }
+    });
+  }
+  ngOnDestroy() {
+    if (this.mySubscription) {
+      this.mySubscription.unsubscribe();
+    }
   }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.params['id'];
     this.reloadData();
     this.checkedOnRefresh();
+    // setTimeout(() => { this.ngOnInit() }, 1000 * 10)
   }
 
   reloadData() {
@@ -41,7 +55,6 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
   }
 
   onCheckboxChange(e) {
-    // let checkArray: FormArray = this.form.get('checkArray') as FormArray;
     if (e.target.checked) {
       this.form.value.checkArray.push(+e.target.value);
       console.log(this.form.value.checkArray);
@@ -56,11 +69,8 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
       console.log(this.form.value.checkArray);
     }
   }
-  reloadCurrentPage() {
-    window.location.reload();
-
-  }
   submitForm() {
+    this.boolVar = true
     console.log(this.enable1);
     console.log(this.form.value.checkArray);
     let skillSet: SkillSet[] = [];
@@ -77,17 +87,10 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
       },
         (error) => console.log(error));
 
-        setTimeout(() => {
-          // this.reloadCurrentPage()
-          // this.show = false;
-          this.alertShow=false;
-          this.router.navigate(["job-details/edit-job-details",this.id])
-          console.log(this.route);
-
-        }, 2500);
-        // this.reloadCurrentPage();
-        // this.refreshComponent();
-        // this.boolVar= true;
+    setTimeout(() => {
+      this.boolVar = false
+      this.router.navigate(['/job-details/edit-job-details', this.id])
+    }, 2500);
   }
   checkedOnRefresh() {
     this.jobdetailsSkillSetMapping.jobId = +this.route.snapshot.params['id'];
@@ -102,7 +105,6 @@ export class JobdetailsSkillsetMappingComponent implements OnInit {
       for (let i = 0; i < this.enable1.length; i++) {
         this.form.value.checkArray[i] = this.enable1[i];
       }
-      // console.log(this.form.value.checkArray);
     }, (error) => console.log(error));
   }
 

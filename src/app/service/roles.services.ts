@@ -10,10 +10,13 @@ export class RoleService{
   token
 
   constructor(private http: HttpClient, private authService : AuthGuard) {
-    this.token = authService.getToken();
+    // this.token = authService.getToken();
+    this.token = sessionStorage.getItem('token')
+
    }
 
   getUserDetails(): any {
+    console.log("inside roles service ",this.token);
       return this.http.get(`${this.baseUrl}/user/me`, {headers: new HttpHeaders().set("Authorization", "Bearer "+this.token)});
     }
   }

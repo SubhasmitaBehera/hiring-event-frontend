@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthGuard } from '../guard/auth.guard';
 import { LogOutService } from '../service/logout.service';
+import { RoleService } from '../service/roles.services';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +14,10 @@ export class HomeComponent implements OnInit {
   title = 'Hiring-service v2.0';
   isDropdownOpen=false;
 
-  constructor(private router : Router, private logoutService : LogOutService) { }
+  constructor(private router : Router, private logoutService : LogOutService , private authGuard : AuthGuard) { }
 
   ngOnInit(): void {
+
   }
 
 
@@ -23,9 +26,5 @@ export class HomeComponent implements OnInit {
   }
   onLoadJobDetails() {
     this.router.navigate(['/job-details'])
-  }
-
-  addUser(){
-    this.router.navigate(["/create-user"])
   }
 }

@@ -8,6 +8,7 @@ export class LogOutService{
   constructor(private router : Router){}
   LogOut(){
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('role');
     this.router.navigate(["/login"])
   }
 }

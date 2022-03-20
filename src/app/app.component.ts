@@ -28,10 +28,10 @@ export class AppComponent {
     //   if(params.token!="undefined" && params.token!=null )
     //    this.token = params.token;
       // sessionStorage.setItem('token', this.token);
-      this.token=sessionStorage.getItem('token');
+      // this.token=sessionStorage.getItem('token');
       // console.log("get token",sessionStorage.getItem('token'));
 
-      console.log("app",this.token);
+      // console.log("app",this.token);
       // this.navTrue();
 
   }

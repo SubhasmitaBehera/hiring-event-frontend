@@ -25,3 +25,8 @@ input, .card{
 .help-block{
   color: red;
 }
+
+.fa-eye-slash:hover,
+.fa-eye:hover {
+  cursor: pointer;
+}
