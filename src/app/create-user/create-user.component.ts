@@ -1,9 +1,9 @@
 import { Component, ContentChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { CreateUser } from 'src/app/models/createUser.model';
+import { CreateUser } from 'src/app/models/CreateUser.model';
 import { AuthGuard } from '../guard/auth.guard';
-import { UserStatus } from '../models/userStatus.model';
+import { UserStatus } from '../models/UserStatus.model';
 import { CreateUserService } from '../service/createUser.service';
 import { RoleService } from '../service/roles.services';
 // import { IonInput } from '@ionic/angular';
